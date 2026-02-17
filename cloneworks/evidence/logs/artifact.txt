@@ -1,5 +1,5 @@
 artifact_url=https://github.com/jeffsvajlenko/CloneWorks.git
 commit_hash=4e9f55bad3dd2e6273813fd544b0d05024874a90
-fetch_date=2026-02-17T03:10:09Z
+fetch_date=2026-02-17T04:35:52Z
 fetch_method=git_clone
-target_dir=/workspace/tools/cloneworks_artifact
+target_dir=/Users/chutgiet/Desktop/CMPT470/M3-470/cloneworks/tools/cloneworks_artifact

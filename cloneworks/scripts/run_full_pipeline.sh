@@ -1,20 +1,27 @@
 #!/usr/bin/env bash
 # run_full_pipeline.sh — Full CloneWorks pipeline in one session
 # Compiles TXL grammars, Java, then runs cwbuild + cwdetect + cwformat + eval
-set -euo pipefail
+# Designed to run inside the cloneworks:amd64 Docker container
+set -uo pipefail
 
 CW_DIR="/workspace/tools/cloneworks_artifact"
 LOG_DIR="/workspace/evidence/logs"
 mkdir -p "$LOG_DIR"
 
+# ---- Step 1: TXL grammars ----
 echo "=== Step 1: Compile TXL grammars ==="
 cd "$CW_DIR/txl"
 make clean 2>/dev/null || true
 make 2>&1 | tail -5
 GRAMMAR_COUNT=$(ls *.x 2>/dev/null | wc -l)
 echo "TXL grammars compiled: $GRAMMAR_COUNT files"
+if [ "$GRAMMAR_COUNT" -lt 10 ]; then
+    echo "ERROR: Too few TXL grammars compiled ($GRAMMAR_COUNT). Aborting."
+    exit 1
+fi
 cd "$CW_DIR"
 
+# ---- Step 2: Compile Java sources (always recompile to match container JDK) ----
 echo ""
 echo "=== Step 2: Compile Java sources ==="
 INSTALL_DIR="."
@@ -29,7 +36,9 @@ find src/ -name "*.java" > sources
 javac -encoding UTF-8 -d bin/ -cp "$LIBS" @sources 2>&1 | tail -5 || true
 rm -f sources
 echo "Java compilation done"
+java -version 2>&1 || true
 
+# ---- Step 3: cwbuild with timeout ----
 echo ""
 echo "=== Step 3: cwbuild on BigCloneBench subset ==="
 SRC_ROOT="/workspace/data/bigclonebench_subset/src"
@@ -37,26 +46,40 @@ CWBUILD_OUT="/workspace/out/cwbuild"
 rm -rf "$CWBUILD_OUT"
 mkdir -p "$CWBUILD_OUT"
 
+CWBUILD_TIMEOUT="${CWBUILD_TIMEOUT:-1800}"  # 30 minutes default
+echo "Timeout: ${CWBUILD_TIMEOUT}s"
+echo "Source : $SRC_ROOT"
+echo "Output : $CWBUILD_OUT"
+
 START_TIME=$(date +%s)
-./cwbuild -i "$SRC_ROOT" \
-          -f "$CWBUILD_OUT/bigclonebench.files" \
-          -b "$CWBUILD_OUT/bigclonebench.fragments" \
-          -l java -g function \
-          -c type3token 2>&1 | grep -v "Failed for file" | tee "$LOG_DIR/cwbuild.log"
+timeout --signal=TERM --kill-after=30 "$CWBUILD_TIMEOUT" \
+    ./cwbuild -i "$SRC_ROOT" \
+              -f "$CWBUILD_OUT/bigclonebench.files" \
+              -b "$CWBUILD_OUT/bigclonebench.fragments" \
+              -l java -g function \
+              -c type3token 2>&1 | grep -v "Failed for file" | tee "$LOG_DIR/cwbuild.log"
+CWBUILD_EXIT=$?
 END_TIME=$(date +%s)
 echo ""
-echo "cwbuild completed in $((END_TIME - START_TIME))s"
+echo "cwbuild exited with code $CWBUILD_EXIT in $((END_TIME - START_TIME))s"
 
-FILE_COUNT=$(wc -l < "$CWBUILD_OUT/bigclonebench.files")
-FRAG_COUNT=$(grep -vc "^#" "$CWBUILD_OUT/bigclonebench.fragments" 2>/dev/null || echo "0")
+# Count fragments (lines not starting with #)
+FRAG_COUNT=$(grep -c "^[0-9]" "$CWBUILD_OUT/bigclonebench.fragments" 2>/dev/null || echo "0")
+FILE_COUNT=$(wc -l < "$CWBUILD_OUT/bigclonebench.files" 2>/dev/null || echo "0")
 echo "Files indexed: $FILE_COUNT"
-echo "Fragment entries: $FRAG_COUNT"
+echo "Fragments extracted: $FRAG_COUNT"
 
-if [ "$FRAG_COUNT" -eq 0 ] || [ "$FRAG_COUNT" = "0" ]; then
+if [ "$FRAG_COUNT" -lt 1 ]; then
     echo "ERROR: No fragments extracted. Cannot continue."
     exit 1
 fi
 
+if [ "$CWBUILD_EXIT" -ne 0 ]; then
+    echo "WARNING: cwbuild did not complete cleanly (timeout or error)."
+    echo "         Continuing with $FRAG_COUNT partial fragments."
+fi
+
+# ---- Step 4: cwdetect ----
 echo ""
 echo "=== Step 4: cwdetect ==="
 CWDETECT_OUT="/workspace/out/cwdetect"
@@ -64,8 +87,9 @@ rm -rf "$CWDETECT_OUT"
 mkdir -p "$CWDETECT_OUT"
 
 SIMILARITY="${SIMILARITY:-0.7}"
+echo "Similarity threshold: $SIMILARITY"
 START_TIME=$(date +%s)
-./cwdetect -i "$CWBUILD_OUT/bigclonebench.fragments" \
+time ./cwdetect -i "$CWBUILD_OUT/bigclonebench.fragments" \
            -o "$CWDETECT_OUT/bigclonebench.clones" \
            -s "$SIMILARITY" 2>&1 | tee "$LOG_DIR/cwdetect.log"
 END_TIME=$(date +%s)
@@ -80,11 +104,13 @@ else
     exit 1
 fi
 
+# ---- Step 5: cwformat ----
 echo ""
 echo "=== Step 5: cwformat (post-processing) ==="
 cd /workspace
-./scripts/50_run_cwformat.sh out/cwdetect out/cwformat out/cwbuild 2>&1
+bash scripts/50_run_cwformat.sh out/cwdetect out/cwformat out/cwbuild 2>&1
 
+# ---- Step 6: Evaluation ----
 echo ""
 echo "=== Step 6: Evaluation ==="
 python3 scripts/60_eval_bigclonebench.py \
@@ -97,4 +123,6 @@ python3 scripts/60_eval_bigclonebench.py \
 
 echo ""
 echo "=== Pipeline Complete ==="
-echo "Results in results/ and out/"
+echo "Results in results/ and out/eval/"
+ls -la /workspace/results/ 2>/dev/null || true
+ls -la /workspace/out/eval/ 2>/dev/null || true
