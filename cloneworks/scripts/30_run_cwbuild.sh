@@ -49,7 +49,10 @@ cd "$CW_DIR"
 FILES_OUT="${OUTPUT_DIR}/bigclonebench.files"
 FRAGMENTS_OUT="${OUTPUT_DIR}/bigclonebench.fragments"
 
-echo "Running: ./cwbuild -i $SRC_ROOT -f $FILES_OUT -b $FRAGMENTS_OUT -l java -g function -c $CONFIG_NAME" | tee -a "$LOG_FILE"
+# Granularity: use "file" if TXL is not functional (each snippet is one function per file)
+GRANULARITY="${GRANULARITY:-file}"
+
+echo "Running: ./cwbuild -i $SRC_ROOT -f $FILES_OUT -b $FRAGMENTS_OUT -l java -g $GRANULARITY -c $CONFIG_NAME" | tee -a "$LOG_FILE"
 echo "" | tee -a "$LOG_FILE"
 
 START_TIME=$(date +%s)
@@ -57,7 +60,7 @@ START_TIME=$(date +%s)
 ./cwbuild -i "$SRC_ROOT" \
           -f "$FILES_OUT" \
           -b "$FRAGMENTS_OUT" \
-          -l java -g function \
+          -l java -g "$GRANULARITY" \
           -c "$CONFIG_NAME" 2>&1 | tee -a "$LOG_FILE" || {
     echo "" | tee -a "$LOG_FILE"
     echo "ERROR: cwbuild failed. See log above." | tee -a "$LOG_FILE"

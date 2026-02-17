@@ -64,7 +64,7 @@ rm -rf bin/
 mkdir -p bin/
 find src/ -name "*.java" > sources 2>/dev/null || true
 if [ -s sources ]; then
-    javac -d bin/ -cp "$LIBS" @sources 2>&1 | tee -a "$LOG_FILE" || {
+    javac -encoding UTF-8 -d bin/ -cp "$LIBS" @sources 2>&1 | tee -a "$LOG_FILE" || {
         echo "ERROR: Java compilation failed." | tee -a "$LOG_FILE"
         rm -f sources
         exit 1
