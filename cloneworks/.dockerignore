@@ -1,0 +1,13 @@
+.git
+.DS_Store
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+node_modules/
+dist/
+build/
+output/
+data/
+.env
+.vscode/
+.idea/
