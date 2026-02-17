@@ -1,0 +1,15 @@
+{
+  "tool": "CloneWorks",
+  "benchmark": "BigCloneBench (CodeXGLUE subset)",
+  "oracle_positive_pairs": 958,
+  "oracle_negative_pairs": 1042,
+  "detected_pairs": 5414,
+  "true_positives": 8,
+  "false_positives": 0,
+  "true_negatives": 1042,
+  "false_negatives": 950,
+  "unknown_detected": 5406,
+  "precision": 1.0,
+  "recall": 0.0084,
+  "f1_score": 0.0166
+}
