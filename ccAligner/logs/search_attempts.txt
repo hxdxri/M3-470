@@ -1,0 +1,65 @@
+Search conducted on:
+2026-03-01
+2026-03-02
+
+Queries used:
+"CCAligner"
+"CCAligner: A Token-Based Large-Gap Clone Detector"
+"CCAligner ICSE 2018 source code"
+"CCAligner large-gap clone detector GitHub"
+"CCAligner Roy clone detector download"
+
+Sources checked:
+Google
+ACM DL
+clones.usask.ca
+Author homepages
+Author Github Public Repositories
+
+Result:
+No official implementation located.
+
+Safari logs:
+(no title)
+google/code_x_glue_cc_clone_detection_big_clone_bench · Datasets at Hugging Face
+Pengcheng Wang CCAligner - Google Search
+saurabhshri/CCAligner: 🔮 Word by word audio subtitle synchronisation tool and API. Developed under GSoC 2017 with CCExtractor.
+Just a moment...
+Pengcheng Wang CCAligner github - Google Search
+CCAligner: a token based large-gap clone detector
+Contributors to saurabhshri/CCAligner
+CCAligner | Proceedings of the 40th International Conference on Software Engineering
+Just a moment...
+(PDF) CCAligner: a token based large-gap clone detector
+CCAligner: A Token Based Large-Gap Clone Detector | IEEE Conference Publication | IEEE Xplore
+Pengcheng-Wang (Pengcheng Wang) / Repositories
+Scale Interactions in Turbulence for Mountain Blowing Snow - GWF Publications
+Just a moment...
+This CCAligner is: A source code clone detection tool Token-based Designed to detect large-gap Type-3 clones Developed by Pengcheng Wang, Jeffrey Svajlenko, Yun Xu, and Chanchal K. Roy Published at ICSE 2018 - Google Search
+Error | Semantic Scholar
+Publications | Code Clone Detection Literature
+PCWcn/CCAligner: ICSE 2018 paper implement
+CCAligner | Proceedings of the 40th International Conference on Software Engineering
+CCAligner: A Token Based Large-Gap Clone Detector | IEEE Conference Publication | IEEE Xplore
+PCWcn (王鹏程)
+Pengcheng-Wang (Pengcheng Wang)
+CCAligner: a token based large-gap clone detector - Google Search
+Pengcheng-Wang (Pengcheng Wang) / Repositories
+CCAligner - Google Search
+CCAligner - GWF Publications
+Contributors to saurabhshri/CCAligner
+CCAligner: A Token Based Large-Gap Clone Detector | IEEE Conference Publication | IEEE Xplore
+Look up CCAligner on the ACM DL entry (the ICSE 2018 entry - Google Search
+(no title)
+Pengcheng Wang - GWF Publications
+IEEE Xplore Full-Text PDF:
+Pengcheng-Wang (Pengcheng Wang) / Repositories
+CCAligner large-gap clone detector Roy - Google Search
+Pengcheng Wang CCAligner - Google Shopping
+Pengcheng Wang CCAligner - Google Search
+CCAligner: a token based large-gap clone detector (* ICSE 2018 * - Technical Papers ) - * ICSE 2018 *
+
+
+
+
+
