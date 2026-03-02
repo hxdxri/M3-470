@@ -179,7 +179,7 @@ root@fefd736b2db1:/workspace/tokenizers/file-level#
 
 
 
-### Clone Detector Smoke Tese
+### Clone Detector Smoke Test
 root@fefd736b2db1:/workspace/clone-detector# python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
 search will be carried out with 2 nodes
 loading previous run state

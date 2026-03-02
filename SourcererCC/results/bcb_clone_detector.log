@@ -1,0 +1,26 @@
+root@27117a4719a9:/workspace/logs# cat bcb_clone_detector.log
+search will be carried out with 2 nodes
+loading previous run state
+/workspace/clone-detector/scriptinator_metadata.scc doesn't exist, creating one with state EXECUTE_1
+previous run state 0
+running new command /workspace/clone-detector/execute.sh 1
+current state:  1
+flushing current state 1
+running new command /workspace/clone-detector/backup-gtpm.sh
+running new command /workspace/clone-detector/runnodes.sh init 1
+current state:  2
+flushing current state 2
+running new command /workspace/clone-detector/runnodes.sh index 1
+current state:  3
+flushing current state 3
+running new command /workspace/clone-detector/move-index.sh
+current state:  4
+flushing current state 4
+running new command /workspace/clone-detector/execute.sh 2
+current state:  5
+flushing current state 5
+running new command /workspace/clone-detector/runnodes.sh search 2
+current state:  0
+flushing current state 0
+SUCCESS: Search Completed on all nodes
+root@27117a4719a9:/workspace/logs# 
