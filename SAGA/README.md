@@ -56,6 +56,8 @@ Results
 
 
 
+
+
 TES Classification: TES-E
 
 Tool executed end-to-end and produced output, but results deviate substantially from the paper. 487 clone pairs detected with only 1 true positive. Likely because SAGA is designed for large multi-method codebases, not isolated single-method snippets as used in BigCloneBench subset evaluation.
