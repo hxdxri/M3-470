@@ -1,0 +1,653 @@
+ INFO [main] 2026-02-17 18:10:45 [CppPipelineTest.java:92]: Cpp detection---------------------------------------
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 5%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 10%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 15%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 20%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 30%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 35%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 40%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 45%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 55%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 60%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 65%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 70%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 80%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 85%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 90%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:136]: 95%
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:183]: total token num is: 139338
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:184]: total measure num is: 667
+ INFO [main] 2026-02-17 18:10:45 [Tokenizer.java:185]: total line is: 36553
+ INFO [main] 2026-02-17 18:10:45 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 18:10:45 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 18:10:45 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 18:10:45 [SuffixArrayBuilder.java:48]: data trunk size:139338 0
+ INFO [main] 2026-02-17 18:10:45 [SuffixArrayBuilder.java:53]: ./executable/psacd_win10 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2026-02-17 18:10:45 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 18:10:45 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 18:10:45 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 18:10:45 [UnionFindParser.java:69]: result group: 41
+ INFO [main] 2026-02-17 18:10:45 [CppPipelineTest.java:110]: validate clone groups...
+ INFO [main] 2026-02-17 18:10:46 [GolangPipelineTest.java:98]: Golang detection---------------------------------------
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:183]: total token num is: 320104
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:184]: total measure num is: 2361
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:185]: total line is: 236354
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:48]: data trunk size:320104 0
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:53]: ./executable/psacd_win10 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2026-02-17 18:10:46 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 18:10:46 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [UnionFindParser.java:69]: result group: 166
+ INFO [main] 2026-02-17 18:10:46 [GolangPipelineTest.java:116]: validate clone groups...
+ INFO [main] 2026-02-17 18:10:46 [JavaPipelineTest.java:97]: Java detection---------------------------------------
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-02-17 18:10:46 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:48]: data trunk size:15984 0
+ INFO [main] 2026-02-17 18:10:46 [SuffixArrayBuilder.java:53]: ./executable/psacd_win10 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:69]: result group: 4
+ INFO [main] 2026-02-17 18:10:47 [JavaPipelineTest.java:115]: validate clone groups...
+ INFO [main] 2026-02-17 18:10:47 [JavaScriptPipelineTest.java:95]: JavaScript detection---------------------------------------
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 10%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 20%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 30%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 40%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 60%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 70%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 80%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 90%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:183]: total token num is: 15601
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:184]: total measure num is: 67
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:185]: total line is: 5867
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:48]: data trunk size:15601 0
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:53]: ./executable/psacd_win10 0 -1 -2147483647 0 1 1 10 8
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:69]: result group: 2
+ INFO [main] 2026-02-17 18:10:47 [JavaScriptPipelineTest.java:113]: validate clone groups...
+ INFO [main] 2026-02-17 18:10:47 [PythonPipelineTest.java:98]: Python detection---------------------------------------
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 6%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 12%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 18%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 31%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 37%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 43%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 56%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 62%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 68%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 81%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 87%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 93%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:183]: total token num is: 9450
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:184]: total measure num is: 114
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:185]: total line is: 2454
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:48]: data trunk size:9450 0
+ INFO [main] 2026-02-17 18:10:47 [SuffixArrayBuilder.java:53]: ./executable/psacd_win10 0 -1 -2147483647 0 1 1 10 8
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [UnionFindParser.java:69]: result group: 4
+ INFO [main] 2026-02-17 18:10:47 [PythonPipelineTest.java:116]: validate clone groups...
+ INFO [main] 2026-02-17 18:10:47 [TokenizerTest.java:84]: Cpp detection---------------------------------------
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:183]: total token num is: 100
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:184]: total measure num is: 2
+ INFO [main] 2026-02-17 18:10:47 [Tokenizer.java:185]: total line is: 30
+ERROR [main] 2026-02-17 21:33:57 [Config.java:113]: ???????config.properties!
+ INFO [main] 2026-02-17 21:35:11 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-02-17 21:35:11 [Pipeline.java:62]: 12 files have been loaded
+ INFO [main] 2026-02-17 21:35:11 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-02-17 21:35:11 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-02-17 21:35:11 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 21:35:11 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 21:35:11 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 21:35:11 [SuffixArrayBuilder.java:48]: data trunk size:15984 0
+ INFO [main] 2026-02-17 21:35:11 [SuffixArrayBuilder.java:53]:  0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2026-02-17 21:35:11 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 21:35:11 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 21:35:11 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 21:35:11 [Pipeline.java:151]: total time cost: PT0.168S
+ INFO [main] 2026-02-17 21:36:58 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-02-17 21:36:58 [Pipeline.java:62]: 12 files have been loaded
+ INFO [main] 2026-02-17 21:36:58 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-02-17 21:36:58 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-02-17 21:36:58 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-02-17 21:36:58 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-02-17 21:36:58 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-02-17 21:36:58 [SuffixArrayBuilder.java:48]: data trunk size:15984 0
+ INFO [main] 2026-02-17 21:36:58 [SuffixArrayBuilder.java:53]: executable/sa_gpu.exe 0 -1 -2147483647 0 1 1 20
+ INFO [main] 2026-02-17 21:37:00 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-02-17 21:37:00 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-02-17 21:37:00 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-02-17 21:37:00 [UnionFindParser.java:69]: result group: 0
+ INFO [main] 2026-02-17 21:37:00 [Pipeline.java:151]: total time cost: PT2.157S
+ INFO [main] 2026-03-01 17:12:26 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 17:12:26 [Pipeline.java:62]: 2 files have been loaded
+ INFO [main] 2026-03-01 17:12:26 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-03-01 17:12:26 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-03-01 17:12:35 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 17:12:35 [Pipeline.java:62]: 2 files have been loaded
+ INFO [main] 2026-03-01 17:12:35 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-03-01 17:12:36 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-03-01 17:23:41 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 17:23:41 [Pipeline.java:62]: 2 files have been loaded
+ INFO [main] 2026-03-01 17:23:41 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-03-01 17:23:41 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-03-01 17:25:19 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 17:25:19 [Pipeline.java:62]: 2 files have been loaded
+ INFO [main] 2026-03-01 17:25:19 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:183]: total token num is: 0
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:184]: total measure num is: 0
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:185]: total line is: 11
+ INFO [main] 2026-03-01 17:25:19 [Tokenizer.java:188]: no measure extracted from dataset!
+ INFO [main] 2026-03-01 17:25:19 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-03-01 17:25:19 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-03-01 17:25:19 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-03-01 17:25:19 [SuffixArrayBuilder.java:48]: data trunk size:-1 0
+ INFO [main] 2026-03-01 17:25:19 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-03-01 17:25:19 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-03-01 17:25:19 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-03-01 17:25:19 [Pipeline.java:151]: total time cost: PT0.09S
+ INFO [main] 2026-03-01 17:30:53 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 17:30:53 [Pipeline.java:62]: 12 files have been loaded
+ INFO [main] 2026-03-01 17:30:53 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-03-01 17:30:53 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-03-01 17:30:54 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 17:30:54 [Tokenizer.java:183]: total token num is: 15984
+ INFO [main] 2026-03-01 17:30:54 [Tokenizer.java:184]: total measure num is: 118
+ INFO [main] 2026-03-01 17:30:54 [Tokenizer.java:185]: total line is: 10038
+ INFO [main] 2026-03-01 17:30:54 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-03-01 17:30:54 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-03-01 17:30:54 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-03-01 17:30:54 [SuffixArrayBuilder.java:48]: data trunk size:15984 0
+ INFO [main] 2026-03-01 17:30:54 [SuffixArrayBuilder.java:53]: executable/sa_gpu.exe 0 -1 -2147483647 0 1 1 20
+ INFO [main] 2026-03-01 17:30:56 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-03-01 17:30:56 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-03-01 17:30:56 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-03-01 17:30:56 [UnionFindParser.java:69]: result group: 0
+ INFO [main] 2026-03-01 17:30:56 [Pipeline.java:151]: total time cost: PT2.776S
+ INFO [main] 2026-03-01 18:00:48 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 18:00:48 [Pipeline.java:62]: 2996 files have been loaded
+ INFO [main] 2026-03-01 18:00:48 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 18:00:48 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 18:00:48 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 18:00:48 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 1%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 2%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 3%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 4%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 5%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 6%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 7%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 9%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 10%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 11%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 12%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 13%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 14%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 15%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 17%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 18%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 19%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 20%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 21%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 22%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 23%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 24%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 26%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 27%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 28%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 29%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 30%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 31%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 32%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 34%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 35%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 36%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 37%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 38%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 39%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 40%
+ INFO [main] 2026-03-01 18:00:49 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 42%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 43%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 44%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 45%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 46%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 47%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 48%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 49%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 51%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 52%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 53%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 54%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 55%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 56%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 57%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 59%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 60%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 61%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 62%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 63%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 64%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 65%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 67%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 68%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 69%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 70%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 71%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 72%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 73%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 74%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 76%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 77%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 78%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 79%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 80%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 81%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 82%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 84%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 85%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 86%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 87%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 88%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 89%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 90%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 92%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 93%
+ INFO [main] 2026-03-01 18:00:50 [Tokenizer.java:136]: 94%
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:136]: 95%
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:136]: 96%
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:136]: 97%
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:136]: 98%
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:136]: 99%
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:183]: total token num is: 729589
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:184]: total measure num is: 2885
+ INFO [main] 2026-03-01 18:00:51 [Tokenizer.java:185]: total line is: 113334
+ INFO [main] 2026-03-01 18:00:51 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-03-01 18:00:51 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-03-01 18:00:51 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-03-01 18:00:51 [SuffixArrayBuilder.java:48]: data trunk size:729589 0
+ INFO [main] 2026-03-01 18:00:51 [SuffixArrayBuilder.java:53]: executable/sa_gpu.exe 0 -1 -2147483647 0 1 1 20
+ INFO [main] 2026-03-01 18:00:53 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-03-01 18:00:53 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-03-01 18:00:53 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-03-01 18:00:53 [UnionFindParser.java:69]: result group: 0
+ INFO [main] 2026-03-01 18:00:53 [Pipeline.java:151]: total time cost: PT4.768S
+ INFO [main] 2026-03-01 18:03:20 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 18:03:20 [Pipeline.java:62]: 2996 files have been loaded
+ INFO [main] 2026-03-01 18:03:20 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 1%
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 2%
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 3%
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 4%
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 5%
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 6%
+ INFO [main] 2026-03-01 18:03:20 [Tokenizer.java:136]: 7%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 9%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 10%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 11%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 12%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 13%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 14%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 15%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 17%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 18%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 19%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 20%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 21%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 22%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 23%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 24%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 26%
+ INFO [main] 2026-03-01 18:03:21 [Tokenizer.java:136]: 27%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 28%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 29%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 30%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 31%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 32%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 34%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 35%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 36%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 37%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 38%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 39%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 40%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 42%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 43%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 44%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 45%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 46%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 47%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 48%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 49%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 51%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 52%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 53%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 54%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 55%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 56%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 57%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 59%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 60%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 61%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 62%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 63%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 64%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 65%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 67%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 68%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 69%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 70%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 71%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 72%
+ INFO [main] 2026-03-01 18:03:22 [Tokenizer.java:136]: 73%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 74%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 76%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 77%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 78%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 79%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 80%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 81%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 82%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 84%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 85%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 86%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 87%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 88%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 89%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 90%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 92%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 93%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 94%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 95%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 96%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 97%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 98%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:136]: 99%
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:183]: total token num is: 734313
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:184]: total measure num is: 2995
+ INFO [main] 2026-03-01 18:03:23 [Tokenizer.java:185]: total line is: 113334
+ INFO [main] 2026-03-01 18:03:23 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-03-01 18:03:23 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-03-01 18:03:23 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-03-01 18:03:23 [SuffixArrayBuilder.java:48]: data trunk size:734313 0
+ INFO [main] 2026-03-01 18:03:23 [SuffixArrayBuilder.java:53]: executable/sa_gpu.exe 0 -1 -2147483647 0 1 1 20
+ INFO [main] 2026-03-01 18:03:26 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-03-01 18:03:26 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-03-01 18:03:26 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-03-01 18:03:26 [UnionFindParser.java:69]: result group: 0
+ INFO [main] 2026-03-01 18:03:26 [Pipeline.java:151]: total time cost: PT5.849S
+ INFO [main] 2026-03-01 18:13:11 [Pipeline.java:39]: loading file list...
+ INFO [main] 2026-03-01 18:13:11 [Pipeline.java:62]: 2996 files have been loaded
+ INFO [main] 2026-03-01 18:13:11 [Pipeline.java:69]: loading state...
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:83]: ==========================================
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:84]:                  tokenize                 
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:85]: ==========================================
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 1%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 2%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 3%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 4%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 5%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 6%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 7%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 8%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 9%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 10%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 11%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 12%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 13%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 14%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 15%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 16%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 17%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 18%
+ INFO [main] 2026-03-01 18:13:11 [Tokenizer.java:136]: 19%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 20%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 21%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 22%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 23%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 24%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 25%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 26%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 27%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 28%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 29%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 30%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 31%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 32%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 33%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 34%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 35%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 36%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 37%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 38%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 39%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 40%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 41%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 42%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 43%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 44%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 45%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 46%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 47%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 48%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 49%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 50%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 51%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 52%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 53%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 54%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 55%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 56%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 57%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 58%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 59%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 60%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 61%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 62%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 63%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 64%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 65%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 66%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 67%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 68%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 69%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 70%
+ INFO [main] 2026-03-01 18:13:12 [Tokenizer.java:136]: 71%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 72%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 73%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 74%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 75%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 76%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 77%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 78%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 79%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 80%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 81%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 82%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 83%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 84%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 85%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 86%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 87%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 88%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 89%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 90%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 91%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 92%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 93%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 94%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 95%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 96%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 97%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 98%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:136]: 99%
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:182]: tokenIndexList: [-2147483647]
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:183]: total token num is: 729589
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:184]: total measure num is: 2885
+ INFO [main] 2026-03-01 18:13:13 [Tokenizer.java:185]: total line is: 113334
+ INFO [main] 2026-03-01 18:13:13 [SuffixArrayBuilder.java:32]: ==========================================
+ INFO [main] 2026-03-01 18:13:13 [SuffixArrayBuilder.java:33]:                   build                   
+ INFO [main] 2026-03-01 18:13:13 [SuffixArrayBuilder.java:34]: ==========================================
+ INFO [main] 2026-03-01 18:13:13 [SuffixArrayBuilder.java:48]: data trunk size:729589 0
+ INFO [main] 2026-03-01 18:13:13 [SuffixArrayBuilder.java:53]: executable/psacd_win10.exe 0 -1 -2147483647 0 1 1 20 8
+ INFO [main] 2026-03-01 18:13:14 [UnionFindParser.java:191]: ==========================================
+ INFO [main] 2026-03-01 18:13:14 [UnionFindParser.java:192]:                   parse                   
+ INFO [main] 2026-03-01 18:13:14 [UnionFindParser.java:193]: ==========================================
+ INFO [main] 2026-03-01 18:13:14 [UnionFindParser.java:69]: result group: 179
+ INFO [main] 2026-03-01 18:13:14 [Pipeline.java:151]: total time cost: PT3.553S
