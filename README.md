@@ -17,10 +17,10 @@ For each assigned tool, we will:
 Based on the provided assignment sheet/screenshot, this team is covering:
 - CCAligner: Haidari Alhaidari
 - SourcererCC: Ademola Obalaye
-- Boreas: Olukuewu, Samuel
+- Boreas: Giet, Chut
 - CloneWorks: Giet, Chut
 - SAGA: Emeka-Nwuba, Chibuikem
-- LePalex: Giet, Chut
+- LePalex: Olukuewu, Samuel
 
 
 Tool-specific setup, execution steps, benchmark configuration, interventions, logs, and outcomes are documented in each tool's own section/README by the responsible teammate.
