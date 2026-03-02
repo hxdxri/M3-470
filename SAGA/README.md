@@ -30,7 +30,7 @@ How to Run
 
 Interventions Required
 
-1\. Default config uses `sa\_gpu.exe` which silently produces 0 results — switched to `psacd\_win10.exe` (CPU fallback, included in repo)
+1\. Default config uses `sa\_gpu.exe` which silently produces 0 results , switched to `psacd\_win10.exe` (CPU fallback, included in repo)
 
 2\. Had to clear `tokenData` cache before each run to avoid IndexOutOfBoundsException crash exception
 
@@ -38,7 +38,7 @@ Interventions Required
 
 Benchmark
 
-BigCloneBench — 2000-pair subset (2996 Java files, seed=42)
+BigCloneBench : 2000-pair subset (2996 Java files, seed=42)
 
 
 
