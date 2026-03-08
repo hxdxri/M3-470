@@ -65,14 +65,14 @@ README.md  clone-detector  requirements.txt  tokenizers
 
 6. Run execution scripts
   - Run
-    '''
+    """
     bash scripts/run_bcb_subset.sh 20
-    '''
+    """
 
 
 
 
-## Smoke Test Execution Stpes
+## Smoke Test Execution Steps
 1. Smoke test input creation
   - Create a minimal Java project inside the container:
   '''
