@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # run_full_pipeline.sh — Full CloneWorks pipeline in one session
-# Compiles TXL grammars, Java, then runs cwbuild + cwdetect + cwformat + eval
+# Compiles TXL grammarrs, Java, then runs cwbuild + cwdetect + cwformat + eval
 # Designed to run inside the cloneworks:amd64 Docker container
 set -uo pipefail
 
