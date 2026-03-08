@@ -1,7 +1,6 @@
 FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
-
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     git \
@@ -21,7 +20,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 WORKDIR /workspace
 COPY . /workspace
 
-RUN find /workspace -type f -name "*.sh" -exec dos2unix {} \; \
+# Ensure all shell scripts have Unix line endings and are executable.
+RUN find /workspace -type f -name "*.sh" -exec dos2unix -q {} \; \
  && find /workspace -type f -name "*.sh" -exec chmod +x {} \;
 
 RUN pip3 install --no-cache-dir \

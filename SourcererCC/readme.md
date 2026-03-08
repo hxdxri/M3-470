@@ -58,8 +58,22 @@ README.md  clone-detector  requirements.txt  tokenizers
 
   '''
 
-## Smoke Test Execution
-6a. Smoke test input creation
+5b. Make the shell script executable 
+    '''
+    chmod +x run_bcb_subset.sh
+    '''
+
+6. Run execution scripts
+  - Run
+    '''
+    bash scripts/run_bcb_subset.sh 20
+    '''
+
+
+
+
+## Smoke Test Execution Stpes
+1. Smoke test input creation
   - Create a minimal Java project inside the container:
   '''
     mkdir -p miniproj
@@ -94,7 +108,7 @@ README.md  clone-detector  requirements.txt  tokenizers
   '''
 
 
-6b. Run Tokenizer
+2. Run Tokenizer
   - Inside the container:
   '''
     cd tokenizers/file-level
@@ -105,7 +119,7 @@ README.md  clone-detector  requirements.txt  tokenizers
 
   '''
 
-7. Prepare Dataset for Clone Detector
+3. Prepare Dataset for Clone Detector
   '''
     cat files_tokens/* > blocks.file
 
@@ -113,7 +127,7 @@ README.md  clone-detector  requirements.txt  tokenizers
 
   '''
 
-8. Run Clone Detector
+4. Run Clone Detector
   - Still inside the container:
   '''
     cd /workspace/clone-detector
@@ -128,13 +142,14 @@ README.md  clone-detector  requirements.txt  tokenizers
 
 Expected output: SUCCESS: Search Completed on all nodes
 
-9. Aggregate Results
+5. Aggregate Results
   '''
     cat NODE_*/output8.0/query_* > results.pairs
 
     wc -l results.pairs
 
   '''
+
 
 ### Benchmark used
 - BigCloneBench (HuggingFace CodeXGLUE version)
@@ -161,3 +176,15 @@ SourcererCC was successfully executed end to end inside a Dockerized Ubuntu 22.0
 However, the tool required several environment interventions to run correctly, including installation of Ant (for building Java components), the `python-is-python3` alias (required by legacy scripts), `dos2unix` (to normalize shell script line endings), and `zip` (for dataset packaging). These dependencies were not clearly documented in the official README and had to be identified during reproduction. All required fixes have been captured in the provided Dockerfile to ensure reproducible execution on first run.
 
 Based on the taxonomy provoded, SourcererCC is classified as TES-B (Executable with Intervention), as it runs successfully but required some environment adjustments beyond the provided documentation.
+
+
+
+### Notes (Execution Logs and Evidence)
+
+Two sets of execution logs are included in this repository to document the reproduction attempts.
+
+- 100 pair BigCloneBench subset attempt
+An initial attempt was made to run the pipeline using a subset of 100 clone pairs. During this run, the system experienced a crash on the local machine before the pipeline could complete. As a result, only partial logs were captured. These logs are still included in the repository as evidence of the attempted execution and to document the failure conditions encountered during the experiment.
+
+- 20-pair BigCloneBench subset run
+After the crash during the larger run, the experiment was repeated using a smaller subset of 20 clone pairs to ensure that the pipeline could complete within the available system resources. This run successfully completed the full workflow (tokenization, indexing, and search), and the logs from this execution are included as the primary evidence for the reproduction results.

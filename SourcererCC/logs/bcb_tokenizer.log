@@ -314,3 +314,140 @@ Starting new process 0
 Process 0 finished, 100 files processed (101). Current total: 100
 *** All done. 100 files in 0:00:00.204067
 root@27117a4719a9:/workspace/logs#
+
+
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/benchmarks/bcb_subset.zip> (process 0)  
+[INFO] (MainThread) Attempting to process_zip_ball /workspace/benchmarks/bcb_subset.zip        
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func1.java
+[INFO] (MainThread) Successfully ran process_zip_ball /workspace/benchmarks/bcb_subset.zip     
+[INFO] (MainThread) Project finished <1,/workspace/benchmarks/bcb_subset.zip> (process 0)      
+[INFO] (MainThread)  (0): Total: 0:00:00.190260micros | Zip: 7023 Read: 26003 Separators: 2112micros Tokens: 13881micros Write: 1851micros Hash: 25460 regex: 2588
+[INFO] (MainThread) Process 0 finished. 40 files in 0s.
+*** No more projects to process. Waiting for children to finish...
+Process 0 finished, 40 files processed (41). Current total: 40
+*** All done. 40 files in 0:00:00.251757
+root@c7e6afe0c349:/workspace/SourcererCC/logs#

@@ -209,3 +209,515 @@ root@fefd736b2db1:/workspace/clone-detector#
 root@fefd736b2db1:/workspace/clone-detector# cat NODE_*/output8.0/query_* > results.pairs
 root@fefd736b2db1:/workspace/clone-detector# wc -l results.pairs
 0 results.pairs
+
+
+### Benchmark Execution
+
+User@demola MINGW64 ~/OneDrive/Desktop/CMPT470/M3/SourcererC
+$ docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
+root@c7e6afe0c349:/workspace# bash scripts/run_bcb_subset.sh
+[1/6] Installing Python dependency (datasets)
+WARNING: Running pip as the 'root' user can result in broken recommended to use a virtual environment instead: https://p
+[2/6] Creating BigCloneBench subset (streaming) - 20 pairs
+Downloading readme: 6.94kB [00:00, 6.67MB/s]
+Wrote 40 .java files to /workspace/benchmarks/bcb_subset
+[3/6] Zipping subset into a single 'project'
+[4/6] Tokenizing (SourcererCC tokenizer)
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/bench
+[INFO] (MainThread) Attempting to process_zip_ball /workspac
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Successfully ran process_zip_ball /works
+[INFO] (MainThread) Project finished <1,/workspace/benchmark
+[INFO] (MainThread)  (0): Total: 0:00:00.190260micros | Zip:s Hash: 25460 regex: 2588
+[INFO] (MainThread) Process 0 finished. 40 files in 0s.
+*** No more projects to process. Waiting for children to fin
+Process 0 finished, 40 files processed (41). Current total: 
+*** All done. 40 files in 0:00:00.251757
+[5/6] Running clone detector (controller.py)
+search will be carried out with 2 nodes
+loading previous run state
+/workspace/clone-detector/scriptinator_metadata.scc doesn't 
+previous run state 0
+running new command /workspace/clone-detector/execute.sh 1
+current state:  1
+flushing current state 1
+running new command /workspace/clone-detector/backup-gtpm.sh
+running new command /workspace/clone-detector/runnodes.sh in
+current state:  2
+flushing current state 2
+running new command /workspace/clone-detector/runnodes.sh in
+current state:  3
+flushing current state 3
+running new command /workspace/clone-detector/move-index.sh
+current state:  4
+flushing current state 4
+running new command /workspace/clone-detector/execute.sh 2
+current state:  5
+flushing current state 5
+running new command /workspace/clone-detector/runnodes.sh se
+current state:  0
+flushing current state 0
+SUCCESS: Search Completed on all nodes
+[6/6] Aggregating results
+0 results.pairs
+DONE Results: /workspace/SourcererCC/results/bcb_subset_resu
+root@c7e6afe0c349:/workspace# ls
+LICENSE    SourcererCC  benchmarks      dockerfile  requirem
+README.md  WebApp       clone-detector  logs        results
+root@c7e6afe0c349:/workspace# cd SourcerCC
+bash: cd: SourcerCC: No such file or directory
+root@c7e6afe0c349:/workspace# cd SourcererCC
+root@c7e6afe0c349:/workspace/SourcererCC# ls
+logs  results
+root@c7e6afe0c349:/workspace/SourcererCC# cd logs
+root@c7e6afe0c349:/workspace/SourcererCC/logs# ls
+bcb_clone_detector.log  bcb_tokenizer.log
+root@c7e6afe0c349:/workspace/SourcererCC/logs# cat bcb_clone
+search will be carried out with 2 nodes
+loading previous run state
+/workspace/clone-detector/scriptinator_metadata.scc doesn't 
+previous run state 0
+running new command /workspace/clone-detector/execute.sh 1
+current state:  1
+flushing current state 1
+running new command /workspace/clone-detector/backup-gtpm.sh
+running new command /workspace/clone-detector/runnodes.sh in
+current state:  2
+flushing current state 2
+running new command /workspace/clone-detector/runnodes.sh in
+current state:  3
+flushing current state 3
+running new command /workspace/clone-detector/move-index.sh
+current state:  4
+flushing current state 4
+running new command /workspace/clone-detector/execute.sh 2
+current state:  5
+flushing current state 5
+running new command /workspace/clone-detector/runnodes.sh se
+current state:  0
+flushing current state 0
+SUCCESS: Search Completed on all nodes
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/bench
+[INFO] (MainThread) Attempting to process_zip_ball /workspac
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Attempting to process_file_contents /wor
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /
+[INFO] (MainThread) Successfully ran process_zip_ball /works
+[INFO] (MainThread) Project finished <1,/workspace/benchmark
+[INFO] (MainThread)  (0): Total: 0:00:00.190260micros | Zip:bash: cd: too many arguments        
+root@c7e6afe0c349:/workspace/SourcererCC/results# cd bcb_subset_results.count bcb_subset_results.pairs
+bash: cd: too many arguments
+root@c7e6afe0c349:/workspace/SourcererCC/results# cd bcb_subset_results.count
+bash: cd: bcb_subset_results.count: Not a directory
+root@c7e6afe0c349:/workspace/SourcererCC/results# ls
+bcb_subset_results.count  bcb_subset_results.pairs
+root@c7e6afe0c349:/workspace/SourcererCC/results# cat bcb_subset_results.count bcb_subset_results.pairs
+0 results.pairs
+root@c7e6afe0c349:/workspace/Sourcerroot@c7e6afe0c349:/worksroot@c7e6afe0c349:/workspace/Sourceroot@c7e6afe0c349:/workspace/SourcererCC/results# cd ..
+root@c7e6afe0c349:/workspace/SourcererCC# cd logs
+root@c7e6afe0c349:/workspace/SourcererCC/logs# cat bcb_clone_detector.log  bcb_tokenizer.log
+search will be carried out with 2 nodes
+loading previous run state
+/workspace/clone-detector/scriptinator_metadata.scc doesn't exist, creating one with state EXECUTE_1
+previous run state 0
+running new command /workspace/clone-detector/execute.sh 1
+current state:  1
+flushing current state 1
+running new command /workspace/clone-detector/backup-gtpm.sh
+running new command /workspace/clone-detector/runnodes.sh init 1
+current state:  2
+flushing current state 2
+running new command /workspace/clone-detector/runnodes.sh index 1
+current state:  3
+flushing current state 3
+running new command /workspace/clone-detector/move-index.sh
+current state:  4
+flushing current state 4
+running new command /workspace/clone-detector/execute.sh 2
+current state:  5
+flushing current state 5
+running new command /workspace/clone-detector/runnodes.sh search 2
+current state:  0
+flushing current state 0
+SUCCESS: Search Completed on all nodes
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/benchmarks/bcb_subset.zip> (process 0)  
+[INFO] (MainThread) Attempting to process_zip_ball /workspace/benchmarks/bcb_subset.zip        
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/18_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/9_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/8_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/16_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/1_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/5_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/13_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/10_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/17_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/14_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/3_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/7_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/4_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/15_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/19_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/0_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/2_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/11_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func2.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func2.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/6_func1.java
+[INFO] (MainThread) Attempting to process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func1.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/benchmarks/bcb_subset.zip/bcb_subset/12_func1.java
+[INFO] (MainThread) Successfully ran process_zip_ball /workspace/benchmarks/bcb_subset.zip     
+[INFO] (MainThread) Project finished <1,/workspace/benchmarks/bcb_subset.zip> (process 0)      
+[INFO] (MainThread)  (0): Total: 0:00:00.190260micros | Zip: 7023 Read: 26003 Separators: 2112micros Tokens: 13881micros Write: 1851micros Hash: 25460 regex: 2588
+[INFO] (MainThread) Process 0 finished. 40 files in 0s.
+*** No more projects to process. Waiting for children to finish...
+Process 0 finished, 40 files processed (41). Current total: 40
+*** All done. 40 files in 0:00:00.251757
+root@c7e6afe0c349:/workspace/SourcererCC/logs#
