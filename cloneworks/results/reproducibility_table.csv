@@ -1,2 +1,0 @@
-tool,benchmark,subset_size,clone_type,threshold,precision,recall,f1,tes_category,notes
-CloneWorks,BigCloneBench (CodeXGLUE),2000,Type-3,0.7,N/A,N/A,N/A,TES B,"Pending execution; requires TXL installation"
