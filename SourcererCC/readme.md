@@ -15,15 +15,17 @@
 - Build tool: Apache Ant (installed in container)
 
 - Further Proof
-root@b544a82ef93f:/workspace# python3 --version
-Python 3.10.12
-root@b544a82ef93f:/workspace# java -version
-Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
-openjdk version "11.0.30" 2026-01-20
-OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
-root@b544a82ef93f:/workspace# ls
-LICENSE    WebApp          dockerfile        scripts-data-analysis
-README.md  clone-detector  requirements.txt  tokenizers
+```
+  root@b544a82ef93f:/workspace# python3 --version
+  Python 3.10.12
+  root@b544a82ef93f:/workspace# java -version
+  Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+  openjdk version "11.0.30" 2026-01-20
+  OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+  root@b544a82ef93f:/workspace# ls
+  LICENSE    WebApp          dockerfile        scripts-data-analysis
+  README.md  clone-detector  requirements.txt  tokenizers
+```
 
 ### Installation and Execution Steps
 1. Prerequisites (No local Java or Python installation is required)
@@ -31,40 +33,41 @@ README.md  clone-detector  requirements.txt  tokenizers
   - Linux containers enabled (enabled by default in docker)
 
 2. Clone the My team's Repository 
-  '''
+  ```
     https://github.com/hxdxri/M3-470.git
 
-  '''
+  ```
 
 3. Clone the Tools Repository 
   - In the "SourcererCC" Folder of My team's repository, run:
-  '''
+  ```
     cd SourcererCC
     git clone https://github.com/Mondego/SourcererCC.git
 
-  '''
+  ```
 
 4. Build the Docker Image (creates an Ubuntu 22.04 environment with OpenJDK 11, Python 3.10, Apache Ant)
   - From the root of the SourcererCC directory:
-  '''
+  ```
     docker build -t sourcerercc .
 
-  '''
+  ```
 
 5. Start the Container
   - Run
-  '''
+  ```
     docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
 
-  '''
+  ```
 
 5b. Make the shell script executable 
-    '''
+    ```
     chmod +x run_bcb_subset.sh
-    '''
+    ```
 
 6. Run execution scripts
   - Run
+  
     """
     bash scripts/run_bcb_subset.sh 20
     """
@@ -75,7 +78,7 @@ README.md  clone-detector  requirements.txt  tokenizers
 ## Smoke Test Execution Steps
 1. Smoke test input creation
   - Create a minimal Java project inside the container:
-  '''
+  ```
     mkdir -p miniproj
 
     cat > miniproj/Hello.java << 'EOF'
@@ -87,49 +90,49 @@ README.md  clone-detector  requirements.txt  tokenizers
     }
     EOF
 
-  '''
+  ```
 
   - Zip the project:
-  '''
+  ```
     zip -r miniproj.zip miniproj
 
-  '''
+  ```
   
   - Create a project-list.txt file containing the absolute path to the zip file:
-  '''
+  ```
     echo "/workspace/tokenizers/file-level/miniproj.zip" > project-list.txt
 
-  '''
+  ```
 
   - Ensure "SourcererCC\tokenizers\file-level\config.ini" contains:
-  '''
+  ```
     File_extensions = .java
     
-  '''
+  ```
 
 
 2. Run Tokenizer
   - Inside the container:
-  '''
+  ```
     cd tokenizers/file-level
 
     rm -rf bookkeeping_projs files_stats files_tokens logs
 
     python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
 
-  '''
+  ```
 
 3. Prepare Dataset for Clone Detector
-  '''
+  ```
     cat files_tokens/* > blocks.file
 
     cp blocks.file /workspace/clone-detector/input/dataset/
 
-  '''
+  ```
 
 4. Run Clone Detector
   - Still inside the container:
-  '''
+  ```
     cd /workspace/clone-detector
 
     rm -f scriptinator_metadata.scc Log_*.out Log_*.err
@@ -138,17 +141,17 @@ README.md  clone-detector  requirements.txt  tokenizers
 
     python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
 
-  '''
+  ```
 
 Expected output: SUCCESS: Search Completed on all nodes
 
 5. Aggregate Results
-  '''
+  ```
     cat NODE_*/output8.0/query_* > results.pairs
 
     wc -l results.pairs
 
-  '''
+  ```
 
 
 ### Benchmark used
