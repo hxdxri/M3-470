@@ -60,14 +60,13 @@
 
   ```
 
-5b. Make the shell script executable 
+6. Make the shell script executable 
     ```
     chmod +x run_bcb_subset.sh
     ```
 
-6. Run execution scripts
+7. Run execution scripts
   - Run
-  
     """
     bash scripts/run_bcb_subset.sh 20
     """
