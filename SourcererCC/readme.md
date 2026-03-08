@@ -67,9 +67,9 @@
 
 7. Run execution scripts
   - Run
-    """
+    ```
     bash scripts/run_bcb_subset.sh 20
-    """
+    ```
 
 
 
