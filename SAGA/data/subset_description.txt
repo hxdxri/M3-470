@@ -1,0 +1,14 @@
+BigCloneBench Subset Description
+------------------------------
+Source: google/code_x_glue_cc_clone_detection_big_clone_bench (HuggingFace)
+Split: train
+Total pairs in split: 901,028
+Subset size: 2000 pairs
+Unique Java files: 2996
+Positive (clone) pairs: 958
+Negative (non-clone) pairs: 1042
+Random seed: 42
+Selection method: random.sample(range(total), n) with seed=42
+
+Each snippet was wrapped in a Java class and saved as an individual file.
+Same subset parameters as used by CloneWorks evaluation for cross-tool comparability.
