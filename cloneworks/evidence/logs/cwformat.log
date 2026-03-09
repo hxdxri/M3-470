@@ -1,0 +1,9 @@
+=== Running cwformat (post-processing) ===
+Date         : Sun Mar  8 23:31:47 UTC 2026
+Clones in    : /workspace/out/cwdetect/bigclonebench.clones
+Files map    : /workspace/out/cwbuild/bigclonebench.files
+Output dir   : /workspace/out/cwformat
+
+
+Formatted clone pairs: 5424
+=== Done ===
