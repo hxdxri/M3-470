@@ -17,6 +17,6 @@ Building GTF...
 Indexing...
 Detection...
 
-real	0m1.917s
-user	0m3.828s
-sys	0m0.421s
+real	0m3.772s
+user	0m7.132s
+sys	0m0.868s
