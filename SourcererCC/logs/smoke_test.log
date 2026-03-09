@@ -1,0 +1,185 @@
+### Enviromental Smoke Test
+View build details: docker-desktop://dashboard/build/desktop-linux/desktop-linux/wi95cq0buwecwtjj912nrxbey
+PS C:\Users\User\OneDrive\Desktop\CMPT470\M3\SourcererCC> docker run --rm -it sourcerercc bash
+root@b544a82ef93f:/workspace# python3 --version
+Python 3.10.12
+root@b544a82ef93f:/workspace# java -version
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+openjdk version "11.0.30" 2026-01-20
+OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+root@b544a82ef93f:/workspace# ls
+LICENSE    WebApp          dockerfile        scripts-data-analysis
+README.md  clone-detector  requirements.txt  tokenizers
+root@b544a82ef93f:/workspace# ls tokenizers/file-level 
+cleanup.sh  config.ini  db-importer  tokenizer-sample-input.tgz  tokenizer-sample-input.zip  tokenizer-unit-test.py  tokenizer.py  utils
+root@b544a82ef93f:/workspace# ls clone_detector
+ls: cannot access 'clone_detector': No such file or directory
+root@b544a82ef93f:/workspace# ls clone-detector
+README.md       cleanup.sh          input                   move-index.sh         restore-gtpm.sh       runValidation.sh    runparser.sh             src
+analyze.py      controller.py       lib                     preparequery.sh       run.sh                runexp.sh           search_status.sh         test.sh
+backup-gtpm.sh  copy_properties.sh  mergeindexes-cygwin.sh  replacenodeprefix.sh  runAggregator.sh      runnodes-cygwin.sh  sourcerer-cc.properties  unevensplit.py
+build.xml       execute.sh          mergeindexes.sh         res                   runPostProcessing.sh  runnodes.sh         splitquery.sh
+
+
+### Tokenizer Smoke Test (error)
+root@b544a82ef93f:/workspace# cd tokenizers/file-level
+root@b544a82ef93f:/workspace/tokenizers/file-level# python3 tokenizer.py 2>&1 | head -n 40
+' zip ' format
+Traceback (most recent call last):
+  File "/workspace/tokenizers/file-level/tokenizer.py", line 557, in <module>
+    with open(FILE_projects_list) as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'project-list.txt'
+root@b544a82ef93f:/workspace/tokenizers/file-level# 
+
+
+
+### Tokenizer Smoke Test (success)
+root@fefd736b2db1:/workspace/tokenizers/file-level# ls
+cleanup.sh  db-importer                 tokenizer-sample-input.zip  tokenizer.py
+config.ini  tokenizer-sample-input.tgz  tokenizer-unit-test.py      utils       
+root@fefd736b2db1:/workspace/tokenizers/file-level# cat > /tmp/miniproj/Hello.java << 'EOF'
+> public class Hello {
+>   public static void main(String[] args) {
+>     System.out.println("hi");
+>   }
+> }
+> EOF
+root@fefd736b2db1:/workspace/tokenizers/file-level# cd /tmp
+root@fefd736b2db1:/tmp# zip -r miniproj.zip miniproj >/dev/null 
+root@fefd736b2db1:/tmp# mv /tmp/miniproj.zip /workspace/tokenizerace/tokenizers/file-levs/file-level/miniproj.zip
+root@fefd736b2db1:/tmp# cd /workspace/tokenizers/file-level      le_extensions *=.*/File
+root@fefd736b2db1:/workspace/tokenizers/file-level# echo "/workspace/tokenizers/file-level/miniproj.zip" > project-list.txt       
+root@fefd736b2db1:/workspace/tokenizers/file-level# sed -i 's/^File_extensions *=.*/File_extensions = .java/' config.ini
+root@fefd736b2db1:/workspace/tokenizers/file-level# ls
+cleanup.sh    project-list.txt            tokenizer.py
+config.ini    tokenizer-sample-input.tgz  utils
+db-importer   tokenizer-sample-input.zip
+miniproj.zip  tokenizer-unit-test.py
+root@fefd736b2db1:/workspace/tokenizers/file-level# python3 tokenizer.py zip
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+*** No more projects to process. Waiting for children to finish...
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/tokenizers/file-level/miniproj.zip> (process 0)
+[INFO] (MainThread) Attempting to process_zip_ball /workspace/tokenizers/file-level/miniproj.zip
+[INFO] (MainThread) Attempting to process_file_contents /workspace/tokenizers/file-level/miniproj.zip/miniproj/Hello.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/tokenizers/file-level/miniproj.zip/miniproj/Hello.java      
+[INFO] (MainThread) Successfully ran process_zip_ball /workspace/tokenizers/file-level/miniproj.zip
+[INFO] (MainThread) Project finished <1,/workspace/tokenizers/file-level/miniproj.zip> (process 0)
+[INFO] (MainThread)  (0): Total: 0:00:00.026204micros | Zip: 1036 Read: 163 Separators: 60micros Tokens: 241micros Write: 612micros Hash: 1374 regex: 2324
+[INFO] (MainThread) Process 0 finished. 1 files in 0s.
+Process 0 finished, 1 files processed (2). Current total: 1
+*** All done. 1 files in 0:00:00.074404
+root@fefd736b2db1:/workspace/tokenizers/file-level# ls -la | grep -E "bookkeeping_projs|files_stats|files_tokens"
+drwxr-xr-x 2 root root     4096 Feb 19 19:50 bookkeeping_projs   
+drwxr-xr-x 2 root root     4096 Feb 19 19:50 files_stats
+drwxr-xr-x 2 root root     4096 Feb 19 19:50 files_tokens
+root@fefd736b2db1:/workspace/tokenizers/file-level# mkdir -p /workspace/SourcererCC/logs
+root@fefd736b2db1:/workspace/tokenizers/file-level# python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
+' zip ' format
+ERROR - Folder [files_stats] or [bookkeeping_projs] or [files_tokens] or [logs] already exists!
+root@fefd736b2db1:/workspace/tokenizers/file-level# ls
+bookkeeping_projs  config.ini   files_stats   logs          project-list.txt            tokenizer-sample-input.zip  tokenizer.py
+cleanup.sh         db-importer  files_tokens  miniproj.zip  tokenizer-sample-input.tgz  tokenizer-unit-test.py      utils       
+root@fefd736b2db1:/workspace/tokenizers/file-level# cd ..
+root@fefd736b2db1:/workspace/tokenizers# cd ..
+root@fefd736b2db1:/workspace# ls
+LICENSE  README.md  SourcererCC  WebApp  clone-detector  dockerfile  requirements.txt  scripts-data-analysis  tokenizers
+root@fefd736b2db1:/workspace# cd SourcererCC
+root@fefd736b2db1:/workspace/SourcererCC#
+root@fefd736b2db1:/workspace/SourcererCC# l
+logs/
+root@fefd736b2db1:/workspace/SourcererCC# ls
+logs
+root@fefd736b2db1:/workspace/SourcererCC# cd logs
+root@fefd736b2db1:/workspace/SourcererCC/logs# ls
+tokenizer_smoketest.log
+root@fefd736b2db1:/workspace/SourcererCC/logs# cat tokenizer_smoketest.log
+' zip ' format
+ERROR - Folder [files_stats] or [bookkeeping_projs] or [files_tokens] or [logs] already exists!
+root@fefd736b2db1:/workspace/SourcererCC/logs# cd /workspace/tokenizers/file-level
+root@fefd736b2db1:/workspace/tokenizers/file-level# ls
+bookkeeping_projs  config.ini   files_stats   logs          project-list.txt            tokenizer-sample-input.zip  tokenizer.py
+cleanup.sh         db-importer  files_tokens  miniproj.zip  tokenizer-sample-input.tgz  tokenizer-unit-test.py      utils
+root@fefd736b2db1:/workspace/tokenizers/file-level# cd losgs
+bash: cd: losgs: No such file or directory
+root@fefd736b2db1:/workspace/tokenizers/file-level# cd logs
+root@fefd736b2db1:/workspace/tokenizers/file-level/logs# ls
+LOG-0.log
+root@fefd736b2db1:/workspace/tokenizers/file-level/logs# cd ..
+root@fefd736b2db1:/workspace/tokenizers/file-level# rm -rf bookkeeping_projs files_stats files_tokens logs
+root@fefd736b2db1:/workspace/tokenizers/file-level# python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/tokenizers/file-level/miniproj.zip> (process 0)
+[INFO] (MainThread) Attempting to process_zip_ball /workspace/tokenizers/file-level/miniproj.zip
+[INFO] (MainThread) Attempting to process_file_contents /workspace/tokenizers/file-level/miniproj.zip/miniproj/Hello.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/tokenizers/file-level/miniproj.zip/miniproj/Hello.java
+[INFO] (MainThread) Successfully ran process_zip_ball /workspace/tokenizers/file-level/miniproj.zip
+[INFO] (MainThread) Project finished <1,/workspace/tokenizers/file-level/miniproj.zip> (process 0)
+[INFO] (MainThread)  (0): Total: 0:00:00.011298micros | Zip: 253 Read: 152 Separators: 15micros Tokens: 169micros Write: 49micros Hash: 595 regex: 1642
+[INFO] (MainThread) Process 0 finished. 1 files in 0s.
+*** No more projects to process. Waiting for children to finish...
+Process 0 finished, 1 files processed (2). Current total: 1
+*** All done. 1 files in 0:00:00.027787
+root@fefd736b2db1:/workspace/tokenizers/file-level# ls -d bookkeeping_projs files_stats files_tokens
+bookkeeping_projs  files_stats  files_tokens
+root@fefd736b2db1:/workspace/tokenizers/file-level# cat /workspace/SourcererCC/logs/tokenizer_smoketest.log
+' zip ' format
+*** Starting priority projects...
+*** Starting regular projects...
+Starting new process 0
+[INFO] (MainThread) Process 0 starting
+[INFO] (MainThread) Starting zip project <1,/workspace/tokenizers/file-level/miniproj.zip> (process 0)
+[INFO] (MainThread) Attempting to process_zip_ball /workspace/tokenizers/file-level/miniproj.zip
+[INFO] (MainThread) Attempting to process_file_contents /workspace/tokenizers/file-level/miniproj.zip/miniproj/Hello.java
+[INFO] (MainThread) Generating original tokens
+[INFO] (MainThread) Successfully ran process_file_contents /workspace/tokenizers/file-level/miniproj.zip/miniproj/Hello.java
+[INFO] (MainThread) Successfully ran process_zip_ball /workspace/tokenizers/file-level/miniproj.zip
+[INFO] (MainThread) Project finished <1,/workspace/tokenizers/file-level/miniproj.zip> (process 0)
+[INFO] (MainThread)  (0): Total: 0:00:00.011298micros | Zip: 253 Read: 152 Separators: 15micros Tokens: 169micros Write: 49micros Hash: 595 regex: 1642
+[INFO] (MainThread) Process 0 finished. 1 files in 0s.
+*** No more projects to process. Waiting for children to finish...
+Process 0 finished, 1 files processed (2). Current total: 1
+*** All done. 1 files in 0:00:00.027787
+root@fefd736b2db1:/workspace/tokenizers/file-level#
+
+
+### Clone Detector Smoke Test
+root@fefd736b2db1:/workspace/clone-detector# python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
+
+search will be carried out with 2 nodes
+loading previous run state
+/workspace/clone-detector/scriptinator_metadata.scc doesn't exist, creating one with state EXECUTE_1
+previous run state 0
+running new command /workspace/clone-detector/execute.sh 1
+current state:  1
+flushing current state 1
+running new command /workspace/clone-detector/backup-gtpm.sh
+running new command /workspace/clone-detector/runnodes.sh init 1
+current state:  2
+flushing current state 2
+running new command /workspace/clone-detector/runnodes.sh index 1
+current state:  3
+flushing current state 3
+running new command /workspace/clone-detector/move-index.sh
+current state:  4
+flushing current state 4
+running new command /workspace/clone-detector/execute.sh 2
+current state:  5
+flushing current state 5
+running new command /workspace/clone-detector/runnodes.sh search 2
+current state:  0
+flushing current state 0
+SUCCESS: Search Completed on all nodes
+root@fefd736b2db1:/workspace/clone-detector#
+root@fefd736b2db1:/workspace/clone-detector# cat NODE_*/output8.0/query_* > results.pairs
+root@fefd736b2db1:/workspace/clone-detector# wc -l results.pairs
+0 results.pairs
