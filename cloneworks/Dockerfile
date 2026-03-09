@@ -46,3 +46,4 @@ RUN chmod +x /workspace/docker/entrypoint.sh \
  && chmod +x /workspace/scripts/*.sh || true
 
 ENTRYPOINT ["/workspace/docker/entrypoint.sh"]
+CMD ["bash", "scripts/run_full_pipeline.sh"]

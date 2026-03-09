@@ -23,33 +23,21 @@ Reproducing CloneWorks clone detection on a BigCloneBench subset inside Docker.
 | Build tools    | gcc, make (build-essential) |
 | Extra Python   | datasets, pandas, numpy, scikit-learn, tqdm |
 
-### Build the Docker image
+### Build the Docker image & Start the Pipelines
+
+Run these commands to automatically start and run the full cloneworks pipelines till results evaluation. The pipeline stages are evaluated below. It takes about 45mins-1hr of running on Docker.
 
 ```bash
 cd cloneworks
-docker build -t cloneworks:latest -f docker/Dockerfile .
+docker build --platform linux/amd64 -t cloneworks:amd64 -f Dockerfile .
+docker run --rm --platform linux/amd64 \
+    --cpus=4 --memory=8g \
+    -v "$PWD":/workspace -v "$PWD/out":/workspace/out cloneworks:amd64
 ```
 
-### Start an interactive container
+> **Tip**: Increase `--cpus` and `--memory` to match your machine for faster execution (e.g. `--cpus=8 --memory=16g`). The pipeline auto-detects available resources inside the container and tunes JVM heap accordingly.
 
-```bash
-docker run --rm -it \
-  -v "$PWD":/workspace \
-  -v "$PWD/data":/workspace/data \
-  -v "$PWD/out":/workspace/out \
-  cloneworks:latest bash
-```
-
-### Capture environment info
-
-Inside the container:
-```bash
-java -version > evidence/logs/env.txt 2>&1
-python3 --version >> evidence/logs/env.txt 2>&1
-cat /etc/os-release >> evidence/logs/env.txt 2>&1
-```
-
-## 3. Step-by-Step Reproducibility
+## 3. Step-by-Step Reproducibility Running in Above Pipelines
 
 ### Step 1: Fetch the artifact
 
@@ -68,6 +56,8 @@ This clones the official CloneWorks repository into `tools/cloneworks_artifact/`
 This compiles CloneWorks, compiles TXL grammars (if TXL is available), and runs cwbuild + cwdetect on the included JHotDraw example. Logs go to `evidence/logs/smoke_test.log`.
 
 ### Step 3: Prepare BigCloneBench subset
+
+This step is what takes long time inside the above pipelines.
 
 ```bash
 python3 scripts/10_prepare_bigclonebench_subset.py \
