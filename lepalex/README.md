@@ -8,56 +8,44 @@ Responsible Student: **Samuel Olukuewu**
 Team: **Tech Titans**
 Course: **CMPT 470 – Reproducibility Assignment**
 
+## Assignment Scope
+For each assigned tool, we will:
+1. Verify and document the official artifact.
+2. Set up the required environment.
+3. Run smoke tests and capture evidence.
+4. Execute on approved benchmark(s) using default or paper-specified settings.
+5. Assess outcomes and assign a TES category.
 ---
 
 # 1. Paper Information
 
 Paper Title:
-LePalex: An Extended Line-Based Approach to Detect Code Clones Using Syntactic and Lexical Information
+An Extended Line-Based Approach to Detect Code Clones Using Syntactic and Lexical Information
 
 Authors:
-[Add authors from the paper]
+K. Maeda
 
 Publication Year:
-[Add year]
+2010
 
 Paper Link:
-[Insert DOI / PDF link]
+10.1109/ITNG.2010.176.
 
 Discovery Method:
-Example: Paper located using Google Scholar search with the title provided in the assignment.
+Example: Paper located using Google search with the title provided in the assignment(LePalex: An Extended Line-Based Approach to Detect Code Clones Using Syntactic and Lexical Information).
 
 ---
 
 # 2. Artifact Discovery
 
 Official Artifact Link:
-[Insert GitHub repository / project website / download link]
-
-Artifact Type:
-
-* GitHub repository
-* Binary release
-* Archived source code
-* N/A (if none found)
+Artifact Could Not be found
 
 Artifact Discovery Process:
-Describe how the artifact was located. For example:
-
-* Searched the paper for repository links
+* Searched the repository for repository links
+* Checked Paper References and Citation for Links
 * Checked author websites
 * Searched GitHub for "LePalex"
-* Checked research lab pages
-
-If no artifact was found, document the search attempts.
-
-Example:
-
-Search attempts included:
-
-* Google Scholar
-* GitHub
-* Author university pages
 
 Result:
 No official artifact could be located.
@@ -66,150 +54,30 @@ No official artifact could be located.
 
 # 3. Environment Setup
 
-Operating System:
-Example: Ubuntu 22.04
-
-Hardware:
-Example: Intel i7 / 16GB RAM
-
-Programming Language / Runtime:
-Example: Java 11 / Python 3.8
-
-Dependencies:
-List required libraries or tools.
-
-Example:
-
-* Java
-* Python
-* Maven
-* GCC
-* TensorFlow
-
-Environment Setup Steps:
-
-Example:
-
-1. Clone repository
-2. Install dependencies
-3. Build the tool
-
-Commands used:
-
-```
-git clone [repository]
-cd [tool directory]
-install dependencies
-build project
-```
+No artifact Found: Environment cant be setup
 
 ---
 
 # 4. Smoke Testing
 
-Purpose:
-Verify that the tool executes basic commands.
-
-Command executed:
-
-```
-example_command --help
-```
-
-Observed Output:
-
-Describe the output or errors observed.
-
-Evidence:
-Screenshots or logs stored in:
-
-```
-logs/
-screenshots/
-```
-
-Outcome:
-
-* Successful
-* Failed
-* Partially executed
+No artifact Found: Test cant be setup
 
 ---
 
 # 5. Benchmark Execution
-
-Benchmark Used:
-
-* BigCloneBench
-* SemanticCloneBench
-* GPTCloneBench
-* Google Code Jam
-* CLCDSA
-
-Dataset Source:
-
-Insert dataset link used.
-
-Dataset Size Used:
-
-Example: Subset of 500 files from BigCloneBench.
-
-Execution Command:
-
-```
-command used to run tool
-```
-
-Output Files:
-
-Describe where outputs are stored.
-
-Example:
-
-```
-outputs/
-clone_results.txt
-```
-
----
-
-# 6. Results
-
-
-## LePalex Reproducibility Assessment
-
-### Team: Tech Titans
-This repository is the group record for our reproducibility assessment of assigned code clone detection tools.  
-The goal is to evaluate artifact availability, executability, and result reproducibility, following the course protocol.
-
-## Assignment Scope
-For each assigned tool, we will:
-1. Verify and document the official artifact.
-2. Set up the required environment.
-3. Run smoke tests and capture evidence.
-4. Execute on approved benchmark(s) using default or paper-specified settings.
-5. Assess outcomes and assign a TES category.
-
-
-## Artifact Verification
-- Paper: K. Maeda, "An Extended Line-Based Approach to Detect Code Clones Using Syntactic and Lexical Information," 2010 Seventh International Conference on Information Technology: New Generations, Las Vegas, NV, USA, 2010, pp. 1237-1240, doi: 10.1109/ITNG.2010.176.
-- Article: No Artifact Implementation Found
-- Steps:
-    Github
-    google
-
-## Environment 
-
-## Smoke test and Evidence Capture
-
-## Benchmark Execution
 ### Required Benchmarks
 - BigCloneBench
 - SemanticCloneBench
 - GPTCloneBench
 - Google Code Jam
 - CLCDSA
+- 
+No artifact Found: Cant compare to benchmark
 
-## Outcome Assessment and TES Assignment
-### TES D
-Non-Executable
+---
+
+# 6. Results
+
+TES-D (Non-Executable)
+The tool could not be executed despite best-effort attempts. This includes cases where no official artifact was found, the tool failed irrecoverably during build or execution, or critical components were missing with no feasible path to recovery.
+
