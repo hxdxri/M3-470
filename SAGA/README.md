@@ -5,6 +5,7 @@ SAGA - Evaluation Report
 Discovery
 
 Found at: https://github.com/FudanSELab/SAGA
+The authors linked their GitHub directly in the paper
 
 
 
@@ -20,9 +21,9 @@ How to Run
 
 1\. Clone the repo or use the JAR directly
 
-2\. Open config.properties and set `exe=executable/psacd\_win10.exe`
+2. Open config.properties and change `exe=executable/sa_gpu.exe` to `exe=executable/psacd_win10.exe`
 
-3\. Clear stale cache: delete all files in `tokenData/` and `result/`
+3. Delete everything in `tokenData/` and `result/` folders before running
 
 4\. Run: `java -jar SAGACloneDetector.jar <input\_folder> result`
 
@@ -30,15 +31,17 @@ How to Run
 
 Interventions Required
 
-1\. Default config uses `sa\_gpu.exe` which silently produces 0 results , switched to `psacd\_win10.exe` (CPU fallback, included in repo)
+1\. The Default config uses `sa\_gpu.exe` but silently returns 0 results , switched to `psacd\_win10.exe` (CPU fallback, included in repo)
 
-2\. Had to clear `tokenData` cache before each run to avoid IndexOutOfBoundsException crash exception
+2\. Had to clear `tokenData` data before each run to avoid IndexOutOfBoundsException crash exception
 
 
 
 Benchmark
 
-BigCloneBench : 2000-pair subset (2996 Java files, seed=42)
+BigCloneBench — 2000 pair subset, 2996 Java files, seed=42.
+See data/subset_description.txt for full details.
+Use scripts/prepare_bcb.py to regenerate the exact same subset.
 
 
 
