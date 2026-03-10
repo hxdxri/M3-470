@@ -39,7 +39,7 @@ Interventions Required
 
 Benchmark
 
-BigCloneBench — 2000 pair subset, 2996 Java files, seed=42.
+BigCloneBench : 2000 pair subset, 2996 Java files, seed=42.
 See data/subset_description.txt for full details.
 Use scripts/prepare_bcb.py to regenerate the exact same subset.
 
