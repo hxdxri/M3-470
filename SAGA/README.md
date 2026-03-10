@@ -4,8 +4,9 @@ SAGA - Evaluation Report
 
 Discovery
 
-Found at: https://github.com/FudanSELab/SAGACloneDetector
-The authors linked their GitHub directly in the paper
+Found at: https://github.com/FudanSELab/SAGACloneDetector.
+Searched on "SAGA clone detection git" on google search and came across the autors git repo
+The authors linked their GitHub directly in the README
 
 
 
