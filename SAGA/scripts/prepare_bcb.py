@@ -53,7 +53,7 @@ def main():
     print(f"Output dir  : {args.output_dir}")
     print()
 
-    # ---- Load dataset from HuggingFace ----
+    # Load dataset from HuggingFace
     try:
         from datasets import load_dataset
     except ImportError:
@@ -68,7 +68,7 @@ def main():
     )
     print(f"Dataset loaded: {len(ds)} pairs in '{args.split}' split")
 
-    # ---- Sample subset ----
+    # Sample subset 
     import random
     random.seed(args.seed)
 
@@ -81,13 +81,13 @@ def main():
     subset = ds.select(indices)
     print(f"Selected {len(subset)} pairs")
 
-    # ---- Count positive / negative ----
+    #Count positive / negative
     pos_count = sum(1 for ex in subset if ex["label"])
     neg_count = len(subset) - pos_count
     print(f"Positive (clone) pairs: {pos_count}")
     print(f"Negative (non-clone) pairs: {neg_count}")
 
-    # ---- Materialize source files ----
+    #  Materialize source files 
     src_dir = Path(args.output_dir) / "src"
     oracle_dir = Path(args.output_dir) / "oracle"
     src_dir.mkdir(parents=True, exist_ok=True)
@@ -155,7 +155,7 @@ def main():
     print(f"Written {len(written_snippets)} unique Java files")
     print(f"Oracle contains {len(oracle_pairs)} pairs")
 
-    # ---- Write oracle file ----
+    # Write oracle file 
     oracle_file = oracle_dir / "oracle_pairs.jsonl"
     with open(oracle_file, "w", encoding="utf-8") as f:
         for pair in oracle_pairs:
@@ -171,7 +171,7 @@ def main():
                     f"{pair['file1']},{pair['file2']},{pair['label']}\n")
     print(f"Oracle CSV written to: {oracle_csv}")
 
-    # ---- Write evidence files ----
+    # Write evidence files 
     evidence_dir = Path(args.evidence_dir)
     evidence_dir.mkdir(parents=True, exist_ok=True)
 
