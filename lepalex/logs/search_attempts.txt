@@ -1,0 +1,15 @@
+Google:
+LePalex
+Code Clone Detector LePalex
+Lepalex Implementation
+Lepalex Github
+Lepalex Repo
+
+Github:
+Lepalex(EDM115/palex: Not related to clone detection )
+Kazuaki Maeda
+Clone Detector Lepalex
+
+Ai:
+Lepalex Clone Detector Artifact
+Find an Implementation of a Lepalex Clone Detector
