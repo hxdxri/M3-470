@@ -46,7 +46,8 @@ WORKDIR /workspace
 COPY --chown=appuser:appuser . /workspace
 
 # Copy the pre-cloned artifact into the workspace (if not already present from COPY)
-RUN if [ ! -d /workspace/tools/cloneworks_artifact/src ]; then \
+RUN mkdir -p /workspace/tools && \
+    if [ ! -d /workspace/tools/cloneworks_artifact/src ]; then \
       rm -rf /workspace/tools/cloneworks_artifact && \
       cp -a /opt/cloneworks_artifact /workspace/tools/cloneworks_artifact; \
     fi
