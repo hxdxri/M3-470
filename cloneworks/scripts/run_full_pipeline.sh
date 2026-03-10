@@ -84,7 +84,7 @@ timeout --signal=TERM --kill-after=30 "$CWBUILD_TIMEOUT" \
     ./cwbuild -i "$SRC_ROOT" \
               -f "$CWBUILD_OUT/bigclonebench.files" \
               -b "$CWBUILD_OUT/bigclonebench.fragments" \
-              -l java -g function \
+              -l java -g file \
               -c type3token > "$LOG_DIR/cwbuild.log" 2>&1
 CWBUILD_EXIT=$?
 grep -v "Failed for file" "$LOG_DIR/cwbuild.log"
@@ -93,7 +93,7 @@ echo ""
 echo "cwbuild exited with code $CWBUILD_EXIT in $((END_TIME - START_TIME))s"
 
 # Count fragments (lines not starting with #)
-FRAG_COUNT=$(grep -c "^[0-9]" "$CWBUILD_OUT/bigclonebench.fragments" 2>/dev/null | tr -d ' ' || echo "0")
+FRAG_COUNT=$(grep -c "^[0-9]" "$CWBUILD_OUT/bigclonebench.fragments" 2>/dev/null | tr -d '[:space:]' || echo "0")
 FILE_COUNT=$(wc -l < "$CWBUILD_OUT/bigclonebench.files" 2>/dev/null | tr -d ' ' || echo "0")
 echo "Files indexed: $FILE_COUNT"
 echo "Fragments extracted: $FRAG_COUNT"
