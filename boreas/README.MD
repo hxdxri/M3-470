@@ -6,6 +6,12 @@
 
 The Boreas paper was reviewed for any links to source code, binaries, or replication packages. **No artifact link was provided in the paper.** A manual search was also conducted on GitHub and Google using queries such as "Boreas code clone detection tool", "Boreas source code", and related terms. None of these searches returned a usable artifact or repository.
 
+These keywords lead to other tools that had Boreas in their names that were entirely different projects.
+
+I found a Boreas as a Multi-Season Autonomous Driving Dataset for autonomous vehicle research project.
+
+I also found PyBoreas as a command line tool for an IP address research project thats entirely different from clone detection.
+
 **Conclusion:** The official artifact is unavailable.
 
 ---
