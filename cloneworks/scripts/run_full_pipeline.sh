@@ -54,6 +54,18 @@ java -version 2>&1 || true
 sed -i "s/^MEM=.*/MEM=${JVM_HEAP}G/" "$CW_DIR/cwbuild"
 sed -i "s/^TC_MEMORY=.*/TC_MEMORY=${JVM_HEAP}G/" "$CW_DIR/cwdetect"
 
+# ---- Step 2.5: Prepare BigCloneBench subset (download + materialize) ----
+echo ""
+echo "=== Step 2.5: Prepare BigCloneBench subset ==="
+if [ ! -d /workspace/data/bigclonebench_subset/src ]; then
+    python3 /workspace/scripts/10_prepare_bigclonebench_subset.py \
+        --n 2000 --seed 42 \
+        --output-dir /workspace/data/bigclonebench_subset \
+        --evidence-dir "$LOG_DIR"
+else
+    echo "BigCloneBench subset already exists, skipping download."
+fi
+
 # ---- Step 3: cwbuild with timeout ----
 echo ""
 echo "=== Step 3: cwbuild on BigCloneBench subset ==="
