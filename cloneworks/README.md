@@ -29,7 +29,7 @@ Run these commands to automatically start and run the full cloneworks pipelines 
 
 ```bash
 cd cloneworks
-docker build --platform linux/amd64 -t cloneworks:amd64 -f Dockerfile .
+docker build --no-cache --platform linux/amd64 -t cloneworks:amd64 -f Dockerfile .
 docker run --rm --platform linux/amd64 \
     --cpus=4 --memory=8g \
     -v "$PWD":/workspace -v "$PWD/out":/workspace/out cloneworks:amd64
