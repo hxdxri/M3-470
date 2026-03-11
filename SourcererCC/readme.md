@@ -70,6 +70,16 @@
     ```
     bash scripts/run_bcb_subset.sh 20
     ```
+8. View execution results (inside the container)
+  - The clone detector outputs are written to `/workspace/SourcererCC/results` and the execution logs are written to `/workspace/SourcererCC/logs`.
+  - Example commands:
+    ```
+    ls -l /workspace/SourcererCC/results
+    cat /workspace/SourcererCC/results/results.pairs | head
+
+    ls -l /workspace/SourcererCC/logs
+    tail -n 50 /workspace/SourcererCC/logs/bcb_clone_detector.log
+    ```
 
 
 
