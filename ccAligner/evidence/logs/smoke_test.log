@@ -1,6 +1,42 @@
 === CCAligner Smoke Test ===
-Thu Mar 12 15:56:50 UTC 2026
-root=/Users/haidari/M3-470/ccAligner
-artifact=/Users/haidari/M3-470/ccAligner/tools/ccaligner_artifact
-ERROR: CCAligner artifact and toolchain are Linux-oriented.
-Run this script in Docker (see README.md).
+Thu Mar 12 18:03:15 UTC 2026
+root=/workspace
+artifact=/workspace/tools/ccaligner_artifact
+mkdir -p src
+flex  -o src/lexer.cpp src/config/lexer.l
+mkdir -p src
+g++ -I src/include -c -o bin/lexer.o src/lexer.cpp
+mkdir -p src
+g++ -I src/include -c -o bin/main.o src/main.cpp
+mkdir -p src
+g++ -I src/include -c -o bin/tok.o src/tok.cpp
+mkdir -p bin
+g++ -I src/include -o bin/c1c bin/lexer.o bin/main.o bin/tok.o
+1
+tid:1
+tid:0
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Using Time: 0.005679
+Using Time: 0.004783
+tid:1tid:0
+
+Using Time: 0.007899
+num of Cmap:0
+num of candidate pairs:0
+0
+0
+Using Time: 0.003905
+Smoke test completed.
+Generated outputs:
+total 0
+drwxr-xr-x 10 appuser appuser 320 Mar 12 18:03 .
+drwxr-xr-x 19 appuser appuser 608 Mar 12 18:03 ..
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 1clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 2clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 3clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 4clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 5clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 6clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 7clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 12 18:03 8clones_6_0.6

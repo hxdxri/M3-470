@@ -18,8 +18,9 @@ As of March 12, 2026, repository discovery has been corrected:
 ## Current Smoke-Test Evidence
 - `scripts/01_fetch_artifact.sh` executed and wrote `evidence/logs/artifact.txt`.
 - `scripts/20_smoke_test.sh` executed on host and correctly aborted with Linux-only warning.
+- Smoke test then executed successfully in Docker with workspace mount.
 - Log: `evidence/logs/smoke_test.log`.
-- Next action: run smoke test inside Docker image.
+- Note: running container without `-v "$PWD":/workspace` discards logs after container exit.
 
 ## Next Execution Step
 Run and capture:

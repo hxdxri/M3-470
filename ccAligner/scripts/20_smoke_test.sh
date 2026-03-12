@@ -59,6 +59,7 @@ EOF
     rm -rf input/* output/*
     find token -type f -delete || true
     rm -f function.file tokenline_num clones
+    chmod +x extract parser tokenize detect detect2 co1 || true
     chmod +x txl/*.x || true
 
     # Execute native pipeline as documented by artifact runner.

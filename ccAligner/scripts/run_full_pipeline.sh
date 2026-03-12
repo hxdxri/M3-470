@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 # run_full_pipeline.sh — Foundation pipeline for CCAligner milestone workflow
+# revision: 2026-03-12-smoke-path-fix
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"

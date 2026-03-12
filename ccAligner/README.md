@@ -59,6 +59,8 @@ docker run --rm --platform linux/amd64 \
   -v "$PWD":/workspace ccaligner:amd64
 ```
 
+Important: if `-v "$PWD":/workspace` is omitted, logs/outputs are written only inside the temporary container filesystem and disappear on exit.
+
 ## 6. Directory Structure
 
 ```
