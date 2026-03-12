@@ -1,27 +1,25 @@
-FROM ubuntu:22.04
+FROM amazoncorretto:17
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN rm -rf /var/lib/apt/lists/* \
- && apt-get clean \
- && apt-get update -o Acquire::Retries=5 \
- && apt-get install -y --no-install-recommends -o Acquire::Retries=5 \
+RUN yum -y update \
+ && yum -y install \
     ca-certificates \
     git \
     curl \
     wget \
     unzip \
+    tar \
     jq \
     python3 \
     python3-pip \
-    openjdk-11-jdk \
-    build-essential \
-    g++ \
+    gcc \
+    gcc-c++ \
     make \
     flex \
     bison \
-    libboost-all-dev \
+    boost-devel \
     file \
- && rm -rf /var/lib/apt/lists/*
+ && yum clean all \
+ && rm -rf /var/cache/yum
 
 # Install FreeTXL (needed by CCAligner extraction pipeline)
 RUN cd /tmp \
@@ -37,8 +35,6 @@ RUN cd /tmp \
  && cp lib/* /usr/local/lib/txl/ \
  && ldconfig \
  && cd / && rm -rf /tmp/txl* /tmp/response.html
-
-RUN pip3 install --no-cache-dir datasets pandas numpy scikit-learn tqdm
 
 RUN useradd -ms /bin/bash appuser
 USER appuser

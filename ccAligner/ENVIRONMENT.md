@@ -9,10 +9,9 @@ From the official CCAligner README:
 - `libboost`
 
 ### Reproducibility container baseline
-- Ubuntu 22.04
-- OpenJDK 11
+- Amazon Corretto 17 (`amazoncorretto:17`)
 - Python 3 + pip
-- build-essential, g++, make, flex, bison, libboost-all-dev
+- gcc, gcc-c++, make, flex, bison, boost-devel
 - FreeTXL (for extraction pipeline compatibility)
 
 ### Local paths
@@ -23,4 +22,5 @@ From the official CCAligner README:
 ### Notes
 - CCAligner artifact includes Linux ELF binaries (`extract`, `parser`, `tokenize`, `detect`, `detect2`, `co1`).
 - The upstream `runner` script has hardcoded `/home/wpc/...` paths; local scripts in `scripts/` replace this with repository-relative paths.
-- A first Docker build attempt hit transient Ubuntu mirror `Hash Sum mismatch` errors during `apt-get install`; Dockerfiles now include apt retries (`Acquire::Retries=5`).
+- Ubuntu mirror hash issues were blocking builds in this environment; Dockerfiles were migrated to `amazoncorretto:17` + `yum` to avoid `apt` mirror instability while preserving glibc compatibility.
+- Python benchmark libraries (`datasets`, `pandas`, `numpy`, `scikit-learn`) are deferred to benchmark-stage setup instead of image build to keep base image stable.

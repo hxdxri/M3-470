@@ -32,10 +32,10 @@ Details and extracted setup notes are documented in `BenchmarksUsed-README.md`.
 ## 4. Environment Baseline
 
 Planned runtime baseline:
-- Ubuntu 22.04
+- Amazon Corretto 17 base image (`amazoncorretto:17`, glibc-based)
 - `g++`, `flex`, `make`, `libboost`
-- Java 11 (for benchmark tooling compatibility in our workflow scripts)
-- Python 3 (subset prep + evaluation scripts)
+- Java 17 (from Corretto base image)
+- Python 3 (subset prep + evaluation scripts; extra Python libs installed in benchmark phase)
 - TXL tooling (used by CCAligner extraction stage)
 
 Container files:
