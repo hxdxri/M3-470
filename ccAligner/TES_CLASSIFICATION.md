@@ -1,17 +1,18 @@
 # TES Classification - CCAligner
 
-## Assigned Category
-**TES-D (Non-Executable)**
+## Current Status
+**Pending reassessment**
 
-## Justification
-The tool could not be executed despite best-effort attempts because:
-- No official source code was found.
-- No binary or artifact was available.
-- No archived version was accessible.
-- Only the research paper PDF was available.
+## Correction Note
+The earlier TES-D assignment was based on an incorrect artifact-discovery conclusion.
 
-According to TES taxonomy:
+As of March 12, 2026:
+- Official repository identified: https://github.com/PCWcn/CCAligner
+- Previous "non-executable due to missing artifact" reasoning is no longer valid.
 
-TES-D: The tool could not be executed despite best-effort attempts. This includes cases where no source code or binary artifact was found.
-
-This classification strictly follows the assignment rubric.
+## Next Classification Step
+A final TES category (A/B/C/D/E) will be assigned after re-running:
+1. Environment setup
+2. Smoke testing
+3. Benchmark execution
+4. Result assessment against paper claims

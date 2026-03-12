@@ -63,3 +63,13 @@ CCAligner: a token based large-gap clone detector (* ICSE 2018 * - Technical Pap
 
 
 
+Correction update (2026-03-12):
+- Previous conclusion above is withdrawn.
+- Official artifact identified: https://github.com/PCWcn/CCAligner
+- Trigger for correction: teammate cross-check + direct GitHub repository search.
+
+Root-cause notes:
+- Discovery process leaned on Google and paper-link tracing more than GitHub-native repo search.
+- AI summaries were treated as stronger evidence than they should have been.
+- Some verification queries included misspelling variants (e.g., "CCAlginer"), reducing signal quality.
+- Maintainer account includes Chinese characters ("王鹏程"), which may have reduced discoverability in initial query phrasing.
