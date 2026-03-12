@@ -1,0 +1,24 @@
+CCAligner paper analysis summary
+Date: 2026-03-12
+Source: Paper.pdf (ICSE 2018)
+
+Key evaluation setups identified:
+1) BigCloneBench + BigCloneEval
+   - Recall by clone type (Type-1/Type-2/VST3/ST3/MT3)
+   - Uses minimum clone size 6 lines in core experiments
+   - Main CCAligner configuration reported: q=6, e=1, similarity=0.6
+
+2) Mutation-Injection based benchmark
+   - Controlled synthetic gapped clones
+   - 200 clones per gap length
+   - Gap lengths 1..20
+   - Total 2,000 synthetic gapped clones
+
+3) Real project empirical comparison
+   - C: Cook, Redis, PostgreSQL, Linux
+   - Java: JDK, OpenNLP, Maven, Ant
+   - Metrics: precision, recall, F1-score
+
+Notes:
+- Reproduction plan will prioritize assignment-approved BigCloneBench source.
+- Mutation-based stage will be implemented as a clearly documented approximation unless the exact original framework can be recovered.

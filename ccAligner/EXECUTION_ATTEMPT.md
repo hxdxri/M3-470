@@ -7,12 +7,23 @@ The prior attempt reported "not possible" because artifact discovery was incorre
 As of March 12, 2026, repository discovery has been corrected:
 - https://github.com/PCWcn/CCAligner
 
-Therefore this file is now an interim status note only.
+## Foundation Step Completed
+- Workflow scaffold added (`docker/`, `scripts/`, `config/`, `data/`, `out/`, `results/`, `evidence/`).
+- Artifact cloned to `tools/ccaligner_artifact`.
+- Repro scripts prepared:
+  - `scripts/01_fetch_artifact.sh`
+  - `scripts/20_smoke_test.sh`
+  - `scripts/run_full_pipeline.sh`
 
-## Re-attempt Plan (Next Steps)
-1. Clone and pin artifact commit hash.
-2. Reconstruct environment in Docker.
-3. Run smoke test and log outputs.
-4. Attempt benchmark-compatible execution and document interventions.
+## Current Smoke-Test Evidence
+- `scripts/01_fetch_artifact.sh` executed and wrote `evidence/logs/artifact.txt`.
+- `scripts/20_smoke_test.sh` executed on host and correctly aborted with Linux-only warning.
+- Log: `evidence/logs/smoke_test.log`.
+- Next action: run smoke test inside Docker image.
 
-Detailed rerun logs will be appended here in the next phase.
+## Next Execution Step
+Run and capture:
+1. `scripts/20_smoke_test.sh`
+2. BigCloneBench subset preparation
+3. CCAligner benchmark run and result parsing
+4. Comparative reporting vs paper

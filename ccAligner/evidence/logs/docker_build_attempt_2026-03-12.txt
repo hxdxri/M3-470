@@ -1,0 +1,11 @@
+Command:
+docker build --platform linux/amd64 -t ccaligner:amd64 -f docker/Dockerfile .
+
+Result:
+Failed during apt installation step with transient Ubuntu mirror integrity errors:
+- Hash Sum mismatch (multiple packages)
+- apt exited with code 100
+
+Action taken:
+- Updated Dockerfiles to include apt retries (`Acquire::Retries=5`) and list cleanup before update.
+- Rebuild should be retried in next execution step.

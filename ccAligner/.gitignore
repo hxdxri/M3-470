@@ -1,0 +1,21 @@
+# Data and outputs (large, generated)
+data/
+out/
+results/*.tmp
+tools/ccaligner_artifact/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo

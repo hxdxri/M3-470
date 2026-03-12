@@ -1,0 +1,5 @@
+artifact_url=https://github.com/PCWcn/CCAligner.git
+commit_hash=f27622d6f1500536c45862c4d49bd5f5d6802ace
+fetch_date=2026-03-12T15:56:21Z
+fetch_method=git_clone
+target_dir=/Users/haidari/M3-470/ccAligner/tools/ccaligner_artifact

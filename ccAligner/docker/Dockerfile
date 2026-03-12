@@ -45,6 +45,7 @@ USER appuser
 WORKDIR /workspace
 
 COPY --chown=appuser:appuser . /workspace
+
 RUN chmod +x /workspace/docker/entrypoint.sh \
  && chmod +x /workspace/scripts/*.sh || true
 

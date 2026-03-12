@@ -1,0 +1,6 @@
+=== CCAligner Smoke Test ===
+Thu Mar 12 15:56:50 UTC 2026
+root=/Users/haidari/M3-470/ccAligner
+artifact=/Users/haidari/M3-470/ccAligner/tools/ccaligner_artifact
+ERROR: CCAligner artifact and toolchain are Linux-oriented.
+Run this script in Docker (see README.md).

@@ -1,17 +1,26 @@
 # Environment Setup Attempt - CCAligner
+## Environment Baseline (CCAligner)
 
-## Intended Environment
-- Ubuntu 22.04 (Dockerized)
+### Artifact-stated requirements
+From the official CCAligner README:
+- 64-bit Linux
+- `g++`
+- `flex`
+- `libboost`
 
-The paper describes implementation details including:
-- Tokenization
-- Sliding windows
-- e-mismatch index
-- Asymmetric Dice similarity
+### Reproducibility container baseline
+- Ubuntu 22.04
+- OpenJDK 11
+- Python 3 + pip
+- build-essential, g++, make, flex, bison, libboost-all-dev
+- FreeTXL (for extraction pipeline compatibility)
 
-However:
-- No build system is described.
-- No language or repository is specified.
-- No installation instructions are provided.
+### Local paths
+- Artifact: `tools/ccaligner_artifact`
+- Logs: `evidence/logs`
+- Generated work outputs: `out/`
 
-Since no artifact was available, environment setup could not proceed.
+### Notes
+- CCAligner artifact includes Linux ELF binaries (`extract`, `parser`, `tokenize`, `detect`, `detect2`, `co1`).
+- The upstream `runner` script has hardcoded `/home/wpc/...` paths; local scripts in `scripts/` replace this with repository-relative paths.
+- A first Docker build attempt hit transient Ubuntu mirror `Hash Sum mismatch` errors during `apt-get install`; Dockerfiles now include apt retries (`Acquire::Retries=5`).
