@@ -36,13 +36,24 @@ RUN pip3 install --no-cache-dir datasets pandas numpy scikit-learn tqdm
 # Set UTF-8 encoding for Java (prevents compilation errors on non-ASCII comments)
 ENV JAVA_TOOL_OPTIONS="-Dfile.encoding=UTF-8"
 
+# Clone the official CloneWorks artifact into the image
+RUN git clone https://github.com/jeffsvajlenko/CloneWorks.git /opt/cloneworks_artifact
+
 RUN useradd -ms /bin/bash appuser
 USER appuser
 WORKDIR /workspace
 
 COPY --chown=appuser:appuser . /workspace
 
+# Copy the pre-cloned artifact into the workspace (if not already present from COPY)
+RUN mkdir -p /workspace/tools && \
+    if [ ! -d /workspace/tools/cloneworks_artifact/src ]; then \
+      rm -rf /workspace/tools/cloneworks_artifact && \
+      cp -a /opt/cloneworks_artifact /workspace/tools/cloneworks_artifact; \
+    fi
+
 RUN chmod +x /workspace/docker/entrypoint.sh \
  && chmod +x /workspace/scripts/*.sh || true
 
 ENTRYPOINT ["/workspace/docker/entrypoint.sh"]
+CMD ["bash", "scripts/run_full_pipeline.sh"]

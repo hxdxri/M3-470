@@ -14,18 +14,18 @@ For each assigned tool, we will:
 5. Assess outcomes and assign a TES category.
 
 ## Assigned Tools
-Based on the provided assignment sheet/screenshot, this team is covering:
+This team is covering:
 - CCAligner: Haidari Alhaidari
 - SourcererCC: Ademola Obalaye
-- Boreas: Olukuewu, Samuel
+- Boreas: Giet, Chut
 - CloneWorks: Giet, Chut
 - SAGA: Emeka-Nwuba, Chibuikem
-- LePalex: Giet, Chut
+- LePalex: Olukuewu, Samuel
 
 
 Tool-specific setup, execution steps, benchmark configuration, interventions, logs, and outcomes are documented in each tool's own section/README by the responsible teammate.
 
-## Required Benchmarks (Course-Approved)
+## Required Benchmarks
 - BigCloneBench
 - SemanticCloneBench
 - GPTCloneBench
@@ -61,4 +61,5 @@ This repository includes:
 - Do not tune beyond paper-described settings.
 - Do not substitute datasets.
 - Document all interventions and failures honestly.
+- Cite all external sources used.
 - Cite all external sources used.

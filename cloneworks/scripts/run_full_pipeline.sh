@@ -4,6 +4,18 @@
 # Designed to run inside the cloneworks:amd64 Docker container
 set -uo pipefail
 
+# ---- Auto-detect resources ----
+TOTAL_MEM_KB=$(grep MemTotal /proc/meminfo | awk '{print $2}')
+TOTAL_MEM_GB=$((TOTAL_MEM_KB / 1024 / 1024))
+NPROC=$(nproc 2>/dev/null || echo 2)
+# Give JVM ~70% of available RAM, minimum 2G
+JVM_HEAP=$(( TOTAL_MEM_GB * 70 / 100 ))
+[ "$JVM_HEAP" -lt 2 ] && JVM_HEAP=2
+# Cap parallelism to nproc
+PARALLEL_THREADS=${PARALLEL_THREADS:-$NPROC}
+export JVM_HEAP PARALLEL_THREADS NPROC
+echo "Detected resources: ${TOTAL_MEM_GB}G RAM, ${NPROC} CPUs → JVM heap ${JVM_HEAP}G, threads ${PARALLEL_THREADS}"
+
 CW_DIR="/workspace/tools/cloneworks_artifact"
 LOG_DIR="/workspace/evidence/logs"
 mkdir -p "$LOG_DIR"
@@ -38,6 +50,22 @@ rm -f sources
 echo "Java compilation done"
 java -version 2>&1 || true
 
+# Patch cwbuild/cwdetect to use detected memory
+sed -i "s/^MEM=.*/MEM=${JVM_HEAP}G/" "$CW_DIR/cwbuild"
+sed -i "s/^TC_MEMORY=.*/TC_MEMORY=${JVM_HEAP}G/" "$CW_DIR/cwdetect"
+
+# ---- Step 2.5: Prepare BigCloneBench subset (download + materialize) ----
+echo ""
+echo "=== Step 2.5: Prepare BigCloneBench subset ==="
+if [ ! -d /workspace/data/bigclonebench_subset/src ]; then
+    python3 /workspace/scripts/10_prepare_bigclonebench_subset.py \
+        --n 2000 --seed 42 \
+        --output-dir /workspace/data/bigclonebench_subset \
+        --evidence-dir "$LOG_DIR"
+else
+    echo "BigCloneBench subset already exists, skipping download."
+fi
+
 # ---- Step 3: cwbuild with timeout ----
 echo ""
 echo "=== Step 3: cwbuild on BigCloneBench subset ==="
@@ -46,7 +74,7 @@ CWBUILD_OUT="/workspace/out/cwbuild"
 rm -rf "$CWBUILD_OUT"
 mkdir -p "$CWBUILD_OUT"
 
-CWBUILD_TIMEOUT="${CWBUILD_TIMEOUT:-1800}"  # 30 minutes default
+CWBUILD_TIMEOUT="${CWBUILD_TIMEOUT:-3600}"  # 60 minutes default
 echo "Timeout: ${CWBUILD_TIMEOUT}s"
 echo "Source : $SRC_ROOT"
 echo "Output : $CWBUILD_OUT"
@@ -56,16 +84,17 @@ timeout --signal=TERM --kill-after=30 "$CWBUILD_TIMEOUT" \
     ./cwbuild -i "$SRC_ROOT" \
               -f "$CWBUILD_OUT/bigclonebench.files" \
               -b "$CWBUILD_OUT/bigclonebench.fragments" \
-              -l java -g function \
-              -c type3token 2>&1 | grep -v "Failed for file" | tee "$LOG_DIR/cwbuild.log"
+              -l java -g file \
+              -c type3token > "$LOG_DIR/cwbuild.log" 2>&1
 CWBUILD_EXIT=$?
+grep -v "Failed for file" "$LOG_DIR/cwbuild.log"
 END_TIME=$(date +%s)
 echo ""
 echo "cwbuild exited with code $CWBUILD_EXIT in $((END_TIME - START_TIME))s"
 
 # Count fragments (lines not starting with #)
-FRAG_COUNT=$(grep -c "^[0-9]" "$CWBUILD_OUT/bigclonebench.fragments" 2>/dev/null || echo "0")
-FILE_COUNT=$(wc -l < "$CWBUILD_OUT/bigclonebench.files" 2>/dev/null || echo "0")
+FRAG_COUNT=$(grep -c "^[0-9]" "$CWBUILD_OUT/bigclonebench.fragments" 2>/dev/null | tr -d '[:space:]' || echo "0")
+FILE_COUNT=$(wc -l < "$CWBUILD_OUT/bigclonebench.files" 2>/dev/null | tr -d ' ' || echo "0")
 echo "Files indexed: $FILE_COUNT"
 echo "Fragments extracted: $FRAG_COUNT"
 
