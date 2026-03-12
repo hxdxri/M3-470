@@ -50,8 +50,9 @@ Observed metrics for first attempt:
 - False positives: 0
 - False negatives: 50
 - Unknown detected pairs (not part of selected oracle pair set): 26
+- Labeled detection coverage: 0.0 (none of the 26 detected pairs are in sampled oracle pair list)
 
 Interpretation:
 - Execution is working end-to-end.
-- Current evaluator compares only against selected oracle pairs, while CCAligner reports additional valid clone pairs among materialized snippets, producing "unknown detected" pairs.
-- Evaluation logic will be refined in the next iteration to better align detector output scope with subset oracle semantics.
+- Current sampled-pair oracle scope and detector output scope are misaligned.
+- Precision/recall formulas are standard and correct, but paper-comparable values require a benchmark setup aligned with BigCloneEval semantics.

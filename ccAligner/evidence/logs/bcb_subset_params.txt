@@ -7,3 +7,4 @@ positive_pairs=50
 negative_pairs=50
 unique_snippets=198
 tool=ccaligner
+build_induced_oracle=True

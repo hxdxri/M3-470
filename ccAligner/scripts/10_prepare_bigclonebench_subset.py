@@ -64,6 +64,11 @@ def main():
     parser.add_argument("--split", default="train")
     parser.add_argument("--output-dir", default="data/bigclonebench_subset")
     parser.add_argument("--evidence-dir", default="evidence/logs")
+    parser.add_argument(
+        "--build-induced-oracle",
+        action="store_true",
+        help="build oracle over all labeled pairs among selected snippet IDs from full split",
+    )
     args = parser.parse_args()
 
     ensure_datasets()
@@ -150,11 +155,57 @@ def main():
                 f"negative_pairs={neg}",
                 f"unique_snippets={len(written)}",
                 "tool=ccaligner",
+                f"build_induced_oracle={args.build_induced_oracle}",
             ]
         )
         + "\n",
         encoding="utf-8",
     )
+
+    if args.build_induced_oracle:
+        selected_ids = set(written.keys())
+        induced = {}
+        for ex in ds:
+            a = int(ex["id1"])
+            b = int(ex["id2"])
+            if a in selected_ids and b in selected_ids:
+                pair = (min(a, b), max(a, b))
+                induced[pair] = bool(ex["label"])
+
+        induced_rows = [
+            {"id1": a, "id2": b, "label": label}
+            for (a, b), label in sorted(induced.items())
+        ]
+
+        induced_jsonl = oracle_dir / "oracle_pairs_induced.jsonl"
+        with induced_jsonl.open("w", encoding="utf-8") as f:
+            for row in induced_rows:
+                f.write(json.dumps(row) + "\n")
+
+        induced_csv = oracle_dir / "oracle_pairs_induced.csv"
+        with induced_csv.open("w", encoding="utf-8") as f:
+            f.write("id1,id2,label\n")
+            for row in induced_rows:
+                f.write(f"{row['id1']},{row['id2']},{row['label']}\n")
+
+        pos_i = sum(1 for r in induced_rows if r["label"])
+        neg_i = len(induced_rows) - pos_i
+        (ev / "bcb_induced_oracle_params.txt").write_text(
+            "\n".join(
+                [
+                    f"selected_snippets={len(selected_ids)}",
+                    f"induced_pairs={len(induced_rows)}",
+                    f"induced_positive_pairs={pos_i}",
+                    f"induced_negative_pairs={neg_i}",
+                ]
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        print(
+            f"Induced oracle ready: pairs={len(induced_rows)} "
+            f"(pos={pos_i}, neg={neg_i}) -> {induced_jsonl}"
+        )
 
     print(f"Subset ready: pairs={len(oracle_rows)} unique_files={len(written)}")
     print(f"Oracle: {oracle_jsonl}")

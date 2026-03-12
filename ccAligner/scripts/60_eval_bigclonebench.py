@@ -50,11 +50,25 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate CCAligner on BCB subset")
     parser.add_argument("--oracle", required=True)
     parser.add_argument("--clones", required=True)
+    parser.add_argument(
+        "--oracle-mode",
+        default="auto",
+        choices=["auto", "sampled", "induced"],
+        help="auto: prefer induced oracle file if present",
+    )
     parser.add_argument("--results-dir", default="results")
     parser.add_argument("--eval-dir", default="out/eval")
     args = parser.parse_args()
 
-    oracle_rows = load_oracle(Path(args.oracle))
+    oracle_path = Path(args.oracle)
+    if args.oracle_mode in ("auto", "induced"):
+        induced_path = oracle_path.with_name("oracle_pairs_induced.jsonl")
+        if induced_path.exists():
+            oracle_path = induced_path
+        elif args.oracle_mode == "induced":
+            raise FileNotFoundError(f"induced oracle not found: {induced_path}")
+
+    oracle_rows = load_oracle(oracle_path)
     detected = load_detected_pairs(Path(args.clones))
 
     oracle_pos = set()
@@ -80,13 +94,19 @@ def main():
     tn = len(tn_pairs)
     unknown = len(unknown_pairs)
 
-    precision = tp / (tp + fp) if (tp + fp) else 0.0
+    # Precision/recall over labeled oracle space only.
+    labeled_detected = detected & oracle_all
+    labeled_tp = len(labeled_detected & oracle_pos)
+    labeled_fp = len(labeled_detected & oracle_neg)
+    labeled_precision = labeled_tp / (labeled_tp + labeled_fp) if (labeled_tp + labeled_fp) else 0.0
     recall = tp / (tp + fn) if (tp + fn) else 0.0
-    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+    f1 = 2 * labeled_precision * recall / (labeled_precision + recall) if (labeled_precision + recall) else 0.0
+    labeled_coverage = len(labeled_detected) / len(detected) if detected else 0.0
 
     metrics = {
         "tool": "CCAligner",
         "benchmark": "BigCloneBench (CodeXGLUE subset)",
+        "oracle_file": str(oracle_path),
         "oracle_positive_pairs": len(oracle_pos),
         "oracle_negative_pairs": len(oracle_neg),
         "detected_pairs": len(detected),
@@ -95,9 +115,10 @@ def main():
         "true_negatives": tn,
         "false_negatives": fn,
         "unknown_detected": unknown,
-        "precision": round(precision, 4),
-        "recall": round(recall, 4),
-        "f1_score": round(f1, 4),
+        "precision_labeled_pairs_only": round(labeled_precision, 4),
+        "recall_sampled_positive_pairs": round(recall, 4),
+        "f1_labeled_pairs_only": round(f1, 4),
+        "labeled_detection_coverage": round(labeled_coverage, 4),
     }
 
     results_dir = Path(args.results_dir)
