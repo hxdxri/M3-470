@@ -1,0 +1,1494 @@
+=== CCAligner Benchmark Run ===
+Thu Mar 12 18:22:15 UTC 2026
+artifact=/workspace/tools/ccaligner_artifact
+src_root=/workspace/data/bigclonebench_subset/src
+out_dir=/workspace/out/ccaligner
+threads=8 window=6 edit=1 similarity=0.6
+mkdir -p src
+flex  -o src/lexer.cpp src/config/lexer.l
+mkdir -p src
+g++ -I src/include -c -o bin/lexer.o src/lexer.cpp
+mkdir -p src
+g++ -I src/include -c -o bin/main.o src/main.cpp
+mkdir -p src
+g++ -I src/include -c -o bin/tok.o src/tok.cpp
+mkdir -p bin
+g++ -I src/include -o bin/c1c bin/lexer.o bin/main.o bin/tok.o
+198
+tid:6
+tid:2
+tid:1
+tid:0
+tid:3
+tid:4
+tid:5
+tid:7
+[] : [TXL0911] : [] : W - TXL0TXL0(Warning) 911Stack limit less than recommended for TXL size (probable cause: shell stack limit)[911WW - (Warning) 
+] : TXL0 - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Stack limit less than recommended for TXL size (probable cause: shell stack limit)911W
+[] : 
+ - (Warning) TXL0913[[] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)I - ] : TXL0TXL0913[(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+913II - ] : TXL0
+ - (Information) [] : (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit[] : Recursion stack limit reduced from 40960000 to 7340032 to fit
+TXL0913911W
+TXL0I - [] :  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)911WTXL0(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+ - [[911W
+(Warning) ] : TXL0] : TXL0 - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)913I911WStack limit less than recommended for TXL size (probable cause: shell stack limit)
+ - (Information)  - (Warning) 
+[[] : Recursion stack limit reduced from 40960000 to 7340032 to fitTXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)] : 
+913I
+[TXL0913 - (Information) ] : TXL0I - Recursion stack limit reduced from 40960000 to 7340032 to fit
+913I(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Information) 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - [] : [] : [[(Information) Recursion stack limit reduced from 40960000 to 7340032 to fitTXL0TXL0] : TXL0] : 
+911TXL0911WW - 911W - (Warning) (Warning) 911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+ - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+
+[] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)[
+[[TXL0913] : TXL0[] : ] : TXL0] : TXL0I - 913ITXL0913I913I(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Information)  - (Information) 911W - 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+ - (Information) (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[] : [ - (Warning) [] : TXL0] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0911W
+911W911W - (Warning) [] : [] :  - (Warning)  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0
+TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)Stack limit less than recommended for TXL size (probable cause: shell stack limit)913911
+
+I - [] : W - [] : [] : (Information) Recursion stack limit reduced from 40960000 to 7340032 to fitTXL0(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0TXL0913
+913I
+913II -  - (Information) [] :  - (Information) (Information) Recursion stack limit reduced from 40960000 to 7340032 to fitRecursion stack limit reduced from 40960000 to 7340032 to fit
+TXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+913I[] : [] :  - TXL0TXL0(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) 911W - Stack limit less than recommended for TXL size (probable cause: shell stack limit)(Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit[] : 
+TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : [] : [TXL0TXL0911W] : TXL0911W - (Warning) 911Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Warning) W - 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+(Warning) [[] : TXL0] : 913ITXL0913Stack limit less than recommended for TXL size (probable cause: shell stack limit) - I - 
+[(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+] : TXL0[] : 
+[[] : 911WTXL0913] : TXL0TXL0 - (Warning) I - 911WStack limit less than recommended for TXL size (probable cause: shell stack limit)911W(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Warning) 
+[] : TXL0913 - (Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+I - Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] : [] : (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+TXL0TXL0913
+[] : I - 911WTXL0913(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Warning) I
+Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Information) 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : [] : TXL0[] : TXL0[] : TXL0911911WTXL0W - 911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)911 - (Warning) (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+
+W[[Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] :  - (Warning) ] : TXL0] : TXL0
+[TXL0913I - Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+913I911W] : TXL0(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit[] :  - (Information)  - (Warning) 913I
+TXL0913Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] :  - (Information) I - [] : TXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+911(Information) TXL0Recursion stack limit reduced from 40960000 to 7340032 to fitW - 913I
+(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] :  - (Information) TXL0913Recursion stack limit reduced from 40960000 to 7340032 to fit
+I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[911W] : TXL0 - (Warning) 911WStack limit less than recommended for TXL size (probable cause: shell stack limit) - (Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] : 
+TXL0913[] : ITXL0913 - (Information) IRecursion stack limit reduced from 40960000 to 7340032 to fit
+[] :  - TXL0(Information) 911WRecursion stack limit reduced from 40960000 to 7340032 to fit
+ - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[[] : ] : TXL0TXL0913I911W - (Information)  - (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : [] : TXL0911TXL0W - (Warning) 911WStack limit less than recommended for TXL size (probable cause: shell stack limit) - 
+(Warning) [] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+TXL0913I - [] : (Information) Recursion stack limit reduced from 40960000 to 7340032 to fitTXL0913
+I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[[] : TXL0] : TXL0913I[ - (Information) ] : TXL0911WRecursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] :  - (Warning) [] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0913
+I - [911W(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit] : TXL0 - (Warning) 
+913IStack limit less than recommended for TXL size (probable cause: shell stack limit) - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[] :  - (Warning) TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)911W
+[ - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+] : TXL0913[] : TXL0I - 913I(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Information) 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) [Stack limit less than recommended for TXL size (probable cause: shell stack limit)] : TXL0
+[] : TXL0913I - 911W(Information)  - (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0[] : 913ITXL0 - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : [] : TXL0TXL0911W913 - (Warning) I - Stack limit less than recommended for TXL size (probable cause: shell stack limit)(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : 911WTXL0 - (Warning) 911WStack limit less than recommended for TXL size (probable cause: shell stack limit)
+ - (Warning) [] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)913I
+ - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit[] : 
+TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) [] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0
+[911W] : TXL0[] :  - (Warning) 913ITXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+ - (Information) 911W[] : Recursion stack limit reduced from 40960000 to 7340032 to fit
+ - TXL0913(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)I - 
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) [] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)911W - 
+(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] : 
+TXL0913I[ - (Information) ] : TXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) [Recursion stack limit reduced from 40960000 to 7340032 to fit
+] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[] :  - (Warning) TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+911[] : TXL0W913I - (Warning)  - (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : [] : TXL0TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : [] : [TXL0913TXL0911] : I - W - TXL0(Information) (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fitStack limit less than recommended for TXL size (probable cause: shell stack limit)911
+W
+ - (Warning) [] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+TXL0913[] : I - TXL0913(Information) IRecursion stack limit reduced from 40960000 to 7340032 to fit
+ - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[911W] : TXL0 - (Warning) 911[] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0W - TXL0913(Warning) I - 911WStack limit less than recommended for TXL size (probable cause: shell stack limit)(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Warning) 
+
+[Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+] : TXL0[] : 913ITXL0913 - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fitI - 
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[] :  - TXL0(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W - (Warning) 911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : 
+TXL0[] : 913ITXL0 - (Information) 913IRecursion stack limit reduced from 40960000 to 7340032 to fit - (Information) 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : [] : TXL0TXL0911W911W[] :  - (Warning)  - [TXL0(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Stack limit less than recommended for TXL size (probable cause: shell stack limit)] : TXL0911
+W
+911W - (Warning) [] : [] :  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0TXL0
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)913I913I[] : 
+ - (Information)  - [TXL0913Recursion stack limit reduced from 40960000 to 7340032 to fit
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit] : TXL0I - 
+913(Information) Recursion stack limit reduced from 40960000 to 7340032 to fitI - 
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+911[] : TXL0913IW -  - (Information) (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W - (Warning) 911WStack limit less than recommended for TXL size (probable cause: shell stack limit) - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+
+[] : TXL0913[] : I - (Information) TXL0913Recursion stack limit reduced from 40960000 to 7340032 to fit
+I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W911W - (Warning)  - Stack limit less than recommended for TXL size (probable cause: shell stack limit)(Warning) 
+[Stack limit less than recommended for TXL size (probable cause: shell stack limit)[
+] : TXL0] : [] : 913ITXL0TXL0913[ - (Information) I - 911W] : TXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Warning) 911W
+Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)[[] : 
+] : TXL0[] : TXL0913[] : TXL0911WI - TXL0913 - (Warning) 911W(Information) Recursion stack limit reduced from 40960000 to 7340032 to fitI - Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+
+[] : [] : TXL0913TXL0913I - I - [] : (Information) (Information) Recursion stack limit reduced from 40960000 to 7340032 to fitTXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+911W - (Warning) [] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0
+911W[] :  - (Warning) TXL0913Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+I[] : TXL0 - (Information) 913IRecursion stack limit reduced from 40960000 to 7340032 to fit
+ - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : [] : [] : [] : TXL0TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0TXL0
+[] : 911911911TXL0913W - WW - I(Warning)  - Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] : (Warning)  - (Information) (Warning) 
+TXL0[] : TXL0913I - (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)911Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : 
+W - (Warning) [] : TXL0[] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+TXL0911WTXL0913I[] : [] :  - (Warning) 913I - (Information) TXL0TXL0913Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+I - 
+Recursion stack limit reduced from 40960000 to 7340032 to fit(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit[] : 
+
+TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[ - (Warning) ] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0911W913I[] :  - (Warning)  - (Information) TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)Recursion stack limit reduced from 40960000 to 7340032 to fit
+911
+[W - ] : TXL0(Warning) [] : 913Stack limit less than recommended for TXL size (probable cause: shell stack limit)[[TXL0I - ] : TXL0
+[] : ] : TXL0(Information) 911W[] : TXL0911WRecursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) TXL0913911W - (Warning)  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)I -  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fitStack limit less than recommended for TXL size (probable cause: shell stack limit)
+
+[
+
+[[] : TXL0[] : ] : TXL0[] : ] : TXL0913ITXL0913913ITXL0913 - 911WI -  - (Information) I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Warning) (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Recursion stack limit reduced from 40960000 to 7340032 to fit
+(Information) 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - [(Warning) ] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - 911W(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : [] : TXL0913[] : TXL0ITXL0 - 911W(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit911 - (Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)W - 
+(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] : 
+TXL0[] : 913ITXL0913 - (Information) IRecursion stack limit reduced from 40960000 to 7340032 to fit
+ - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913[] : TXL0911I - W - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W911 - (Warning) W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I[] :  - (Information) TXL0913Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : I - TXL0(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I[] :  - (Information) TXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W - 911(Warning) [] : W - Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0(Warning) 
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)[] : 911
+TXL0913W - [] : I - (Warning) TXL0913(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit[] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)I - 
+TXL0
+(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : 911WTXL0913 - (Warning) I - (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : 911TXL0W - (Warning) 911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) [Recursion stack limit reduced from 40960000 to 7340032 to fit
+] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[] :  - (Warning) TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)911
+[] : W - [] : TXL0(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W
+[ - (Warning) ] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+913I[[ - (Information) ] : TXL0] : TXL0Recursion stack limit reduced from 40960000 to 7340032 to fit
+911W913I -  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0
+[] : 911WTXL0913 - (Warning) I - (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - [] : (Warning) TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)911W
+ - [] : (Warning) TXL0913I - (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit)Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0[913I[] : ] :  - (Information) [] : TXL0TXL0913Recursion stack limit reduced from 40960000 to 7340032 to fit
+TXL0911WI - (Warning) 911W - (Information) Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[[] : ] : TXL0TXL0913913II -  - (Information) (Information) Recursion stack limit reduced from 40960000 to 7340032 to fitRecursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) [] : Stack limit less than recommended for TXL size (probable cause: shell stack limit)TXL0
+[] : 911TXL0913W - I(Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit) - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W[] :  - (Warning) TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)911W
+[ - (Warning) ] : TXL0Stack limit less than recommended for TXL size (probable cause: shell stack limit)913
+I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[[] : ] : TXL0TXL0913I911W - (Information)  - (Warning) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0[] : TXL0911W - 911W(Warning)  - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0[] : 913ITXL0 - 913I(Information) Recursion stack limit reduced from 40960000 to 7340032 to fit - (Information) 
+Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+[] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
+[] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
+Using Time: 0.414757
+Using Time: 0.009242
+tid:5tid:0tid:4tid:6tid:7tid:1tid:2tid:3
+
+
+
+
+
+
+
+Using Time: 0.506497
+num of Cmap:0
+num of candidate pairs:0
+527
+527
+1
+1
+1
+1
+1
+1
+1
+1
+1
+1
+11
+1
+1
+1
+1
+1
+14
+2
+2
+4
+4
+2
+2
+4
+1
+11
+
+2
+1
+1
+1
+1
+1
+1
+
+2
+1
+2
+1
+16
+2
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+
+1
+2
+2
+2
+1
+11
+2
+1
+2
+1
+1
+4
+1
+2
+3
+3
+1
+1
+22
+2
+1
+1
+3
+3
+
+2
+2
+
+2
+4
+13
+2
+1
+21
+3
+1
+2
+1
+2
+2
+1
+1
+1
+1
+
+2
+1
+2
+1
+13
+2
+1
+1
+
+5
+4
+1
+1
+1
+1
+1
+1
+1
+2
+2
+4
+2
+2
+2
+1
+1
+21
+1
+2
+2
+1
+1
+1
+1
+1
+1
+1
+
+1
+1
+1
+1
+1
+1
+1
+4
+2
+2
+4
+2
+2
+
+1
+85
+3
+4
+2
+2
+3
+2
+2
+1
+1
+1
+1
+1
+2
+3
+3
+1
+1
+1
+2
+2
+2
+3
+2
+3
+2
+1
+1
+
+1
+1
+11
+1
+1
+1
+23
+2
+12
+1
+4
+1
+1
+2
+1
+2
+3
+123
+3
+2
+1
+
+
+2
+
+2
+3
+2
+21
+1
+
+2
+1
+1
+33
+3
+
+1
+1
+1
+1
+2
+2
+2
+2
+
+3
+2
+
+2
+5
+4
+1
+1
+1
+2
+2
+2
+2
+1
+1
+13
+3
+21
+1
+1
+
+1
+2
+3
+11
+2
+3
+2
+
+1
+1
+2
+1
+1
+1
+1
+1
+12
+2
+71
+1
+1
+1
+7
+3
+1
+2
+4
+2
+2
+13
+1
+21
+2
+
+51
+1
+5
+6
+
+3
+2
+2
+1
+1
+
+4
+1
+1
+1
+1
+
+1
+3
+2
+13
+3
+
+7
+2
+1
+2
+6
+2
+1
+
+1
+1
+1
+4
+3
+
+2
+2
+2
+2
+3
+2
+2
+31
+1
+2
+1
+
+2
+1
+1
+5
+4
+1
+1
+3
+4
+1
+1
+1
+1
+31
+1
+1
+1
+
+7
+2
+2
+4
+2
+3
+3
+12
+1
+4
+6
+34
+4
+2
+2
+2
+1
+13
+3
+1
+1
+
+1
+1
+1
+
+1
+1
+1
+1
+1
+14
+2
+1
+5
+5
+3
+3
+4
+5
+2
+2
+
+1
+9
+9
+4
+4
+2
+1
+1
+2
+
+1
+1
+71
+2
+8
+4
+1
+2
+1
+1
+4
+4
+2
+2
+9
+8
+1
+1
+31
+2
+4
+2
+4
+3
+2
+3
+51
+1
+1
+1
+3
+2
+2
+2
+
+7
+1
+2
+21
+2
+4
+5
+1
+1
+
+2
+3
+2
+5
+2
+2
+
+1
+2
+2
+1
+3
+4
+3
+13
+3
+12
+2
+1
+1
+
+5
+1
+1
+
+1
+1
+
+1
+5
+8
+55
+5
+6
+9
+3
+3
+2
+1
+25
+6
+1
+1
+1
+1
+1
+1
+2
+1
+2
+1
+1
+3
+4
+1
+1
+11
+10
+2
+1
+2
+2
+2
+2
+
+2
+1
+1
+3
+3
+11
+2
+
+2
+1
+1
+1
+1
+1
+3
+3
+4
+6
+2
+2
+1
+2
+
+1
+13
+3
+1
+1
+3
+1
+4
+1
+3
+2
+1
+3
+3
+8
+8
+
+1
+3
+3
+2
+2
+6
+6
+1
+1
+1
+1
+2
+2
+1
+1
+1
+2
+6
+1
+1
+13
+3
+72
+3
+5
+5
+2
+3
+1
+2
+3
+2
+5
+3
+35
+5
+8
+9
+2
+3
+44
+3
+1
+1
+
+3
+1
+1
+5
+3
+
+8
+2
+4
+2
+5
+2
+1
+2
+3
+4
+3
+1
+1
+3
+5
+3
+3
+1
+1
+
+1
+2
+2
+2
+2
+2
+2
+9
+9
+4
+3
+1
+2
+1
+1
+18
+18
+2
+1
+5
+5
+1
+1
+
+3
+1
+1
+11
+1
+9
+10
+5
+5
+3
+1
+5
+1
+1
+1
+12
+3
+1
+1
+3
+3
+12
+10
+1
+1
+
+5
+1
+1
+1
+1
+11
+10
+1
+1
+3
+2
+4
+5
+6
+12
+41
+
+2
+
+1
+3
+8
+2
+2
+5
+1
+11
+1
+2
+1
+1
+1
+1
+1
+3
+5
+1
+1
+3
+7
+3
+2
+1
+1
+
+1
+1
+1
+81
+1
+3
+3
+2
+2
+3
+3
+1
+1
+
+10
+22
+2
+4
+2
+
+2
+1
+5
+1
+12
+2
+1
+3
+1
+1
+12
+2
+1
+1
+
+1
+2
+2
+3
+1
+
+3
+3
+2
+1
+1
+5
+1
+1
+1
+3
+1
+1
+1
+1
+2
+2
+34
+2
+1
+1
+1
+
+6
+2
+13
+1
+1
+2
+
+1
+1
+4
+4
+9
+8
+1
+1
+1
+1
+1
+1
+1
+1
+11
+2
+1
+1
+3
+1
+3
+1
+1
+1
+2
+2
+31
+1
+
+1
+1
+1
+1
+1
+1
+2
+2
+1
+1
+14
+14
+
+4
+13
+3
+3
+2
+1
+1
+1
+1
+9
+10
+
+1
+1
+1
+1
+2
+11
+1
+8
+6
+2
+2
+5
+4
+3
+1
+
+5
+3
+3
+1
+1
+1
+1
+3
+2
+1
+1
+1
+2
+9
+6
+11
+2
+1
+1
+3
+3
+3
+3
+
+1
+6
+6
+1
+1
+1
+1
+1
+1
+1
+6
+5
+11
+11
+9
+11
+1
+1
+1
+1
+2
+1
+1
+2
+1
+1
+4
+4
+1
+3
+1
+2
+1
+1
+2
+3
+1
+11
+1
+1
+12
+1
+2
+2
+1
+1
+5
+5
+5
+6
+3
+3
+5
+9
+1
+1
+1
+1
+
+2
+1
+1
+1
+1
+1
+
+1
+2
+2
+1
+1
+1
+13
+4
+3
+1
+1
+1
+1
+
+5
+3
+5
+5
+2
+2
+1
+2
+3
+2
+2
+3
+1
+1
+1
+1
+3
+2
+4
+2
+4
+6
+1
+1
+1
+2
+1
+1
+1
+1
+4
+2
+3
+7
+1
+1
+18
+18
+3
+3
+7
+7
+18
+18
+3
+3
+1
+1
+18
+18
+6
+4
+5
+6
+18
+18
+18
+18
+8
+10
+31
+
+1
+6
+9
+1
+1
+1
+1
+1
+1
+1
+4
+8
+2
+3
+1
+2
+15
+16
+4
+3
+3
+3
+1
+1
+5
+1
+3
+3
+3
+3
+1
+1
+Using Time: 0.006233
+function_count=194
+clone_count=26
+=== Benchmark Run Complete ===

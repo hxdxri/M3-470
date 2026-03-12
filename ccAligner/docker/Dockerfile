@@ -10,6 +10,7 @@ RUN yum -y update \
     tar \
     jq \
     python3 \
+    python3-devel \
     python3-pip \
     gcc \
     gcc-c++ \

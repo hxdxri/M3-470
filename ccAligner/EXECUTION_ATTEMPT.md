@@ -28,3 +28,30 @@ Run and capture:
 2. BigCloneBench subset preparation
 3. CCAligner benchmark run and result parsing
 4. Comparative reporting vs paper
+
+## Benchmark Attempt (Completed)
+Date: March 12, 2026
+
+Pipeline run (Docker, mounted workspace):
+- `docker run --rm --platform linux/amd64 -e BCB_N=100 -e BCB_SEED=42 -v "$PWD":/workspace ccaligner:amd64`
+
+Artifacts produced:
+- `evidence/logs/bcb_subset_params.txt`
+- `evidence/logs/ccaligner_benchmark.log`
+- `out/ccaligner/function.file`
+- `out/ccaligner/clones.csv`
+- `results/ccaligner_metrics.json`
+- `out/eval/metrics.json`
+
+Observed metrics for first attempt:
+- Oracle pairs: 100 (50 positive, 50 negative)
+- Detected pairs: 26
+- True positives: 0
+- False positives: 0
+- False negatives: 50
+- Unknown detected pairs (not part of selected oracle pair set): 26
+
+Interpretation:
+- Execution is working end-to-end.
+- Current evaluator compares only against selected oracle pairs, while CCAligner reports additional valid clone pairs among materialized snippets, producing "unknown detected" pairs.
+- Evaluation logic will be refined in the next iteration to better align detector output scope with subset oracle semantics.

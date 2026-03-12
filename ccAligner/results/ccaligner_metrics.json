@@ -1,0 +1,15 @@
+{
+  "tool": "CCAligner",
+  "benchmark": "BigCloneBench (CodeXGLUE subset)",
+  "oracle_positive_pairs": 50,
+  "oracle_negative_pairs": 50,
+  "detected_pairs": 26,
+  "true_positives": 0,
+  "false_positives": 0,
+  "true_negatives": 50,
+  "false_negatives": 50,
+  "unknown_detected": 26,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1_score": 0.0
+}

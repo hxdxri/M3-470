@@ -16,8 +16,8 @@ Reproducing CCAligner clone detection with milestone-style evidence capture.
 | Official Artifact Found | Yes (`PCWcn/CCAligner`) |
 | Artifact Cloned Locally | Yes (`tools/ccaligner_artifact/`) |
 | Workflow Foundation | Complete (this step) |
-| Smoke Test | Scripted, pending full evidence run |
-| Benchmark Reproduction | Next phase |
+| Smoke Test | Completed in Docker (log captured) |
+| Benchmark Reproduction | First BigCloneBench subset attempt completed |
 | TES Classification | Pending reassessment |
 
 ## 3. Paper-Grounded Benchmark Targets
@@ -49,6 +49,11 @@ Container files:
 cd ccAligner
 ./scripts/01_fetch_artifact.sh
 ./scripts/20_smoke_test.sh
+python3 scripts/10_prepare_bigclonebench_subset.py --n 200 --seed 42
+./scripts/30_run_ccaligner_benchmark.sh
+python3 scripts/60_eval_bigclonebench.py \
+  --oracle data/bigclonebench_subset/oracle/oracle_pairs.jsonl \
+  --clones out/ccaligner/clones.csv
 ```
 
 Or via container:
@@ -56,6 +61,7 @@ Or via container:
 ```bash
 docker build --no-cache --platform linux/amd64 -t ccaligner:amd64 -f docker/Dockerfile .
 docker run --rm --platform linux/amd64 \
+  -e BCB_N=200 \
   -v "$PWD":/workspace ccaligner:amd64
 ```
 
@@ -82,7 +88,10 @@ ccAligner/
   scripts/
     00_discover_artifact.md
     01_fetch_artifact.sh
+    10_prepare_bigclonebench_subset.py
     20_smoke_test.sh
+    30_run_ccaligner_benchmark.sh
+    60_eval_bigclonebench.py
     run_full_pipeline.sh
   tools/
     ccaligner_artifact/
@@ -99,6 +108,8 @@ ccAligner/
 - Artifact provenance: `evidence/logs/artifact.txt`
 - Search correction log: `evidence/logs/search_attempts.txt`
 - Smoke test log: `evidence/logs/smoke_test.log`
+- Benchmark run log: `evidence/logs/ccaligner_benchmark.log`
+- BigCloneBench subset params: `evidence/logs/bcb_subset_params.txt`
 - Docker build attempt log: `evidence/logs/docker_build_attempt_2026-03-12.txt`
 - Environment capture: `evidence/logs/env.txt` (next run)
 
