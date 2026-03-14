@@ -42,8 +42,9 @@
   - In the "SourcererCC" Folder of My team's repository, run:
   ```
     cd SourcererCC
-    git clone https://github.com/Mondego/SourcererCC.git
-
+    git clone https://github.com/Mondego/SourcererCC.git temp_repo
+    mv temp_repo/* .
+    rm -rf temp_repo
   ```
 
 4. Build the Docker Image (creates an Ubuntu 22.04 environment with OpenJDK 11, Python 3.10, Apache Ant)
