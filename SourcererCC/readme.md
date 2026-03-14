@@ -59,13 +59,14 @@
     docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
   ```
 
-6. Make the shell script executable 
+6. Make the shell script executable
+   - Run
     ```
     chmod +x run_bcb_subset.sh
     ```
 
-7. Run execution scripts
-  - Run
+8. Run execution scripts
+   - Run
     ```
     bash scripts/run_bcb_subset.sh 20
     ```
