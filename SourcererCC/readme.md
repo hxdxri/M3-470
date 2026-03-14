@@ -60,13 +60,13 @@
   ```
 
 6. Make the shell script executable
-   - Run
+    - Run
     ```
     chmod +x run_bcb_subset.sh
     ```
 
 8. Run execution scripts
-   - Run
+    - Run
     ```
     bash scripts/run_bcb_subset.sh 20
     ```
