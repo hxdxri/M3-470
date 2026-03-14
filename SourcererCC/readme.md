@@ -35,13 +35,13 @@
 2. Clone the My team's Repository 
   ```
     https://github.com/hxdxri/M3-470.git
-
   ```
 
 3. Clone the Tools Repository 
   - In the "SourcererCC" Folder of My team's repository, run:
   ```
     cd SourcererCC
+
     git clone https://github.com/Mondego/SourcererCC.git temp_repo
     mv temp_repo/* .
     rm -rf temp_repo
@@ -51,14 +51,12 @@
   - From the root of the SourcererCC directory:
   ```
     docker build -t sourcerercc .
-
   ```
 
 5. Start the Container
   - Run
   ```
     docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
-
   ```
 
 6. Make the shell script executable 
@@ -99,7 +97,6 @@
         }
     }
     EOF
-
   ```
 
   - Zip the project:
@@ -111,13 +108,11 @@
   - Create a project-list.txt file containing the absolute path to the zip file:
   ```
     echo "/workspace/tokenizers/file-level/miniproj.zip" > project-list.txt
-
   ```
 
   - Ensure "SourcererCC\tokenizers\file-level\config.ini" contains:
   ```
-    File_extensions = .java
-    
+    File_extensions = .java   
   ```
 
 
@@ -129,7 +124,6 @@
     rm -rf bookkeeping_projs files_stats files_tokens logs
 
     python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
-
   ```
 
 3. Prepare Dataset for Clone Detector
@@ -137,7 +131,6 @@
     cat files_tokens/* > blocks.file
 
     cp blocks.file /workspace/clone-detector/input/dataset/
-
   ```
 
 4. Run Clone Detector
@@ -150,7 +143,6 @@
     rm -rf NODE_*
 
     python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
-
   ```
 
 Expected output: SUCCESS: Search Completed on all nodes
@@ -160,7 +152,6 @@ Expected output: SUCCESS: Search Completed on all nodes
     cat NODE_*/output8.0/query_* > results.pairs
 
     wc -l results.pairs
-
   ```
 
 
