@@ -60,17 +60,17 @@
   ```
 
 6. Make the shell script executable
-    - Run
-    ```
-    chmod +x run_bcb_subset.sh
-    ```
+  - Run
+  ```
+  chmod +x run_bcb_subset.sh
+  ```
 
 8. Run execution scripts
-    - Run
-    ```
-    bash scripts/run_bcb_subset.sh 20
-    ```
-8. View execution results (inside the container)
+  - Run
+  ```
+  bash scripts/run_bcb_subset.sh 20
+  ```
+  View execution results (inside the container)
   - The clone detector outputs are written to `/workspace/SourcererCC/results` and the execution logs are written to `/workspace/SourcererCC/logs`.
   - Example commands:
     ```
