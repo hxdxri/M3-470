@@ -33,53 +33,53 @@
   - Linux containers enabled (enabled by default in docker)
 
 2. Clone the My team's Repository 
-  ```
-    https://github.com/hxdxri/M3-470.git
-  ```
+    ```
+      https://github.com/hxdxri/M3-470.git
+    ```
 
 3. Clone the Tools Repository 
   - In the "SourcererCC" Folder of My team's repository, run:
-  ```
-    cd SourcererCC
-
-    git clone https://github.com/Mondego/SourcererCC.git temp_repo
-    mv temp_repo/* .
-    rm -rf temp_repo
-  ```
+    ```
+      cd SourcererCC
+  
+      git clone https://github.com/Mondego/SourcererCC.git temp_repo
+      mv temp_repo/* .
+      rm -rf temp_repo
+    ```
 
 4. Build the Docker Image (creates an Ubuntu 22.04 environment with OpenJDK 11, Python 3.10, Apache Ant)
   - From the root of the SourcererCC directory:
-  ```
-    docker build -t sourcerercc .
-  ```
+    ```
+      docker build -t sourcerercc .
+    ```
 
 5. Start the Container
   - Run
-  ```
-    docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
-  ```
+    ```
+      docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
+    ```
 
 6. Make the shell script executable
   - Run
-  ```
-  chmod +x run_bcb_subset.sh
-  ```
+    ```
+    chmod +x run_bcb_subset.sh
+    ```
 
 8. Run execution scripts
   - Run
-  ```
-  bash scripts/run_bcb_subset.sh 20
-  ```
-  View execution results (inside the container)
-  - The clone detector outputs are written to `/workspace/SourcererCC/results` and the execution logs are written to `/workspace/SourcererCC/logs`.
-  - Example commands:
     ```
-    ls -l /workspace/SourcererCC/results
-    cat /workspace/SourcererCC/results/results.pairs | head
-
-    ls -l /workspace/SourcererCC/logs
-    tail -n 50 /workspace/SourcererCC/logs/bcb_clone_detector.log
+    bash scripts/run_bcb_subset.sh 20
     ```
+    View execution results (inside the container)
+    - The clone detector outputs are written to `/workspace/SourcererCC/results` and the execution logs are written to `/workspace/SourcererCC/logs`.
+    - Example commands:
+        ```
+        ls -l /workspace/SourcererCC/results
+        cat /workspace/SourcererCC/results/results.pairs | head
+    
+        ls -l /workspace/SourcererCC/logs
+        tail -n 50 /workspace/SourcererCC/logs/bcb_clone_detector.log
+        ```
 
 
 
@@ -87,73 +87,73 @@
 ## Smoke Test Execution Steps
 1. Smoke test input creation
   - Create a minimal Java project inside the container:
-  ```
-    mkdir -p miniproj
-
-    cat > miniproj/Hello.java << 'EOF'
-
-    public class Hello {
-        public static void main(String[] args) {
-            System.out.println("hi");
-        }
-    }
-    EOF
-  ```
+    ```
+      mkdir -p miniproj
+  
+      cat > miniproj/Hello.java << 'EOF'
+  
+      public class Hello {
+          public static void main(String[] args) {
+              System.out.println("hi");
+          }
+      }
+      EOF
+    ```
 
   - Zip the project:
-  ```
-    zip -r miniproj.zip miniproj
-
-  ```
+    ```
+      zip -r miniproj.zip miniproj
+  
+    ```
   
   - Create a project-list.txt file containing the absolute path to the zip file:
-  ```
-    echo "/workspace/tokenizers/file-level/miniproj.zip" > project-list.txt
-  ```
+    ```
+      echo "/workspace/tokenizers/file-level/miniproj.zip" > project-list.txt
+    ```
 
   - Ensure "SourcererCC\tokenizers\file-level\config.ini" contains:
-  ```
-    File_extensions = .java   
-  ```
+    ```
+      File_extensions = .java   
+    ```
 
 
 2. Run Tokenizer
   - Inside the container:
-  ```
-    cd tokenizers/file-level
-
-    rm -rf bookkeeping_projs files_stats files_tokens logs
-
-    python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
-  ```
+    ```
+      cd tokenizers/file-level
+  
+      rm -rf bookkeeping_projs files_stats files_tokens logs
+  
+      python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
+    ```
 
 3. Prepare Dataset for Clone Detector
-  ```
-    cat files_tokens/* > blocks.file
-
-    cp blocks.file /workspace/clone-detector/input/dataset/
-  ```
+    ```
+      cat files_tokens/* > blocks.file
+  
+      cp blocks.file /workspace/clone-detector/input/dataset/
+    ```
 
 4. Run Clone Detector
   - Still inside the container:
-  ```
-    cd /workspace/clone-detector
-
-    rm -f scriptinator_metadata.scc Log_*.out Log_*.err
-
-    rm -rf NODE_*
-
-    python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
-  ```
+    ```
+      cd /workspace/clone-detector
+  
+      rm -f scriptinator_metadata.scc Log_*.out Log_*.err
+  
+      rm -rf NODE_*
+  
+      python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
+    ```
 
 Expected output: SUCCESS: Search Completed on all nodes
 
 5. Aggregate Results
-  ```
-    cat NODE_*/output8.0/query_* > results.pairs
-
-    wc -l results.pairs
-  ```
+    ```
+      cat NODE_*/output8.0/query_* > results.pairs
+  
+      wc -l results.pairs
+    ```
 
 
 ### Benchmark used
