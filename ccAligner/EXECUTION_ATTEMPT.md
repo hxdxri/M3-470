@@ -43,16 +43,22 @@ Artifacts produced:
 - `results/ccaligner_metrics.json`
 - `out/eval/metrics.json`
 
-Observed metrics for first attempt:
+Observed metrics for first sampled-oracle attempt:
 - Oracle pairs: 100 (50 positive, 50 negative)
 - Detected pairs: 26
+- Scored detected pairs: 0
+- Unscored detected pairs: 26
 - True positives: 0
 - False positives: 0
 - False negatives: 50
-- Unknown detected pairs (not part of selected oracle pair set): 26
-- Labeled detection coverage: 0.0 (none of the 26 detected pairs are in sampled oracle pair list)
+- Precision: 0.0
+- Recall: 0.0
+- F1: 0.0
+- Scored detection coverage: 0.0
 
 Interpretation:
 - Execution is working end-to-end.
-- Current sampled-pair oracle scope and detector output scope are misaligned.
-- Precision/recall formulas are standard and correct, but paper-comparable values require a benchmark setup aligned with BigCloneEval semantics.
+- All detections came from the sampled materialized snippet set, but none matched the exact sampled oracle pairs.
+- This does not indicate a broken file-path mapping. It indicates that CCAligner found different pairings among the sampled snippets than the 100 labeled pairs we selected from the dataset.
+- Evaluation has now been simplified to one oracle only: the sampled HuggingFace pair list. Additional detector outputs are recorded as unscored pairs.
+- There is still uncertainty about whether the course expects BigCloneEval for final reporting. An email has been sent to the TAs requesting clarification.

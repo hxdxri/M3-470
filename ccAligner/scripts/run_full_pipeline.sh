@@ -22,7 +22,6 @@ BCB_N="${BCB_N:-200}"
 BCB_SEED="${BCB_SEED:-42}"
 python3 "${ROOT_DIR}/scripts/10_prepare_bigclonebench_subset.py" \
   --n "${BCB_N}" --seed "${BCB_SEED}" \
-  --build-induced-oracle \
   --output-dir "${ROOT_DIR}/data/bigclonebench_subset" \
   --evidence-dir "${ROOT_DIR}/evidence/logs"
 
@@ -33,11 +32,11 @@ bash "${ROOT_DIR}/scripts/30_run_ccaligner_benchmark.sh" \
   "${ROOT_DIR}/out/ccaligner"
 
 echo ""
-echo "Step 5: evaluate against oracle"
+echo "Step 5: evaluate against sampled oracle"
 python3 "${ROOT_DIR}/scripts/60_eval_bigclonebench.py" \
   --oracle "${ROOT_DIR}/data/bigclonebench_subset/oracle/oracle_pairs.jsonl" \
   --clones "${ROOT_DIR}/out/ccaligner/clones.csv" \
-  --oracle-mode auto \
+  --metrics-name "ccaligner_metrics.json" \
   --results-dir "${ROOT_DIR}/results" \
   --eval-dir "${ROOT_DIR}/out/eval"
 

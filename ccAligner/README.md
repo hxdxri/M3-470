@@ -18,6 +18,7 @@ Reproducing CCAligner clone detection with milestone-style evidence capture.
 | Workflow Foundation | Complete (this step) |
 | Smoke Test | Completed in Docker (log captured) |
 | Benchmark Reproduction | First BigCloneBench subset attempt completed |
+| Evaluation Workflow | Simplified to sampled-pair oracle only |
 | TES Classification | Pending reassessment |
 
 ## 3. Paper-Grounded Benchmark Targets
@@ -110,10 +111,18 @@ ccAligner/
 - Smoke test log: `evidence/logs/smoke_test.log`
 - Benchmark run log: `evidence/logs/ccaligner_benchmark.log`
 - BigCloneBench subset params: `evidence/logs/bcb_subset_params.txt`
+- Evaluation mismatch and fix log: `EVALUATION_MISMATCH_LOG.md`
+- Final sampled-oracle metrics: `results/ccaligner_metrics.json`
 - Docker build attempt log: `evidence/logs/docker_build_attempt_2026-03-12.txt`
 - Environment capture: `evidence/logs/env.txt` (next run)
 
 ## 8. Notes
 
-This commit establishes the reproducibility foundation only.  
-Full benchmark execution (BigCloneBench / BigCloneEval and mutation-framework emulation) is the next incremental phase.
+Current evaluation is intentionally simple:
+- sample labeled pairs from the HuggingFace BigCloneBench split,
+- materialize the snippets referenced by those pairs,
+- run CCAligner on the materialized snippet set,
+- score only exact sampled oracle pairs,
+- record any additional detections as unscored rather than expanding the oracle.
+
+BigCloneEval is still under discussion with the TAs. Until that is clarified, this repository keeps the direct sampled-pair evaluation path as the main executable workflow.

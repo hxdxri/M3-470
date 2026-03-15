@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""
-Evaluate CCAligner clone output against BigCloneBench subset oracle.
-"""
+"""Evaluate CCAligner output against the sampled BigCloneBench oracle."""
 
 import argparse
 import json
@@ -50,33 +48,30 @@ def main():
     parser = argparse.ArgumentParser(description="Evaluate CCAligner on BCB subset")
     parser.add_argument("--oracle", required=True)
     parser.add_argument("--clones", required=True)
-    parser.add_argument(
-        "--oracle-mode",
-        default="auto",
-        choices=["auto", "sampled", "induced"],
-        help="auto: prefer induced oracle file if present",
-    )
     parser.add_argument("--results-dir", default="results")
     parser.add_argument("--eval-dir", default="out/eval")
+    parser.add_argument(
+        "--metrics-name",
+        default="ccaligner_metrics.json",
+        help="output filename for metrics JSON (written to results-dir and eval-dir)",
+    )
     args = parser.parse_args()
 
     oracle_path = Path(args.oracle)
-    if args.oracle_mode in ("auto", "induced"):
-        induced_path = oracle_path.with_name("oracle_pairs_induced.jsonl")
-        if induced_path.exists():
-            oracle_path = induced_path
-        elif args.oracle_mode == "induced":
-            raise FileNotFoundError(f"induced oracle not found: {induced_path}")
-
     oracle_rows = load_oracle(oracle_path)
     detected = load_detected_pairs(Path(args.clones))
 
     oracle_pos = set()
     oracle_neg = set()
     oracle_all = set()
+    selected_snippets = set()
     for row in oracle_rows:
-        pair = (min(int(row["id1"]), int(row["id2"])), max(int(row["id1"]), int(row["id2"])))
+        id1 = int(row["id1"])
+        id2 = int(row["id2"])
+        pair = (min(id1, id2), max(id1, id2))
         oracle_all.add(pair)
+        selected_snippets.add(id1)
+        selected_snippets.add(id2)
         if row["label"]:
             oracle_pos.add(pair)
         else:
@@ -85,40 +80,45 @@ def main():
     tp_pairs = detected & oracle_pos
     fp_pairs = detected & oracle_neg
     fn_pairs = oracle_pos - detected
-    tn_pairs = oracle_neg - detected
-    unknown_pairs = detected - oracle_all
+    unscored_pairs = detected - oracle_all
 
     tp = len(tp_pairs)
     fp = len(fp_pairs)
     fn = len(fn_pairs)
-    tn = len(tn_pairs)
-    unknown = len(unknown_pairs)
+    unscored = len(unscored_pairs)
 
-    # Precision/recall over labeled oracle space only.
-    labeled_detected = detected & oracle_all
-    labeled_tp = len(labeled_detected & oracle_pos)
-    labeled_fp = len(labeled_detected & oracle_neg)
-    labeled_precision = labeled_tp / (labeled_tp + labeled_fp) if (labeled_tp + labeled_fp) else 0.0
+    scored_detected = detected & oracle_all
+    precision = tp / (tp + fp) if (tp + fp) else 0.0
     recall = tp / (tp + fn) if (tp + fn) else 0.0
-    f1 = 2 * labeled_precision * recall / (labeled_precision + recall) if (labeled_precision + recall) else 0.0
-    labeled_coverage = len(labeled_detected) / len(detected) if detected else 0.0
+    f1 = 2 * precision * recall / (precision + recall) if (precision + recall) else 0.0
+    scored_detection_coverage = len(scored_detected) / len(detected) if detected else 0.0
+    selected_snippet_coverage = len(selected_snippets)
+    detected_selected_snippet_pairs = {
+        p
+        for p in detected
+        if p[0] in selected_snippets and p[1] in selected_snippets
+    }
+    detected_selected_snippet_pair_count = len(detected_selected_snippet_pairs)
 
     metrics = {
         "tool": "CCAligner",
         "benchmark": "BigCloneBench (CodeXGLUE subset)",
         "oracle_file": str(oracle_path),
+        "total_sampled_pairs": len(oracle_all),
         "oracle_positive_pairs": len(oracle_pos),
         "oracle_negative_pairs": len(oracle_neg),
+        "selected_snippets": selected_snippet_coverage,
         "detected_pairs": len(detected),
+        "detected_pairs_within_selected_snippets": detected_selected_snippet_pair_count,
+        "scored_detected_pairs": len(scored_detected),
+        "unscored_detected_pairs": unscored,
         "true_positives": tp,
         "false_positives": fp,
-        "true_negatives": tn,
         "false_negatives": fn,
-        "unknown_detected": unknown,
-        "precision_labeled_pairs_only": round(labeled_precision, 4),
-        "recall_sampled_positive_pairs": round(recall, 4),
-        "f1_labeled_pairs_only": round(f1, 4),
-        "labeled_detection_coverage": round(labeled_coverage, 4),
+        "precision": round(precision, 4),
+        "recall": round(recall, 4),
+        "f1": round(f1, 4),
+        "scored_detection_coverage": round(scored_detection_coverage, 4),
     }
 
     results_dir = Path(args.results_dir)
@@ -126,14 +126,29 @@ def main():
     results_dir.mkdir(parents=True, exist_ok=True)
     eval_dir.mkdir(parents=True, exist_ok=True)
 
-    (results_dir / "ccaligner_metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
-    (eval_dir / "metrics.json").write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+    (results_dir / args.metrics_name).write_text(json.dumps(metrics, indent=2), encoding="utf-8")
+    (eval_dir / args.metrics_name).write_text(json.dumps(metrics, indent=2), encoding="utf-8")
 
     fp_sample = [{"id1": a, "id2": b} for a, b in list(fp_pairs)[:20]]
     fn_sample = [{"id1": a, "id2": b} for a, b in list(fn_pairs)[:20]]
+    unscored_sample = [{"id1": a, "id2": b} for a, b in list(unscored_pairs)[:20]]
     (eval_dir / "false_positives_sample.json").write_text(json.dumps(fp_sample, indent=2), encoding="utf-8")
     (eval_dir / "false_negatives_sample.json").write_text(json.dumps(fn_sample, indent=2), encoding="utf-8")
+    (eval_dir / "unscored_detected_pairs_sample.json").write_text(
+        json.dumps(unscored_sample, indent=2),
+        encoding="utf-8",
+    )
 
+    print("=== CCAligner BCB subset evaluation summary ===")
+    print("Total sampled pairs:", len(oracle_all))
+    print("Oracle positive:", len(oracle_pos), "negative:", len(oracle_neg))
+    print("Detected pairs:", len(detected))
+    print("Detected pairs within selected snippets:", detected_selected_snippet_pair_count)
+    print("Scored detected pairs (in sampled oracle):", len(scored_detected))
+    print("Unscored detected pairs:", unscored)
+    print("True positives:", tp, "False positives:", fp, "False negatives:", fn)
+    print("Precision:", round(precision,4), "Recall:", round(recall,4), "F1:", round(f1,4))
+    print("(Unscored detections are expected when CCAligner finds pairs that were not in the sampled labeled set.)")
     print(json.dumps(metrics, indent=2))
 
 

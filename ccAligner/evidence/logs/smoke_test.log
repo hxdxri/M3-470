@@ -1,5 +1,5 @@
 === CCAligner Smoke Test ===
-Thu Mar 12 18:20:44 UTC 2026
+Sun Mar 15 20:55:04 UTC 2026
 root=/workspace
 artifact=/workspace/tools/ccaligner_artifact
 mkdir -p src
@@ -13,30 +13,30 @@ g++ -I src/include -c -o bin/tok.o src/tok.cpp
 mkdir -p bin
 g++ -I src/include -o bin/c1c bin/lexer.o bin/main.o bin/tok.o
 1
-tid:0
 tid:1
+tid:0
 [] : TXL0911W - (Warning) Stack limit less than recommended for TXL size (probable cause: shell stack limit)
 [] : TXL0913I - (Information) Recursion stack limit reduced from 40960000 to 7340032 to fit
-Using Time: 0.006811
-Using Time: 0.005801
-tid:0tid:1
+Using Time: 0.005119
+Using Time: 0.004431
+tid:1tid:0
 
-Using Time: 0.009820
+Using Time: 0.007036
 num of Cmap:0
 num of candidate pairs:0
 0
 0
-Using Time: 0.004618
+Using Time: 0.003268
 Smoke test completed.
 Generated outputs:
 total 0
-drwxr-xr-x 10 appuser appuser 320 Mar 12 18:20 .
-drwxr-xr-x 19 appuser appuser 608 Mar 12 18:20 ..
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 1clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 2clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 3clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 4clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 5clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 6clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 7clones_6_0.6
--rw-r--r--  1 appuser appuser   0 Mar 12 18:20 8clones_6_0.6
+drwxr-xr-x 10 appuser appuser 320 Mar 15 20:55 .
+drwxr-xr-x 19 appuser appuser 608 Mar 15 20:55 ..
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 1clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 2clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 3clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 4clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 5clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 6clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 7clones_6_0.6
+-rw-r--r--  1 appuser appuser   0 Mar 15 20:55 8clones_6_0.6
