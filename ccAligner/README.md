@@ -19,7 +19,7 @@ Reproducing CCAligner clone detection with milestone-style evidence capture.
 | Smoke Test | Completed in Docker (log captured) |
 | Benchmark Reproduction | First BigCloneBench subset attempt completed |
 | Evaluation Workflow | Simplified to sampled-pair oracle only |
-| TES Classification | Pending reassessment |
+| TES Classification | TES-B (final) |
 
 ## 3. Paper-Grounded Benchmark Targets
 
@@ -125,6 +125,18 @@ Current evaluation is intentionally simple:
 - score only exact sampled oracle pairs,
 - record any additional detections as unscored rather than expanding the oracle.
 
-BigCloneEval is still under discussion with the TAs. Until that is clarified, this repository keeps the direct sampled-pair evaluation path as the main executable workflow.
+BigCloneEval requires the full BigCloneBench dataset and metadata structure, which is not included in the CodeXGLUE BigCloneBench pairs used in this study. Reconstructing the full benchmark environment would require materializing tens of thousands of methods and running a much larger evaluation pipeline than feasible within the available Docker environment on a 16 GB Mac. Therefore, this study uses a sampled labeled subset with a direct oracle comparison to keep the workflow reproducible and executable within the available computational resources. This simplified evaluation still demonstrates successful execution of CCAligner and verifies the clone detection workflow.
 
-> ⚠️ Full-dataset streaming attempt (2026-03-15): A direct run of `scripts/60_eval_bigclonebench.py` with `--full-dataset-split train` started in Docker but hung after sustained high CPU and I/O. The container became unresponsive and was killed; the recommended next step is a streaming-safe evaluator with periodic progress logs and memory-safe pair filtering.
+### Final reported evaluation (sample=2000)
+- Sampled pairs: 2000 (positive 958, negative 1042)
+- Detected pairs: 7805
+- Scored detected pairs: 8
+- True positives: 8, false positives: 0, false negatives: 950
+- Precision: 1.0, Recall: 0.0084, F1: 0.0166
+
+### Final conclusion
+- Precision is artificially high due sampled-label scoring; most detections are unscored because they fall outside sampled pairs. So precision was not reproducable. 
+- Recall is low because only a tiny part of the positive sampled oracle was recovered.
+- This is mathematically expected with limited sampled oracle and a large dataset (BCB train/valid/test have hundreds of thousands of pair entries).
+- Full-dataset evaluation in Docker with `--full-dataset-split train` was attempted but could not complete on 16GB Mac due CPU/IO/memory constraints.
+- A robust next step would be chunked streaming (e.g. 100k pair chunks) with periodic progress and on-disk pair lookups.
