@@ -1,0 +1,9 @@
+dataset=google/code_x_glue_cc_clone_detection_big_clone_bench
+split=train
+total_pairs_in_split=901028
+subset_n=2000
+seed=42
+positive_pairs=958
+negative_pairs=1042
+unique_snippets=2996
+tool=ccaligner

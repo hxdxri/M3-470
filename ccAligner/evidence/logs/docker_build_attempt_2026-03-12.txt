@@ -1,0 +1,21 @@
+Command:
+docker build --platform linux/amd64 -t ccaligner:amd64 -f docker/Dockerfile .
+
+Result:
+Failed during apt installation step with transient Ubuntu mirror integrity errors:
+- Hash Sum mismatch (multiple packages)
+- apt exited with code 100
+
+Action taken:
+- Updated Dockerfiles to include apt retries (`Acquire::Retries=5`) and list cleanup before update.
+- Rebuild should be retried in next execution step.
+
+Follow-up decision:
+- Switched container base from Ubuntu to `amazoncorretto:17` (yum-based) to avoid persistent apt mirror hash issues on this machine.
+- Avoided `amazoncorretto:17-alpine` because CCAligner ships prebuilt Linux ELF binaries that are likely glibc-linked.
+
+Build validation after switch:
+- `docker build --platform linux/amd64 -t ccaligner:amd64 -f docker/Dockerfile .` succeeded.
+- Additional fixes applied during validation:
+  - Added `tar` package (required for TXL archive extraction).
+  - Removed non-essential `pip` layer from Dockerfile for now (the `datasets` dependency chain failed under this base Python due `xxhash` wheel build issues).

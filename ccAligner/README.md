@@ -1,26 +1,142 @@
-# CCAligner Reproducibility Assessment
+# CCAligner - Reproducibility Study
 
-**Paper:** CCAligner: A Token-Based Large-Gap Clone Detector (ICSE 2018)
+Reproducing CCAligner clone detection with milestone-style evidence capture.
 
-## Summary
-This directory documents our reproducibility assessment of CCAligner, a token-based large-gap clone detector proposed at ICSE 2018.
+## 1. Artifact
 
-After a comprehensive artifact discovery and execution attempt process, we classify this tool as:
+- **Paper**: "CCAligner: a token based large-gap clone detector" (ICSE 2018)
+- **Official repo**: https://github.com/PCWcn/CCAligner
+- **Discovery correction log**: `ARTIFACT_DISCOVERY.md`
+- **Deadline extension communication log**: `DEADLINE_EXTENSION.md`
 
-**TES-D (Non-Executable)**  
-No official source code or executable artifact was publicly available.
+## 2. Current Status
 
-## Quick Status Overview
 | Category | Status |
 |---|---|
-| Official Artifact Found | No |
-| Executable | No |
-| Benchmarks Run | Not possible |
-| TES Classification | TES-D |
+| Official Artifact Found | Yes (`PCWcn/CCAligner`) |
+| Artifact Cloned Locally | Yes (`tools/ccaligner_artifact/`) |
+| Workflow Foundation | Complete (this step) |
+| Smoke Test | Completed in Docker (log captured) |
+| Benchmark Reproduction | First BigCloneBench subset attempt completed |
+| Evaluation Workflow | Simplified to sampled-pair oracle only |
+| TES Classification | TES-B (final) |
 
-## Documentation Index
-- Artifact discovery process -> `ARTIFACT_DISCOVERY.md`
-- Environment details -> `ENVIRONMENT.md`
-- Execution attempt log -> `EXECUTION_ATTEMPT.md`
-- TES classification justification -> `TES_CLASSIFICATION.md`
-- Search logs -> `logs/search_attempts.txt`
+## 3. Paper-Grounded Benchmark Targets
+
+From the ICSE 2018 paper (`Paper.pdf`):
+- **BigCloneBench + BigCloneEval** for general Type-1/2/3 recall assessment.
+- **Mutation-Injection framework** for large-gap recall by gap size.
+- **Real projects comparison** (Cook, Redis, PostgreSQL, Linux, JDK, OpenNLP, Maven, Ant) for precision/recall/F1 analysis.
+
+Details and extracted setup notes are documented in `BenchmarksUsed-README.md`.
+
+## 4. Environment Baseline
+
+Planned runtime baseline:
+- Amazon Corretto 17 base image (`amazoncorretto:17`, glibc-based)
+- `g++`, `flex`, `make`, `libboost`
+- Java 17 (from Corretto base image)
+- Python 3 (subset prep + evaluation scripts; extra Python libs installed in benchmark phase)
+- TXL tooling (used by CCAligner extraction stage)
+
+Container files:
+- `Dockerfile` (top-level)
+- `docker/Dockerfile`
+- `docker/entrypoint.sh`
+
+## 5. Foundation Workflow (Scaffolded)
+
+```bash
+cd ccAligner
+./scripts/01_fetch_artifact.sh
+./scripts/20_smoke_test.sh
+python3 scripts/10_prepare_bigclonebench_subset.py --n 200 --seed 42
+./scripts/30_run_ccaligner_benchmark.sh
+python3 scripts/60_eval_bigclonebench.py \
+  --oracle data/bigclonebench_subset/oracle/oracle_pairs.jsonl \
+  --clones out/ccaligner/clones.csv
+```
+
+Or via container:
+
+```bash
+docker build --no-cache --platform linux/amd64 -t ccaligner:amd64 -f docker/Dockerfile .
+docker run --rm --platform linux/amd64 \
+  -e BCB_N=200 \
+  -v "$PWD":/workspace ccaligner:amd64
+```
+
+Important: if `-v "$PWD":/workspace` is omitted, logs/outputs are written only inside the temporary container filesystem and disappear on exit.
+
+## 6. Directory Structure
+
+```
+ccAligner/
+  README.md
+  Paper.pdf
+  Assignment-README.md
+  BenchmarksUsed-README.md
+  ARTIFACT_DISCOVERY.md
+  DEADLINE_EXTENSION.md
+  ENVIRONMENT.md
+  EXECUTION_ATTEMPT.md
+  TES_CLASSIFICATION.md
+  config/
+    ccaligner.env
+  docker/
+    Dockerfile
+    entrypoint.sh
+  scripts/
+    00_discover_artifact.md
+    01_fetch_artifact.sh
+    10_prepare_bigclonebench_subset.py
+    20_smoke_test.sh
+    30_run_ccaligner_benchmark.sh
+    60_eval_bigclonebench.py
+    run_full_pipeline.sh
+  tools/
+    ccaligner_artifact/
+  data/                  # benchmark data (gitignored)
+  out/                   # generated outputs (gitignored)
+  evidence/
+    logs/
+    screenshots/
+  results/
+```
+
+## 7. Evidence Index
+
+- Artifact provenance: `evidence/logs/artifact.txt`
+- Search correction log: `evidence/logs/search_attempts.txt`
+- Smoke test log: `evidence/logs/smoke_test.log`
+- Benchmark run log: `evidence/logs/ccaligner_benchmark.log`
+- BigCloneBench subset params: `evidence/logs/bcb_subset_params.txt`
+- Evaluation mismatch and fix log: `EVALUATION_MISMATCH_LOG.md`
+- Final sampled-oracle metrics: `results/ccaligner_metrics.json`
+- Docker build attempt log: `evidence/logs/docker_build_attempt_2026-03-12.txt`
+- Environment capture: `evidence/logs/env.txt` (next run)
+
+## 8. Notes
+
+Current evaluation is intentionally simple:
+- sample labeled pairs from the HuggingFace BigCloneBench split,
+- materialize the snippets referenced by those pairs,
+- run CCAligner on the materialized snippet set,
+- score only exact sampled oracle pairs,
+- record any additional detections as unscored rather than expanding the oracle.
+
+BigCloneEval requires the full BigCloneBench dataset and metadata structure, which is not included in the CodeXGLUE BigCloneBench pairs used in this study. Reconstructing the full benchmark environment would require materializing tens of thousands of methods and running a much larger evaluation pipeline than feasible within the available Docker environment on a 16 GB Mac. Therefore, this study uses a sampled labeled subset with a direct oracle comparison to keep the workflow reproducible and executable within the available computational resources. This simplified evaluation still demonstrates successful execution of CCAligner and verifies the clone detection workflow.
+
+### Final reported evaluation (sample=2000)
+- Sampled pairs: 2000 (positive 958, negative 1042)
+- Detected pairs: 7805
+- Scored detected pairs: 8
+- True positives: 8, false positives: 0, false negatives: 950
+- Precision: 1.0, Recall: 0.0084, F1: 0.0166
+
+### Final conclusion
+- Precision is artificially high due sampled-label scoring; most detections are unscored because they fall outside sampled pairs. So precision was not reproducable. 
+- Recall is low because only a tiny part of the positive sampled oracle was recovered.
+- This is mathematically expected with limited sampled oracle and a large dataset (BCB train/valid/test have hundreds of thousands of pair entries).
+- Full-dataset evaluation in Docker with `--full-dataset-split train` was attempted but could not complete on 16GB Mac due CPU/IO/memory constraints.
+- A robust next step would be chunked streaming (e.g. 100k pair chunks) with periodic progress and on-disk pair lookups.
