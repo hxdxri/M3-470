@@ -44,6 +44,33 @@ def load_detected_pairs(clones_csv: Path):
     return pairs
 
 
+def load_full_dataset_oracle(selected_snippet_ids, split="train"):
+    try:
+        from datasets import load_dataset
+    except ImportError as e:
+        raise RuntimeError(
+            "datasets library is required for full dataset evaluation. Install with: python3 -m pip install datasets pyarrow"
+        ) from e
+
+    print(f"Loading full BigCloneBench dataset split '{split}' to build oracle map...")
+    ds = load_dataset("google/code_x_glue_cc_clone_detection_big_clone_bench", split=split, streaming=True)
+    pair_labels = {}
+    count = 0
+    matched = 0
+    for ex in ds:
+        id1 = int(ex["id1"])
+        id2 = int(ex["id2"])
+        if id1 in selected_snippet_ids and id2 in selected_snippet_ids:
+            pair = (min(id1, id2), max(id1, id2))
+            pair_labels[pair] = bool(ex["label"])
+            matched += 1
+        count += 1
+        if count % 500_000 == 0:
+            print(f"  scanned {count:,} rows, matched {matched:,} pairs")
+    print(f"Full dataset scan complete: scanned {count:,} rows, matched {matched:,} labeled pairs")
+    return pair_labels
+
+
 def main():
     parser = argparse.ArgumentParser(description="Evaluate CCAligner on BCB subset")
     parser.add_argument("--oracle", required=True)
@@ -54,6 +81,11 @@ def main():
         "--metrics-name",
         default="ccaligner_metrics.json",
         help="output filename for metrics JSON (written to results-dir and eval-dir)",
+    )
+    parser.add_argument(
+        "--full-dataset-split",
+        default=None,
+        help="Optional full dataset split (e.g. train) to label detected pairs among selected snippets (streaming).",
     )
     args = parser.parse_args()
 
@@ -76,6 +108,28 @@ def main():
             oracle_pos.add(pair)
         else:
             oracle_neg.add(pair)
+
+    # Optionally expand evaluation using full BigCloneBench labeled pairs among selected snippets.
+    full_labels = None
+    if args.full_dataset_split:
+        full_labels = load_full_dataset_oracle(selected_snippets, split=args.full_dataset_split)
+        # fill in unlabeled with None for detected pairs among selected snippets if missing
+        for p in detected:
+            if p[0] in selected_snippets and p[1] in selected_snippets:
+                if p not in full_labels:
+                    full_labels[p] = None
+        print(f"Using full dataset oracle for selected snippets: {len([x for x in full_labels if full_labels[x] is not None])} pairs labeled")
+
+    if full_labels is not None:
+        label_map = full_labels
+        oracle_all = set(label_map.keys())
+        oracle_pos = {p for p,v in label_map.items() if v is True}
+        oracle_neg = {p for p,v in label_map.items() if v is False}
+        print("Evaluation mode: full dataset labels among selected snippets")
+    else:
+        label_map = {p: True for p in oracle_pos}
+        label_map.update({p: False for p in oracle_neg})
+        print("Evaluation mode: sampled oracle labels only")
 
     tp_pairs = detected & oracle_pos
     fp_pairs = detected & oracle_neg
