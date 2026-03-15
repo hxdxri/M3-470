@@ -52,7 +52,8 @@ def load_full_dataset_oracle(selected_snippet_ids, split="train"):
             "datasets library is required for full dataset evaluation. Install with: python3 -m pip install datasets pyarrow"
         ) from e
 
-    print(f"Loading full BigCloneBench dataset split '{split}' to build oracle map...")
+    import sys
+    print(f"Loading full BigCloneBench dataset split '{split}' to build oracle map...", flush=True)
     ds = load_dataset("google/code_x_glue_cc_clone_detection_big_clone_bench", split=split, streaming=True)
     pair_labels = {}
     count = 0
@@ -65,9 +66,9 @@ def load_full_dataset_oracle(selected_snippet_ids, split="train"):
             pair_labels[pair] = bool(ex["label"])
             matched += 1
         count += 1
-        if count % 500_000 == 0:
-            print(f"  scanned {count:,} rows, matched {matched:,} pairs")
-    print(f"Full dataset scan complete: scanned {count:,} rows, matched {matched:,} labeled pairs")
+        if count % 100_000 == 0:
+            print(f"  scanned {count:,} rows, matched {matched:,} pairs", flush=True)
+    print(f"Full dataset scan complete: scanned {count:,} rows, matched {matched:,} labeled pairs", flush=True)
     return pair_labels
 
 

@@ -126,3 +126,5 @@ Current evaluation is intentionally simple:
 - record any additional detections as unscored rather than expanding the oracle.
 
 BigCloneEval is still under discussion with the TAs. Until that is clarified, this repository keeps the direct sampled-pair evaluation path as the main executable workflow.
+
+> ⚠️ Full-dataset streaming attempt (2026-03-15): A direct run of `scripts/60_eval_bigclonebench.py` with `--full-dataset-split train` started in Docker but hung after sustained high CPU and I/O. The container became unresponsive and was killed; the recommended next step is a streaming-safe evaluator with periodic progress logs and memory-safe pair filtering.

@@ -22,6 +22,9 @@ RUN yum -y update \
  && yum clean all \
  && rm -rf /var/cache/yum
 
+RUN python3 -m pip install --upgrade pip
+RUN python3 -m pip install datasets==2.13.2 pyarrow==12.0.1 multiprocess==0.70.14 dill==0.3.6 requests==2.28.2
+
 # Install FreeTXL (needed by CCAligner extraction pipeline)
 RUN cd /tmp \
  && curl -sL -X POST "https://www.txl.ca/cgi-bin/txl-download.cgi" \
@@ -45,6 +48,8 @@ COPY --chown=appuser:appuser . /workspace
 
 RUN chmod +x /workspace/docker/entrypoint.sh \
  && chmod +x /workspace/scripts/*.sh || true
+
+RUN python3 -m pip install --no-cache-dir datasets==2.13.2 pyarrow==12.0.1 multiprocess==0.70.14 dill==0.3.6 requests==2.28.2
 
 ENTRYPOINT ["/workspace/docker/entrypoint.sh"]
 CMD ["bash", "scripts/run_full_pipeline.sh"]

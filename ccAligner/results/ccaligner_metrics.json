@@ -1,7 +1,7 @@
 {
   "tool": "CCAligner",
   "benchmark": "BigCloneBench (CodeXGLUE subset)",
-  "oracle_file": "data/bigclonebench_subset/oracle/oracle_pairs.jsonl",
+  "oracle_file": "/workspace/data/bigclonebench_subset/oracle/oracle_pairs.jsonl",
   "total_sampled_pairs": 200,
   "oracle_positive_pairs": 97,
   "oracle_negative_pairs": 103,
