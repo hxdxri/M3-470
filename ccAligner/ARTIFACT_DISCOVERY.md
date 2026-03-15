@@ -32,4 +32,4 @@ After teammate cross-checking, I re-ran discovery with GitHub-first search and f
 ## Status After Correction
 - Previous "artifact unavailable" conclusion is withdrawn.
 - CCAligner now proceeds to full reproduction workflow (environment, smoke test, benchmark, evaluation).
-- TES classification is pending until execution attempts are completed.
+- TES classification is updated.

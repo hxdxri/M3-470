@@ -21,4 +21,3 @@ Key evaluation setups identified:
 
 Notes:
 - Reproduction plan will prioritize assignment-approved BigCloneBench source.
-- Mutation-based stage will be implemented as a clearly documented approximation unless the exact original framework can be recovered.
