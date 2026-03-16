@@ -1,195 +1,132 @@
-### Artifact Discovery
-- Paper: https://arxiv.org/pdf/1512.06448
 
-- Official artifact: https://github.com/Mondego/SourcererCC
+# Tutorial
+SourcererCC is [Sourcerer](http://sourcerer.ics.uci.edu/ "Sourcerer Project @ UCI")'s token-based code clone detector for very large code bases and Internet-scale project repositories. SourcererCC works at many levels of granularity such as detecting clones between files, methods, statements or blocks, in any language. This tutorial is for file-level clone detection on Java.
 
-- Discovery method: Located the tool by searching the tool name “SourcererCC” on google, the top result was the Mondego maintained GitHub repository.
+### Additional Resources:
 
-- Verification: The repository name and documentation indicate it is the SourcererCC clone detector described in the paper and it is maintained by the same person/lab.
+* For more information about SourcererCC please see the [ICSE'16](http://arxiv.org/abs/1512.06448) paper.
+* SourcererCC supports DéjàVu, a large scale study of cloning on GitHub. It has a [homepage](http://mondego.ics.uci.edu/projects/dejavu/), and was published at [OOPSLA'17](https://dl.acm.org/citation.cfm?id=3133908)
+* DéjàVu is a supporting web-tool to allow quick and simple clone analysis, can be found [here](http://dejavu.ics.uci.edu/).
 
-### Environmental Setup (dockerized)
-- Host: Windows 10
-- Container: Ubuntu 22.04
-- Java: OpenJDK 11
-- Python: Python 3.10
-- Build tool: Apache Ant (installed in container)
+### Before going through:
 
-- Further Proof
+We have created an artifact in the form of a virtual machine (VM) that contains the pre-programmed set of instructions that take the user from raw source code to a database with a clone mapping, including all the intermediate steps and explanation of intermediate data types. It can be downloaded from the 'Source Materials' section of the [paper ACM website](https://dl.acm.org/citation.cfm?id=3133908) or from the [DéjàVu homepage](http://mondego.ics.uci.edu/projects/dejavu/) (only the latter is kept updated).
+This VM is the easiest way to get started with SourcererCC to perform your own clone analysis. It has most of the information here. **Please try this VM before contacting us.**
+
+Let's get started.
+
+## Table of Contents
+1. Tokenize source code
+2. Run SourcererCC
+3. I want to know more!
+
+### Tokenize source code:
+
+NOTE: if you're using a Mac, you need to downgrade Python to 3.6 because the tokenizer uses multiprocessing features that don't work in the Macs past Python 3.6. Better yet: don't use a Mac. 
+
+SourcererCC is a token-based clone detector. This means that source code must go through an initial step of processing. Luckily, we have a tool do to so, which we will explain in this section.
+
+The program needed to tokenize souce code can be found [here](https://github.com/Mondego/SourcererCC/tree/master/tokenizers/file-level). Start by looking at [config.ini](https://github.com/Mondego/SourcererCC/blob/master/tokenizers/file-level/config.ini) which sets the configuration for the tokenizer. You need to edit a few parameters (the parameters not covered here can be dismissed for now):
+
+Performance parameters:
 ```
-  root@b544a82ef93f:/workspace# python3 --version
-  Python 3.10.12
-  root@b544a82ef93f:/workspace# java -version
-  Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
-  openjdk version "11.0.30" 2026-01-20
-  OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
-  root@b544a82ef93f:/workspace# ls
-  LICENSE    WebApp          dockerfile        scripts-data-analysis
-  README.md  clone-detector  requirements.txt  tokenizers
+N_PROCESSES = 1
+; How many projects does each process process at a time?
+PROJECTS_BATCH = 2
+``` 
+
+Where `N_PROCESSES` are active at any given time, and each one processes a batch of `PROJECTS_BATCH` projects.
+
+To set the input you can do:
+```
+FILE_projects_list = this/is/a/path/paths.txt
+```
+where `paths.txt` is a list of project paths, the projects we want to find clones on. A sample of a `paths.txt` file would look like this:
+
+```
+path/for/projects/aesthetic-master.zip
+path/for/projects/aesthetic-master.zipOffsetAnimator-master.zip
+path/for/projects/aesthetic-master.zipResourceInspector-master.zip
+path/for/projects/aesthetic-master.zipzachtaylor-JPokemon.zip
 ```
 
-### Installation and Execution Steps
-1. Prerequisites (No local Java or Python installation is required)
-  - Docker Desktop installed
-  - Linux containers enabled (enabled by default in docker)
+Language configurations. Since comments are removed you need to set the language primitives for `comment_inline` and `comment_open_tag`/`comment_close_tag` comments. Finally, describe the `File_extensions` being analyzed (supports a list of extensions):
+```
+[Language]
+comment_inline = //
+comment_open_tag = /*
+comment_close_tag = */
+File_extensions = .py
+```
+And then run with:
+```
+python tokenizer.py zip
+```
+where `zip` is the extension of the individual projects in `FILE_projects_list = this/is/a/path/paths.txt`. 
 
-2. Clone the My team's Repository 
-    ```
-      https://github.com/hxdxri/M3-470.git
-    ```
+The resulting output is composed of three folders, in the same location:
+* `bookkeeping_projs/` - contains a list of processed projects. Has the following format:
+`project id, project path, project url`
+* `files_stats/` - contains lists of files together with various statistics. Has the following format:
+`file id,project id,project path,project url,file hash,size bytes,lines,LOC,SLOC`
+* `files_tokens/` - contains lists of files together with various statistics and the tokenized forms. Has the following format: `file id,project id,total tokens,unique tokens,token hash@#@token1@@::@@frequency,token2@@::@@frequency,...`
 
-3. Clone the Tools Repository 
-  - In the "SourcererCC" Folder of My team's repository, run:
-    ```
-      cd SourcererCC
-  
-      git clone https://github.com/Mondego/SourcererCC.git temp_repo
-      mv temp_repo/* .
-      rm -rf temp_repo
-    ```
+The elements `file id` and `project id` always point to the same source code file or project, respectively (they work as a primary key). So a line in `files_stats/*` that start with `1,1` represents the same file as the line in `files_tokens/*` that starts with `1,1`, and these came from the project in `bookkeeping_projs/*` whose line starts with `1`.
+The number of lines in `bookkeeping_projs/*` corresponds to the total number of projects analyzed, the number of lines in `files_stats/*` is the same as `files_tokens/*` and is the same as the total number of files obtained from the projects.
 
-4. Build the Docker Image (creates an Ubuntu 22.04 environment with OpenJDK 11, Python 3.10, Apache Ant)
-  - From the root of the SourcererCC directory:
-    ```
-      docker build -t sourcerercc .
-    ```
+### Run SourcererCC
 
-5. Start the Container
-  - Run
-    ```
-      docker run --rm -it -v ${PWD}:/workspace sourcerercc bash
-    ```
-
-6. Make the shell script executable
-  - Run
-    ```
-    chmod +x run_bcb_subset.sh
-    ```
-
-8. Run execution scripts
-  - Run
-    ```
-    bash scripts/run_bcb_subset.sh 20
-    ```
-    View execution results (inside the container)
-    - The clone detector outputs are written to `/workspace/SourcererCC/results` and the execution logs are written to `/workspace/SourcererCC/logs`.
-    - Example commands:
-        ```
-        ls -l /workspace/SourcererCC/results
-        cat /workspace/SourcererCC/results/results.pairs | head
-    
-        ls -l /workspace/SourcererCC/logs
-        tail -n 50 /workspace/SourcererCC/logs/bcb_clone_detector.log
-        ```
+For this step we will run SourcererCC, which can be found [here](https://github.com/Mondego/SourcererCC/tree/master/clone-detector).
 
 
+Start with `files_tokens/` from the previous step:
 
+```
+cat files_tokens/* > blocks.file
+cp blocks.file SourcererCC/clone-detector/input/dataset/
+```
 
-## Smoke Test Execution Steps
-1. Smoke test input creation
-  - Create a minimal Java project inside the container:
-    ```
-      mkdir -p miniproj
-  
-      cat > miniproj/Hello.java << 'EOF'
-  
-      public class Hello {
-          public static void main(String[] args) {
-              System.out.println("hi");
-          }
-      }
-      EOF
-    ```
+Inside [clone-detector/](https://github.com/Mondego/SourcererCC/tree/master/clone-detector) it is worth looking at [sourcerer-cc.properties](https://github.com/Mondego/SourcererCC/blob/master/clone-detector/sourcerer-cc.properties), in particular at:
 
-  - Zip the project:
-    ```
-      zip -r miniproj.zip miniproj
-  
-    ```
-  
-  - Create a project-list.txt file containing the absolute path to the zip file:
-    ```
-      echo "/workspace/tokenizers/file-level/miniproj.zip" > project-list.txt
-    ```
+```
+# Ignore all files outside these bounds
+MIN_TOKENS=65
+MAX_TOKENS=500000
+```
+where you can set an upper and lower bound for file clone detection. You can dismiss the other parameters for now.
 
-  - Ensure "SourcererCC\tokenizers\file-level\config.ini" contains:
-    ```
-      File_extensions = .java   
-    ```
+To change the percentage of clone similarity, look at [runnodes.sh](https://github.com/Mondego/SourcererCC/blob/master/clone-detector/runnodes.sh#L9), line 9:
 
+```
+threshold="${3:-8}"
+```
+where `8` means clones will be flagged at 80% similarity (current setup), `7` at 70%, and so on.
+The JVM parameters can be configured in the [same file](https://github.com/Mondego/SourcererCC/blob/master/clone-detector/runnodes.sh#L20), at line 20.
 
-2. Run Tokenizer
-  - Inside the container:
-    ```
-      cd tokenizers/file-level
-  
-      rm -rf bookkeeping_projs files_stats files_tokens logs
-  
-      python3 tokenizer.py zip 2>&1 | tee /workspace/SourcererCC/logs/tokenizer_smoketest.log
-    ```
+Finally, run:
 
-3. Prepare Dataset for Clone Detector
-    ```
-      cat files_tokens/* > blocks.file
-  
-      cp blocks.file /workspace/clone-detector/input/dataset/
-    ```
+```
+python controller.py
+```
+This tool splits the task by multiple nodes, which must be aggregated in the end:
 
-4. Run Clone Detector
-  - Still inside the container:
-    ```
-      cd /workspace/clone-detector
-  
-      rm -f scriptinator_metadata.scc Log_*.out Log_*.err
-  
-      rm -rf NODE_*
-  
-      python3 controller.py 2>&1 | tee /workspace/SourcererCC/logs/clone_detector_smoketest.log
-    ```
+```
+cat clone-detector/NODE_*/output8.0/query_* > results.pairs
+```
 
-Expected output: SUCCESS: Search Completed on all nodes
+The resulting information is a list of file id pairs which are clones. These ids correspond to the ids
+generated in the tokenization phase. An example output is:
 
-5. Aggregate Results
-    ```
-      cat NODE_*/output8.0/query_* > results.pairs
-  
-      wc -l results.pairs
-    ```
+```
+1,2
+2,3
+```
 
+In this case we have the clone pairs `(1,2)` and `(2,3)`. To know which file corresponds to `1`, we can look at the folder `files_stats/*` and look for the line with the unique id `1`.
 
-### Benchmark used
-- BigCloneBench (HuggingFace CodeXGLUE version)
+### I want to know more!
 
-- Subset size (20 pairs) 
+That is great :+1: In the VM we refer to above you can find instructions and programs to import everything into an easily queryable database and perform statistic analysis on this information.
+Our [OOPSLA'17](https://dl.acm.org/citation.cfm?id=3133908) paper is a great way to understand out typical pipeline and which kind of results you can obtain.
+Finally, if you have any question or need more technical help (tweaking performance parameters for you hardware, for example), feel free to [contact us](http://mondego.ics.uci.edu/).
 
-- Default settings (80% threshold unless changed)
-
-
-### Intervention
-- The tool's README does not include a sample project to test with, so I created a small Java project and project-list.txt file in order to run the smoke test successfully.
-
-- Installed "ant" because runnodes.sh relies on Ant build (build.xml) and init failed without it.
-
-- Installed "python-is-python3" because scripts call python but Ubuntu 22.04 only provides python3 by default.
-
-- Converted .sh files from CRLF to LF using "dos2unix" (Windows clone issue).
-
-
-### Execution Outcome and TES Classification
-
-SourcererCC was successfully executed end to end inside a Dockerized Ubuntu 22.04 environment using Java 11 and Python 3. The tool was run on a small BigCloneBench subset (20 pairs - used this because device couldn't handle more than 100 pairs without crashing) using default configuration settings (80% similarity threshold). The pipeline completed successfully, producing clone pair outputs and execution logs without runtime errors after environment setup.
-
-However, the tool required several environment interventions to run correctly, including installation of Ant (for building Java components), the `python-is-python3` alias (required by legacy scripts), `dos2unix` (to normalize shell script line endings), and `zip` (for dataset packaging). These dependencies were not clearly documented in the official README and had to be identified during reproduction. All required fixes have been captured in the provided Dockerfile to ensure reproducible execution on first run.
-
-Based on the taxonomy provoded, SourcererCC is classified as TES-B (Executable with Intervention), as it runs successfully but required some environment adjustments beyond the provided documentation.
-
-
-
-### Notes (Execution Logs and Evidence)
-
-Two sets of execution logs are included in this repository to document the reproduction attempts.
-
-- 100 pair BigCloneBench subset attempt
-An initial attempt was made to run the pipeline using a subset of 100 clone pairs. During this run, the system experienced a crash on the local machine before the pipeline could complete. As a result, only partial logs were captured. These logs are still included in the repository as evidence of the attempted execution and to document the failure conditions encountered during the experiment.
-
-- 20-pair BigCloneBench subset run
-After the crash during the larger run, the experiment was repeated using a smaller subset of 20 clone pairs to ensure that the pipeline could complete within the available system resources. This run successfully completed the full workflow (tokenization, indexing, and search), and the logs from this execution are included as the primary evidence for the reproduction results.
