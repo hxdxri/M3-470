@@ -1,5 +1,9 @@
 # SAGA - Evaluation Report
 
+**Paper:** SAGA: Efficient and Large-Scale Detection of Near-Miss Clones with GPU Acceleration  
+**Authors:** Guanhua Li et al., Fudan University  
+**Venue:** SANER 2020  
+**TES Classification:** TES-E (Executed with Divergent Results)
 ---
 
 ## Discovery
@@ -157,7 +161,7 @@ total time cost: PT3.553S
 ```
 179 clone groups, 487 clone pairs detected in under 4 seconds.
 
-Settings used — all default except the exe:
+Settings used , all default except the exe:
 ```
 threshold=0.7, mlc=50, min-line=2, granularity=method, language=java
 exe=executable/psacd_win10.exe
@@ -172,18 +176,42 @@ exe=executable/psacd_win10.exe
 | Precision | 0.0021 | 0.99 |
 | Recall | 0.0010 | N/A (per clone type, Table IV) |
 | Clone Types | Type-1, 2, 3 | Type-1, 2, 3 |
+| True positives | 1 | N/A |
+| False positives | 486 | N/A |
+| False negatives | 957 | N/A |
+| Clone groups | 179 | N/A |
 
-The numbers are way off from the paper. SAGA was built for very large codebases. 
-It finds clones by detecting repeated token sequences across a big collection. 
-The BigCloneBench subset has 2996 files with one short method each. There isn't 
-enough repetition for SAGA to work properly so it ends up matching methods that 
-share common Java boilerplate rather than real clones.
+
+-**Precision (0.0021)** may be underestimated. All 487 detected pairs 
+  fell within our oracle coverage, but the oracle only covers 2000 pairs 
+  out of 901,028 total in BigCloneBench. Some of our 486 apparent false 
+  positives could be real clones that simply were not sampled into our 
+  2000 pairs. Full validation would require querying the entire BigCloneBench 
+  database.
+
+- **Recall (0.0010)** is a reliable lower bound. SAGA found only 1 out of 
+  958 known positive pairs, missing 957 real clones. This is expected 
+  because SAGA was designed for large multi-method codebases, not isolated 
+  single-method snippets.
+
+- **Why results are this low** is mathematically expected. BigCloneBench 
+  has hundreds of thousands of pairs. Our 2000-pair subset with single-method 
+  snippets does not match the large codebase environment SAGA was built and 
+  evaluated on in the paper.
 
 ---
 
 ## TES Classification: TES-E
 
-Tool executed end-to-end and produced output, but results deviate substantially 
-from the paper. 487 clone pairs detected with only 1 true positive. Likely because 
-SAGA is designed for large multi-method codebases, not isolated single-method 
-snippets as used in the BigCloneBench subset evaluation.
+The tool completed the full pipeline end-to-end after two fixes:
+- Tokenization, suffix array construction, and clone pair output all completed ✅
+- Precision and recall were computable
+  
+TES-E is the correct classification because the tool ran successfully 
+but results deviate substantially from the paper (precision 0.0021 vs 
+0.99). This is not a tool failure , it is a mismatch between SAGA being 
+designed for large multi-method codebases and our single-method snippet 
+evaluation setup.
+
+TES-C and TES-D do not apply because the tool completed the full workflow.  
+TES-B does not apply because the results do not match the paper.
