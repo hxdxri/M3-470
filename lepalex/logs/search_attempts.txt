@@ -1,11 +1,56 @@
-Google:
-LePalex
-Code Clone Detector LePalex
-Lepalex Implementation
-Lepalex Github
-Lepalex Repo
+Detailed Search Log – LePalex Artifact
 
-Github:
-Lepalex(EDM115/palex: Not related to clone detection )
-Kazuaki Maeda
-Clone Detector Lepalex
+1.  Google Searches
+
+Query: LePalex
+Results: 
+- Research papers mentioning LePalex as a clone
+detection tool. 
+- Tool listed in code clone detection surveys.
+
+Query: Code Clone Detector LePalex
+Results: 
+- Similar to "LePalex"
+- Academic papers referencing the tool. 
+- Research discussing syntax-sensitive clone
+detection. 
+
+Query: Lepalex Implementation
+Results:
+- Mostly academic references with no clear implementation download
+- The implementation appears to be a research prototype and no official artifact page was found.
+
+Query: Lepalex Github
+Results: 
+- No official GitHub repository found.
+- Some repositories contain similar names but unrelated projects.
+
+Query: Lepalex Repo
+Results:
+- Similar to previous
+Conclusion: The tool may not have been publicly released.
+
+2.  GitHub Searches
+
+Query: Lepalex
+Result: 
+- Search Did not match Any repositories
+
+Query: Kazuaki Maeda
+Reason: Author associated with PALEX-based clone detection.
+Results: 
+- Search Did not match Any repositories
+
+Query: Clone Detector Lepalex
+Results: - Search Did not match Any repositories
+
+3.  Artifact Availability Summary
+
+Official artifact: Not found
+GitHub repository: Not found
+Research paper: Found Algorithm
+description: Found
+Implementation: Likely research prototype
+
+Conclusion: LePalex appears to be a research prototype described in academic papers but not publicly released as open-source software.
+
