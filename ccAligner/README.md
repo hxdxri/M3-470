@@ -140,3 +140,10 @@ BigCloneEval requires the full BigCloneBench dataset and metadata structure, whi
 - This is mathematically expected with limited sampled oracle and a large dataset (BCB train/valid/test have hundreds of thousands of pair entries).
 - Full-dataset evaluation in Docker with `--full-dataset-split train` was attempted but could not complete on 16GB Mac due CPU/IO/memory constraints.
 - A robust next step would be chunked streaming (e.g. 100k pair chunks) with periodic progress and on-disk pair lookups.
+
+### Citations
+  Pengcheng Wang, Jeffrey Svajlenko, Yanzhao Wu, Yun Xu, and Chanchal K. Roy. 2018. CCAligner: a token based large-gap clone detector. In ICSE ’18: 40th International Conference on Software Engineering, May 27–June 3, 2018, Gothenburg, Sweden. ACM, New York, NY, USA, 12 pages. https://doi.org/10.1145/3180155.3180179
+  
+Jeffrey Svajlenko, Judith F. Islam, Iman Keivanloo, Chanchal K. Roy, and Mohammad Mamun Mia. 2014. Towards a Big Data Curated Benchmark of Inter-Project Code Clones. In 2014 IEEE International Conference on Software Maintenance and Evolution (ICSME). IEEE, 476–480.
+
+Wenhan Wang, Ge Li, Bo Ma, Xin Xia, and Zhi Jin. 2020. Detecting Code Clones with Graph Neural Network and Flow-Augmented Abstract Syntax Tree. In 2020 IEEE 27th International Conference on Software Analysis, Evolution and Reengineering (SANER). IEEE, 261–271.
