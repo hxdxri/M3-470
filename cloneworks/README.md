@@ -35,7 +35,7 @@ docker run --rm --platform linux/amd64 \
     -v "$PWD":/workspace -v "$PWD/out":/workspace/out cloneworks:amd64
 ```
 
-> **Tip**: Increase `--cpus` and `--memory` to match your machine for faster execution (e.g. `--cpus=8 --memory=16g`). The pipeline auto-detects available resources inside the container and tunes JVM heap accordingly.
+> **NB**: Increase `--cpus` and `--memory` to match machine for faster execution (e.g. `--cpus=8 --memory=16g`). The pipeline auto-detects available resources inside the container and tunes JVM heap accordingly.
 
 ## 3. Step-by-Step Reproducibility Running in Above Pipelines
 
@@ -84,7 +84,7 @@ Builds the feature database from source. Log: `evidence/logs/cwbuild.log`.
 ./scripts/40_run_cwdetect.sh out/cwbuild out/cwdetect config/cwdetect.conf
 ```
 
-Runs clone detection with similarity threshold 0.7 (default, per paper recommendation for Type-3). Log: `evidence/logs/cwdetect.log`.
+Runs clone detection with similarity threshold 0.7 (default, Type-3). Log: `evidence/logs/cwdetect.log`.
 
 Override threshold: `SIMILARITY=0.5 ./scripts/40_run_cwdetect.sh ...`
 
@@ -124,7 +124,7 @@ CloneWorks configurations are in `config/`:
 
 cwdetect uses CLI parameters (no config file). The similarity threshold is set via `-s` flag:
 - **Type-1/2**: use `-s 1.0` with `--pre-sorted` flag
-- **Type-3**: use `-s 0.7` (paper recommendation)
+- **Type-3**: use `-s 0.7` 
 
 ## 5. Interventions
 
@@ -155,7 +155,7 @@ cwdetect uses CLI parameters (no config file). The similarity threshold is set v
 ### Paper-reported results (ICSE 2017)
 
 The CloneWorks paper reports using BigCloneBench and achieving:
-- **Type-3 (conservative, threshold 0.7)**: Precision ~90–95%, Recall ~80–90%
+- **Type-3 (conservative, threshold 0.7)**: Precision ~83–93%, Recall ~62–96%
 - High scalability: millions of code fragments processed
 
 ### Our results
@@ -176,8 +176,6 @@ See `results/cloneworks_metrics.json` for computed precision, recall, and F1.
 - Java version update (7 → 11)
 - Wrapper scripts for benchmark preparation and evaluation
 - Subsetting the benchmark for feasibility
-
-If TXL cannot be installed → downgrade to **TES C** (partially executable: compilation works but cwbuild fails without TXL).
 
 ## 9. Repository Structure
 
@@ -233,3 +231,9 @@ cloneworks/
 | cwformat log | `evidence/logs/cwformat.log` |
 | Subset manifest | `evidence/logs/bcb_subset_manifest.json` |
 | Subset parameters | `evidence/logs/bcb_subset_params.txt` |
+
+## 11. References
+
+- **Paper**: Svajlenko, J., et al. (2014). Towards a Big Data Curated Benchmark of Inter-Project Code Clones. *ICSME 2014*. https://doi.org/10.1109/ICSME.2014.77
+- **Dataset (HuggingFace)**: Lu, S., et al. (2021). CodeXGLUE. *NeurIPS 2021*. https://huggingface.co/datasets/google/code_x_glue_cc_clone_detection_big_clone_bench
+- **Repository**: Svajlenko, J. (2017). CloneWorks. GitHub. https://github.com/jeffsvajlenko/CloneWorks
