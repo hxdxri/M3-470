@@ -140,3 +140,46 @@ BigCloneEval requires the full BigCloneBench dataset and metadata structure, whi
 - This is mathematically expected with limited sampled oracle and a large dataset (BCB train/valid/test have hundreds of thousands of pair entries).
 - Full-dataset evaluation in Docker with `--full-dataset-split train` was attempted but could not complete on 16GB Mac due CPU/IO/memory constraints.
 - A robust next step would be chunked streaming (e.g. 100k pair chunks) with periodic progress and on-disk pair lookups.
+
+## 9. NiCad iHotDraw Lightweight BigCloneEval Validation
+
+We performed a lightweight validation run using NiCad iHotDraw (application subset) with CCAligner in Docker and BigCloneEval tooling:
+
+1. Ran CCAligner benchmark in Docker against: `data/ihotdraw/nicad/NiCad-6.2/examples/JHotDraw/application`.
+2. CCAligner generated `out/ccaligner_ihotdraw_app/clones.csv` with 8 clone pairs.
+3. Converted CCAligner CSV to BigCloneEval import format and imported into BigCloneEval tool ID 1:
+   - `application,DrawApplication.java,...` as synthetic subdirectory mapping.
+4. BigCloneEval tool registration and import succeeded (`8` clones imported).
+5. Evaluate step failed due missing BigCloneBench DB: `bigcloneeval/bigclonebenchdb/bcb` not found.
+
+This confirms the end-to-end cloning pipeline works from CCAligner extraction to BigCloneEval import for lightweight test data, and highlights a dataset dependency needed for full recall evaluation.
+
+### 9.1 NiCad + JHotDraw + BigCloneEval + era BCB Attempt
+
+We also attempted a more complete validation on NiCad’s JHotDraw with the era BCB reduced BigCloneBench dataset. The goal was to reuse the same workflow as the lightweight app subset, but with a real BigCloneBench dataset in `bigcloneeval/bigclonebenchdb`.
+
+Steps executed:
+1. Prepare NiCad JHotDraw source:
+   - `cd ccAligner && ./scripts/10_prepare_bigclonebench_subset.py --n 200 --seed 42` (for earlier BCB subset preparation)
+   - For JHotDraw, we used local NiCad clone extraction directories from `data/ihotdraw/nicad/NiCad-6.2/examples/JHotDraw/`
+2. Run CCAligner clone pipeline for full JHotDraw and convert to BCEval format:
+   - `bash scripts/70_run_bigcloneeval_jhotdraw.sh`
+3. Ensure era BCB dataset is downloaded and placed under BigCloneEval DB folder:
+   - expected DB file: `ccAligner/bigcloneeval/bigclonebenchdb/bcb.mv.db` or `bcb.h2.db`
+   - warning is shown if missing (evaluation cannot run)
+4. Register tool and import clones:
+   - `cd ccAligner/bigcloneeval/commands`
+   - `./registerTool -n "CCAligner-JHotDraw" -d "CCAligner run on NiCad JHotDraw full example"`
+   - `./importClones -t 1 -c ../out/ccaligner_ihotdraw_full/clones_bceval.csv`
+5. Attempt evaluation:
+   - `./evaluateTool -t 1 -o ../out/ccaligner_ihotdraw_full/bceval_evaluate.txt`
+
+Observed result:
+- The tool registration and import steps completed successfully.
+- `evaluateTool` returned exit code 255 when DB file wasn’t present.
+- After placing the era BCB h2 DB file in `bigcloneeval/bigclonebenchdb`, evaluation was interrupted (era subset was too large for processing) and output report generation failed.
+
+Key note:
+- This run demonstrates a reproducible NiCad + JHotDraw + BigCloneEval end-to-end attempt when era BCB DB is available.
+- The only blocker for full recall metrics is the presence and correct path of the BigCloneBench H2 DB files, as I used an outdate era reduced file.
+

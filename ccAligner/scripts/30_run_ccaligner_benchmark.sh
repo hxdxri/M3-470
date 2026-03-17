@@ -43,6 +43,7 @@ mkdir -p "$OUT_DIR" "$LOG_DIR"
     make
     cd ..
 
+    mkdir -p input output
     rm -rf input/* output/*
     find token -type f -delete || true
     rm -f function.file tokenline_num clones
