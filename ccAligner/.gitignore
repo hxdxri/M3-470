@@ -3,7 +3,7 @@ data/
 out/
 results/*.tmp
 tools/ccaligner_artifact/
-
+bigcloneeval/*
 # Python
 __pycache__/
 *.pyc
