@@ -22,7 +22,7 @@
 - Evaluation metrics: `results/results(2000)/sourcerercc_metrics.json`
 - Scripts: `scripts/`
 
-#### Where to Find Results and Logs for in the repo
+### Where to Find Results and Logs for in the repo
 - **Primary results (2000 pairs):**
   - Logs: `logs/logs(2000)/*`
   - Results: `results/results(2000)*`
@@ -158,7 +158,7 @@
 
 
 
-## Smoke Test Execution Steps
+### Smoke Test Execution Steps
 1. Smoke test input creation
   - Create a minimal Java project inside the container:
   ```
@@ -267,7 +267,7 @@ The evaluation pipeline for SourcererCC is designed for reproducibility and tran
 - Precision/recall may be lower than the paper beacause we dont evaluate the entire BCB subset
 - Full-dataset evaluation is not feasible in the provided Docker environment.
 
-#### Final reported evaluation (example, sample=2000)
+### Final reported evaluation (example, sample=2000)
 - Sampled pairs: 2000
 - True positives: 1
 - False positives: 8742
@@ -302,12 +302,12 @@ The main experiment was conducted using a 2000 pair BigCloneBench subset. The fu
 
 
 ---
-#### System State, Problem, and Solution (Up-to-date Notes)
+### System State, Problem, and Solution (Up-to-date Notes)
 
 The current system now fully supports end-to-end evaluation of SourcererCC on BigCloneBench subsets, with all outputs and logs reproducible and exportable. The main challenge faced was a mismatch between the clone detector's output indices and the oracle's snippet IDs, which initially prevented correct precision/recall calculation. This was resolved by generating an explicit index-to-snippet-id mapping during subset creation and updating the evaluation script to use this mapping, ensuring detected pairs are compared accurately to the oracle. All steps, outputs, and copying instructions are now standardized and documented. The system is robust for both small and large subsets, and all evidence is included for transparency and reproducibility.
 
 
-#### Citations
+### Citations
 - This project uses datasets and evaluation methodology from prior research in code clone detection.
 
 - Hitesh Sajnani, Vaibhav Saini, Jeffrey Svajlenko, Chanchal K. Roy, Cristina V. Lopes (2015).  
