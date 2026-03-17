@@ -1,0 +1,7 @@
+{
+  "true_positives": 1,
+  "false_positives": 8742,
+  "false_negatives": 1007,
+  "precision": 0.00011437721605856113,
+  "recall": 0.000992063492063492
+}
