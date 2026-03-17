@@ -97,20 +97,20 @@
     ```
     bash scripts/run_bcb_subset.sh 2000
     ```
-    # This will:
-    # - Stream a BigCloneBench subset (default 20 pairs, or as specified)
-    # - Write Java files, manifest, oracle, and index mapping to `/workspace/benchmarks/bcb_subset/`
-    # - Run the tokenizer and clone detector
-    # - Write clone detection results to `/workspace/SourcererCC/results/`
-    # - Write logs to `/workspace/SourcererCC/logs/`
-    #
-    # Key output files (inside the container):
-    #   - `/workspace/benchmarks/bcb_subset/bcb_subset_manifest.json` (maps snippet IDs to file paths)
-    #   - `/workspace/benchmarks/bcb_subset/oracle_pairs.jsonl` (oracle/ground truth for the subset)
-    #   - `/workspace/benchmarks/bcb_subset/index_to_snippet_id.json` (maps local indices to snippet IDs)
-    #   - `/workspace/SourcererCC/results/bcb_subset_results.pairs` (detected clone pairs, local indices)
-    #   - `/workspace/SourcererCC/results/sourcerercc_metrics.json` (evaluation metrics after running the evaluator)
-    #   - `/workspace/SourcererCC/logs/` (all execution logs)
+    This will:
+     - Stream a BigCloneBench subset (default 20 pairs, or as specified)
+     - Write Java files, manifest, oracle, and index mapping to `/workspace/benchmarks/bcb_subset/`
+     - Run the tokenizer and clone detector
+     - Write clone detection results to `/workspace/SourcererCC/results/`
+     - Write logs to `/workspace/SourcererCC/logs/`
+    
+    Key output files (inside the container):
+       - `/workspace/benchmarks/bcb_subset/bcb_subset_manifest.json` (maps snippet IDs to file paths)
+       - `/workspace/benchmarks/bcb_subset/oracle_pairs.jsonl` (oracle/ground truth for the subset)
+       - `/workspace/benchmarks/bcb_subset/index_to_snippet_id.json` (maps local indices to snippet IDs)
+       - `/workspace/SourcererCC/results/bcb_subset_results.pairs` (detected clone pairs, local indices)
+       - `/workspace/SourcererCC/results/sourcerercc_metrics.json` (evaluation metrics after running the evaluator)
+       - `/workspace/SourcererCC/logs/` (all execution logs)
 
 8. Evaluate Results
   - Run the evaluation script inside the container:
