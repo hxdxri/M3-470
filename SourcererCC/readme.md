@@ -85,6 +85,7 @@
 
     git clone https://github.com/Mondego/SourcererCC.git temp_repo
     mv temp_repo/* .
+    git restore readme.md
     rm -rf temp_repo
   ```
 
