@@ -72,7 +72,7 @@
 
 2. Clone the My team's Repository 
   ```
-    git clone https://github.com/hxdxri/M3-470.git
+    git clone https://github.com/hxdxri/M3-470.git .
 
   ```
 
