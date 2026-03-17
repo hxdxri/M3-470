@@ -81,6 +81,7 @@
   ```
     cd SourcererCC
 
+    rm -rf WebApp/ clone-detector/ scripts-data-analysis/ tokenizers/ LICENSE requirements.txt
     git clone https://github.com/Mondego/SourcererCC.git temp_repo
     mv temp_repo/* .
     rm -rf temp_repo
