@@ -5,6 +5,8 @@
 This repository is the group record for our reproducibility assessment of assigned code clone detection tools.  
 The goal is to evaluate artifact availability, executability, and result reproducibility, following the course protocol.
 
+Excel sheet link: https://usaskca1-my.sharepoint.com/:x:/r/personal/vrl968_usask_ca/Documents/TechTitans_Milestone3.xlsx?d=w87f677b2a8b947ad85563020c48f6297&csf=1&web=1&e=vXhZOx
+
 ## Assignment Scope
 For each assigned tool, we will:
 1. Verify and document the official artifact.
