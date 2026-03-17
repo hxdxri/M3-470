@@ -5,7 +5,7 @@
 **Paper:** SAGA: Efficient and Large-Scale Detection of Near-Miss Clones with GPU Acceleration  
 **Authors:** Guanhua Li et al., Fudan University  
 **Venue:** SANER 2020  
-**TES Classification:** TES-E (Executed with Divergent Results)
+**TES Classification:** TES-B 
 
 ## Discovery
 
