@@ -102,7 +102,7 @@
 
 6. Make the shell script executable 
     ```
-    chmod +x run_bcb_subset.sh
+    chmod +x scripts/run_bcb_subset.sh
     ```
 
 7. Run execution scripts
