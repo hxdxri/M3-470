@@ -183,3 +183,10 @@ Key note:
 - This run demonstrates a reproducible NiCad + JHotDraw + BigCloneEval end-to-end attempt when era BCB DB is available.
 - The only blocker for full recall metrics is the presence and correct path of the BigCloneBench H2 DB files, as I used an outdate era reduced file.
 
+### Citations
+  Pengcheng Wang, Jeffrey Svajlenko, Yanzhao Wu, Yun Xu, and Chanchal K. Roy. 2018. CCAligner: a token based large-gap clone detector. In ICSE ’18: 40th International Conference on Software Engineering, May 27–June 3, 2018, Gothenburg, Sweden. ACM, New York, NY, USA, 12 pages. https://doi.org/10.1145/3180155.3180179
+  
+Jeffrey Svajlenko, Judith F. Islam, Iman Keivanloo, Chanchal K. Roy, and Mohammad Mamun Mia. 2014. Towards a Big Data Curated Benchmark of Inter-Project Code Clones. In 2014 IEEE International Conference on Software Maintenance and Evolution (ICSME). IEEE, 476–480.
+
+Wenhan Wang, Ge Li, Bo Ma, Xin Xia, and Zhi Jin. 2020. Detecting Code Clones with Graph Neural Network and Flow-Augmented Abstract Syntax Tree. In 2020 IEEE 27th International Conference on Software Analysis, Evolution and Reengineering (SANER). IEEE, 261–271.
+

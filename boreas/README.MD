@@ -80,3 +80,12 @@ The tool is classified as **TES-D (Non-Executable)** because:
 4. The paper's own evaluation used private datasets (JDK 7 and Linux kernel source) rather than standard benchmarks, and reported only a sampled false-positive rate — not recall or accuracy.
 
 **Not reproducible — tool artifact unavailable.**
+
+## 11. References
+
+- **Paper**: Yuan, Y., Guo, Y. (2012). Boreas: An Accurate and Scalable Token-Based Approach to Code Clone Detection. *ASE 2012*. https://doi.org/10.1145/2351676.2351725
+- **Extended PDF**: https://yaoguopku.github.io/papers/Yuan-ASE-12-extended.pdf
+- **Repository**: N/A (artifact unavailable)
+- **Other Unrelated Boreas Repositories Found**: 
+                    https://github.com/greenbone/boreas
+                    https://github.com/utiasASRL/pyboreas

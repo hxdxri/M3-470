@@ -28,6 +28,7 @@ mkdir -p /workspace/.hf_cache
 python3 - << PY
 from datasets import load_dataset
 import os
+import json
 
 out_dir = "${BCB_DIR}"
 os.makedirs(out_dir, exist_ok=True)
@@ -40,16 +41,61 @@ ds = load_dataset(
 
 N = int("${N_PAIRS}")
 i = 0
+manifest = []
+oracle_pairs = []
+index_to_snippet_id = {}
 for ex in ds:
-    with open(os.path.join(out_dir, f"{i}_func1.java"), "w", encoding="utf-8") as f:
+    # Save func1
+    fname1 = f"{i}_func1.java"
+    with open(os.path.join(out_dir, fname1), "w", encoding="utf-8") as f:
         f.write(ex["func1"])
-    with open(os.path.join(out_dir, f"{i}_func2.java"), "w", encoding="utf-8") as f:
+    manifest.append({
+        "snippet_id": ex["id1"],
+        "file_path": f"src/{str(ex['id1'])[:4]}/Snippet_{ex['id1']}.java"
+    })
+    index_to_snippet_id[i * 2] = ex["id1"]
+    # Save func2
+    fname2 = f"{i}_func2.java"
+    with open(os.path.join(out_dir, fname2), "w", encoding="utf-8") as f:
         f.write(ex["func2"])
+    manifest.append({
+        "snippet_id": ex["id2"],
+        "file_path": f"src/{str(ex['id2'])[:4]}/Snippet_{ex['id2']}.java"
+    })
+    index_to_snippet_id[i * 2 + 1] = ex["id2"]
+    # Add to oracle
+    oracle_pairs.append({
+        "pair_id": i,
+        "id1": ex["id1"],
+        "id2": ex["id2"],
+        "file1": f"src/{str(ex['id1'])[:4]}/Snippet_{ex['id1']}.java",
+        "file2": f"src/{str(ex['id2'])[:4]}/Snippet_{ex['id2']}.java",
+        "label": ex["label"]
+    })
     i += 1
     if i >= N:
         break
 
+# Write manifest
+manifest_path = os.path.join(out_dir, "bcb_subset_manifest.json")
+with open(manifest_path, "w", encoding="utf-8") as mf:
+    json.dump(manifest, mf, indent=2)
+
+# Write oracle
+oracle_path = os.path.join(out_dir, "oracle_pairs.jsonl")
+with open(oracle_path, "w", encoding="utf-8") as of:
+    for pair in oracle_pairs:
+        of.write(json.dumps(pair) + "\n")
+
+# Write index-to-snippet-id mapping
+index_map_path = os.path.join(out_dir, "index_to_snippet_id.json")
+with open(index_map_path, "w", encoding="utf-8") as imf:
+    json.dump(index_to_snippet_id, imf, indent=2)
+
 print(f"Wrote {2*N} .java files to {out_dir}")
+print(f"Wrote manifest to {manifest_path}")
+print(f"Wrote oracle to {oracle_path}")
+print(f"Wrote index map to {index_map_path}")
 PY
 
 echo "[3/6] Zipping subset into a single 'project'"
@@ -67,6 +113,7 @@ python3 tokenizer.py zip 2>&1 | tee "${LOG_DIR}/bcb_tokenizer.log"
 echo "[5/6] Running clone detector (controller.py)"
 cat files_tokens/* > blocks.file
 cp blocks.file "${CLONE_DIR}/input/dataset/"
+echo "Wrote index map to {index_map_path}"
 
 cd "${CLONE_DIR}"
 rm -f scriptinator_metadata.scc Log_*.out Log_*.err
