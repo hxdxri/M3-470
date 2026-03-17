@@ -1,4 +1,34 @@
-## SourcererCC - Reproducibility Study (Summary & Evidence)
+## SourcererCC - Reproducibility Study
+
+### Artifact Discovery
+- Paper: https://arxiv.org/pdf/1512.06448
+
+- Official artifact: https://github.com/Mondego/SourcererCC
+
+- Discovery method: Located the tool by searching the tool name “SourcererCC” on google, the top result was the Mondego maintained GitHub repository.
+
+- Verification: The repository name and documentation indicate it is the SourcererCC clone detector described in the paper and it is maintained by the same person/lab.
+
+### Environmental Setup (dockerized)
+- Host: Windows 10
+- Container: Ubuntu 22.04
+- Java: OpenJDK 11
+- Python: Python 3.10
+- Build tool: Apache Ant (installed in container)
+
+- Further Proof
+```
+  root@b544a82ef93f:/workspace# python3 --version
+  Python 3.10.12
+  root@b544a82ef93f:/workspace# java -version
+  Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+  openjdk version "11.0.30" 2026-01-20
+  OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
+  root@b544a82ef93f:/workspace# ls
+  LICENSE    WebApp          dockerfile        scripts-data-analysis
+  README.md  clone-detector  requirements.txt  tokenizers
+```
+
 
 ### Current Status
 
@@ -34,35 +64,6 @@
   - Results: `results/*`
   - These contain the evidence and outputs for the smaller 20-pair experiment.
 
-
-### Artifact Discovery
-- Paper: https://arxiv.org/pdf/1512.06448
-
-- Official artifact: https://github.com/Mondego/SourcererCC
-
-- Discovery method: Located the tool by searching the tool name “SourcererCC” on google, the top result was the Mondego maintained GitHub repository.
-
-- Verification: The repository name and documentation indicate it is the SourcererCC clone detector described in the paper and it is maintained by the same person/lab.
-
-### Environmental Setup (dockerized)
-- Host: Windows 10
-- Container: Ubuntu 22.04
-- Java: OpenJDK 11
-- Python: Python 3.10
-- Build tool: Apache Ant (installed in container)
-
-- Further Proof
-```
-  root@b544a82ef93f:/workspace# python3 --version
-  Python 3.10.12
-  root@b544a82ef93f:/workspace# java -version
-  Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
-  openjdk version "11.0.30" 2026-01-20
-  OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu122.04)OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu122.04, mixed mode, sharing)
-  root@b544a82ef93f:/workspace# ls
-  LICENSE    WebApp          dockerfile        scripts-data-analysis
-  README.md  clone-detector  requirements.txt  tokenizers
-```
 
 ### Installation and Execution Steps
 1. Prerequisites (No local Java or Python installation is required)
