@@ -1,0 +1,26 @@
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+"./cfprocessors/txl_normalization" "r" "." "java" "file" extract | "./cfprocessors/txl_normalization" "r" "." "java" "file" tokenize
+
+CloneWorks Version 1.0
+
+Input Builder
+
+System=/workspace/data/bigclonebench_subset/src
+FileIDs=/workspace/out/cwbuild/bigclonebench.files
+Blocks=/workspace/out/cwbuild/bigclonebench.fragments
+Configuration=type3token
+Languages=java,
+Granularity=file
+TokenType=token
+
+tokproc[1]=input.termprocessors.FilterOperators
+tokproc[2]=input.termprocessors.FilterSeperators
+
+Parsing....
+
+
+Elapsed Time: 00:02:03.137
+
+real	2m3.627s
+user	6m34.809s
+sys	1m37.278s

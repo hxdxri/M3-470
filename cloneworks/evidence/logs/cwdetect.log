@@ -1,0 +1,22 @@
+Picked up JAVA_TOOL_OPTIONS: -Dfile.encoding=UTF-8
+
+CloneWorks Version 1.0
+
+Clone Detection
+
+Blocks=/workspace/out/cwbuild/bigclonebench.fragments
+Clones=/workspace/out/cwdetect/bigclonebench.clones
+MinimumSimilarity=0.7
+Pre-Sorted=false
+Partitioned=false
+MinLines=0
+MaxLines=0
+MinTokens=0
+MaxTokens=0
+Building GTF...
+Indexing...
+Detection...
+
+real	0m1.789s
+user	0m3.835s
+sys	0m0.441s

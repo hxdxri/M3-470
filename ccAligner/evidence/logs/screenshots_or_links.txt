@@ -1,0 +1,6 @@
+Verified that the following repository is unrelated:
+https://github.com/saurabhshri/CCAligner
+(This repository is an audio subtitle alignment tool.)
+
+Primary paper reference:
+https://clones.usask.ca/pubfiles/articles/Wang_CCAlignerICSE2018.pdf

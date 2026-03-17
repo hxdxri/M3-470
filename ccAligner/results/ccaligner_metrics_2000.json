@@ -1,0 +1,20 @@
+{
+  "tool": "CCAligner",
+  "benchmark": "BigCloneBench (CodeXGLUE subset)",
+  "oracle_file": "data/bigclonebench_subset/oracle/oracle_pairs.jsonl",
+  "total_sampled_pairs": 2000,
+  "oracle_positive_pairs": 958,
+  "oracle_negative_pairs": 1042,
+  "selected_snippets": 2996,
+  "detected_pairs": 7805,
+  "detected_pairs_within_selected_snippets": 7805,
+  "scored_detected_pairs": 8,
+  "unscored_detected_pairs": 7797,
+  "true_positives": 8,
+  "false_positives": 0,
+  "false_negatives": 950,
+  "precision": 1.0,
+  "recall": 0.0084,
+  "f1": 0.0166,
+  "scored_detection_coverage": 0.001
+}
