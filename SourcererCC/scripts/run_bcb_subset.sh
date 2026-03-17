@@ -116,11 +116,7 @@ cp blocks.file "${CLONE_DIR}/input/dataset/"
 echo "Wrote index map to {index_map_path}"
 
 cd "${CLONE_DIR}"
-rm -f scriptinator_metadata.scc Log_*.out Lpython3 scripts/evaluate_bcb.py \
-  --oracle /workspace/benchmarks/bcb_subset/oracle_pairs.jsonl \
-  --results /workspace/SourcererCC/results/bcb_subset_results.pairs \
-  --index_map /workspace/benchmarks/bcb_subset/index_to_snippet_id.json \
-  --metrics /workspace/SourcererCC/results/sourcerercc_metrics.jsonog_*.err
+rm -f scriptinator_metadata.scc Log_*.out Log_*.err
 rm -rf NODE_*
 python3 controller.py 2>&1 | tee "${LOG_DIR}/bcb_clone_detector.log"
 
