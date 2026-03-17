@@ -22,6 +22,18 @@
 - Evaluation metrics: `results/results(2000)/sourcerercc_metrics.json`
 - Scripts: `scripts/`
 
+#### Where to Find Results and Logs for in the repo
+- **Primary results (2000 pairs):**
+  - Logs: `logs/logs(2000)/*`
+  - Results: `results/results(2000)*`
+  - Benchmarks and oracles: `benchmarks/`
+  - These contain the main evidence and metrics for the 2000-pair experiment.
+
+- **Secondary results (20 pairs):**
+  - Logs: `logs/*`
+  - Results: `results/*`
+  - These contain the evidence and outputs for the smaller 20-pair experiment.
+
 
 ### Artifact Discovery
 - Paper: https://arxiv.org/pdf/1512.06448
@@ -144,18 +156,6 @@
     - **Logs:** `/workspace/SourcererCC/logs/`
     - **Local copies:** `./benchmarks/`, `./logs/logs(2000)` `./results/results(2000)` (after using `docker cp`)
 
-
-#### Where to Find Results and Logs for in the repo
-- **Primary results (2000 pairs):**
-  - Logs: `logs/logs(2000)/*`
-  - Results: `results/results(2000)*`
-  - Benchmarks and oracles: `benchmarks/`
-  - These contain the main evidence and metrics for the 2000-pair experiment.
-
-- **Secondary results (20 pairs):**
-  - Logs: `logs/*`
-  - Results: `results/*`
-  - These contain the evidence and outputs for the smaller 20-pair experiment.
 
 
 ## Smoke Test Execution Steps
