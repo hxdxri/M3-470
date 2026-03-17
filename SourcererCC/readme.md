@@ -276,6 +276,7 @@ The evaluation pipeline for SourcererCC is designed for reproducibility and tran
 - Recall: 0.000992063492063492
 
 
+
 ### Execution Outcome and TES Classification
 
 SourcererCC was successfully executed end to end inside a Dockerized Ubuntu 22.04 environment using Java 11 and Python 3. The tool was run on a BigCloneBench subset using default configuration settings (80% similarity threshold). The pipeline completed successfully, producing clone pair outputs and execution logs without runtime errors after environment setup.
@@ -284,9 +285,6 @@ However, the tool required several environment interventions to run correctly, i
 
 Based on the taxonomy provoded, SourcererCC is classified as **TES-B (Executable with Intervention)**, as it runs successfully but required some environment adjustments beyond the provided documentation.
 
-### Conclusion
-- The pipeline demonstrates successful execution and evaluation of SourcererCC on a reproducible subset.
-- All steps, outputs, and evidence are documented for transparency.
 
 ### Notes (Execution Logs and Evidence)
 Three sets of execution logs are included in this repository to document the reproduction attempts.
@@ -294,17 +292,21 @@ Three sets of execution logs are included in this repository to document the rep
 - 100 pair BigCloneBench subset attempt
 An initial attempt was made to run the pipeline using a subset of 100 clone pairs. During this run, the system experienced a crash on the local machine before the pipeline could complete. As a result, only partial logs were captured. These logs are still included in the repository as evidence of the attempted execution and to document the failure conditions encountered during the experiment.
 
-- 20-pair BigCloneBench subset run
+- 20 pair BigCloneBench subset run
 After the crash during the larger run, the experiment was repeated using a smaller subset of 20 clone pairs to ensure that the pipeline could complete within the available system resources. This run successfully completed the full workflow (tokenization, indexing, and search), and the logs from this execution are included as the secondary evidence for the reproduction results.
 
 - 2000 pair BigCloneBench subset run
 The main experiment was conducted using a 2000 pair BigCloneBench subset. The full pipeline (subset generation, tokenization, clone detection, evaluation) completed successfully. The execution log for this run is included as `logs/logs(2000)/bcb_clone_detector.log`, and all related outputs and metrics are available in the `results/results(2000)/*` and `benchmarks/*` folders. This log provides the primary evidence for the main reported evaluation metrics.
 
 
----
 ### System State, Problem, and Solution (Up-to-date Notes)
 
 The current system now fully supports end-to-end evaluation of SourcererCC on BigCloneBench subsets, with all outputs and logs reproducible and exportable. The main challenge faced was a mismatch between the clone detector's output indices and the oracle's snippet IDs, which initially prevented correct precision/recall calculation. This was resolved by generating an explicit index-to-snippet-id mapping during subset creation and updating the evaluation script to use this mapping, ensuring detected pairs are compared accurately to the oracle. All steps, outputs, and copying instructions are now standardized and documented. The system is robust for both small and large subsets, and all evidence is included for transparency and reproducibility.
+
+
+### Conclusion
+- The pipeline demonstrates successful execution and evaluation of SourcererCC on a reproducible subset.
+- All steps, outputs, and evidence are documented for transparency.
 
 
 ### Citations
@@ -315,6 +317,5 @@ The current system now fully supports end-to-end evaluation of SourcererCC on Bi
 Proceedings of the IEEE International Conference on Software Maintenance and Evolution (ICSME).  
 Available at: https://arxiv.org/pdf/1512.06448
 repository: https://github.com/Mondego/SourcererCC
-
-The BigCloneBench dataset and associated evaluation methodology described in this paper are commonly used for evaluating large-scale clone detection tools such as SourcererCC.
+- The BigCloneBench dataset and associated evaluation methodology described in this paper are commonly used for evaluating large-scale clone detection tools such as SourcererCC.
 Dataset (HuggingFace): Lu, S., et al. (2021). CodeXGLUE. NeurIPS 2021. https://huggingface.co/datasets/google/code_x_glue_cc_clone_detection_big_clone_bench
